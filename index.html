@@ -420,7 +420,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
       <div class="frente-card" style="border-color:var(--sage-light);">
         <div class="frente-title">Atuação aplicada</div>
         <p class="frente-desc">Desenvolvimento de diagnósticos, recomendações e apoio técnico a projetos e iniciativas.</p>
-        <a href="#" onclick="showPage('atuo')" class="link-arrow">Ver como atuo →</a>
+       <a href="#" onclick="goAtuoExperiencia()" class="link-arrow">Ver experiência →</a>
       </div>
 
       <!-- 2. Síntese e curadoria -->
@@ -707,7 +707,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
     </div>
 
     <!-- EXPERIÊNCIA RECENTE -->
-    <span class="section-label" style="margin-top:0.5rem;">Experiência recente</span>
+   <span id="experiencia-recente" class="section-label">Experiência recente</span>
     <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:1.2rem;line-height:1.7;">Atuação em estudos, relatórios e projetos relacionados à transição energética, desenvolvimento e políticas públicas.</p>
     <div class="exp-grid">
       <a href="https://www.oxfam.org.br/encruzilhada-climatica-um-retrato-das-desigualdades-brasileiras/" target="_blank" class="exp-row" style="text-decoration:none;">
@@ -779,6 +779,7 @@ function showPage(name) {
   if (page) { page.classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
   if (nl)   nl.classList.add('active');
 }
+
 function goHome(id) {
   showPage('home');
   document.getElementById('nl-contato').classList.add('active');
@@ -787,9 +788,16 @@ function goHome(id) {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
 }
+
+function goAtuoExperiencia() {
+  showPage('atuo');
+  setTimeout(() => {
+    const el = document.getElementById('experiencia-recente');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
 document.querySelectorAll('a[href="#"]').forEach(a => {
   a.addEventListener('click', e => e.preventDefault());
 });
 </script>
-</body>
-</html>
