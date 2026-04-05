@@ -59,9 +59,54 @@ nav {
 .nav-links a:hover { color: var(--sage); }
 .nav-links a.active { color: var(--sage); border-bottom-color: var(--sage-light); }
 
+.nav-item-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  display: inline-flex; align-items: center; gap: 0.38rem;
+}
+.nav-caret {
+  width: 0.45rem; height: 0.45rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px); opacity: 0.75; transition: transform 0.18s ease, opacity 0.18s ease;
+}
+.nav-item-dropdown.open .nav-caret,
+.nav-item-dropdown:hover .nav-caret { transform: rotate(225deg) translateY(-1px); opacity: 1; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 0.7rem); left: 50%; transform: translateX(-50%);
+  min-width: 220px; padding: 0.45rem; list-style: none;
+  background: rgba(246,243,238,0.98); border: 1px solid var(--border); box-shadow: 0 14px 34px rgba(24,20,15,0.08);
+  backdrop-filter: blur(12px); display: none; z-index: 120;
+}
+.nav-item-dropdown.open .nav-dropdown-menu,
+.nav-item-dropdown:hover .nav-dropdown-menu,
+.nav-item-dropdown:focus-within .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu li { margin: 0; }
+.nav-dropdown-link {
+  display: block; width: 100%; padding: 0.72rem 0.85rem; border-bottom: none !important;
+  font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-soft);
+}
+.nav-dropdown-link:hover,
+.nav-dropdown-link.active { background: var(--beige); color: var(--sage); }
+
 /* ── PAGE ROUTING ── */
 .page { display: none; }
 .page.active { display: block; }
+
+
+.home-intro, .inner-page, .nav-dropdown-menu { position: relative; overflow: hidden; }
+.home-intro::after {
+  content: ''; position: absolute; width: 240px; height: 240px; right: -72px; top: -18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M110 110c18-20 38-31 55-26 19 6 29 26 25 46-5 23-25 38-48 37-26-2-45-20-48-45-4-28 12-53 38-60 29-8 60 6 74 32 15 29 8 65-17 85-28 22-67 22-95 0-30-24-40-65-22-99 19-35 58-55 97-48' stroke='%235a7a5a' stroke-width='2' opacity='.42'/%3E%3Cpath d='M110 110c-18 19-29 39-24 56 5 18 23 27 42 23 21-4 35-22 34-43-2-23-18-40-40-43-25-3-47 12-54 35-7 26 6 54 30 68 27 16 61 11 82-11 22-24 26-60 9-88-18-31-53-47-88-41' stroke='%23c09840' stroke-width='1.6' opacity='.34'/%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain;
+  opacity: 0.12; pointer-events: none; filter: saturate(0.9);
+}
+.inner-page::after {
+  content: ''; position: absolute; width: 220px; height: 220px; right: -58px; bottom: 84px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M110 110c18-20 38-31 55-26 19 6 29 26 25 46-5 23-25 38-48 37-26-2-45-20-48-45-4-28 12-53 38-60 29-8 60 6 74 32 15 29 8 65-17 85-28 22-67 22-95 0-30-24-40-65-22-99 19-35 58-55 97-48' stroke='%235a7a5a' stroke-width='2' opacity='.42'/%3E%3Cpath d='M110 110c-18 19-29 39-24 56 5 18 23 27 42 23 21-4 35-22 34-43-2-23-18-40-40-43-25-3-47 12-54 35-7 26 6 54 30 68 27 16 61 11 82-11 22-24 26-60 9-88-18-31-53-47-88-41' stroke='%23c09840' stroke-width='1.6' opacity='.34'/%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain;
+  opacity: 0.08; pointer-events: none;
+}
+.nav-dropdown-menu::before {
+  content: ''; position: absolute; width: 72px; height: 72px; right: -12px; top: -8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M110 110c18-20 38-31 55-26 19 6 29 26 25 46-5 23-25 38-48 37-26-2-45-20-48-45-4-28 12-53 38-60 29-8 60 6 74 32 15 29 8 65-17 85-28 22-67 22-95 0-30-24-40-65-22-99 19-35 58-55 97-48' stroke='%235a7a5a' stroke-width='2' opacity='.42'/%3E%3Cpath d='M110 110c-18 19-29 39-24 56 5 18 23 27 42 23 21-4 35-22 34-43-2-23-18-40-40-43-25-3-47 12-54 35-7 26 6 54 30 68 27 16 61 11 82-11 22-24 26-60 9-88-18-31-53-47-88-41' stroke='%23c09840' stroke-width='1.6' opacity='.34'/%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain;
+  opacity: 0.10; pointer-events: none;
+}
 
 /* ── BUTTONS ── */
 .btn-primary {
@@ -156,14 +201,22 @@ nav {
   border-bottom: 1.5px solid var(--sage-light); padding-bottom: 0.32rem;
 }
 .hero-title {
-  font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.75rem);
-  font-weight: 500; line-height: 1.17; color: var(--text-dark);
-  margin-bottom: 1.2rem; max-width: 450px;
+  font-family: var(--serif); font-size: clamp(1.95rem, 3.2vw, 2.78rem);
+  font-weight: 500; line-height: 1.16; color: var(--text-dark);
+  margin-bottom: 1.15rem; max-width: 560px; letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 .hero-title em { font-style: italic; color: var(--sage); }
+.hero-accent { color: var(--sage); font-style: italic; }
 .hero-sub {
-  font-size: 0.98rem; font-weight: 400; color: var(--text-soft);
-  line-height: 1.78; margin-bottom: 2.2rem; max-width: 420px;
+  font-size: 0.96rem; font-weight: 400; color: var(--text-mid);
+  line-height: 1.84; margin-bottom: 2.15rem; max-width: 540px;
+  text-wrap: pretty;
+}
+.hero-sub strong, .traj-text strong, .inner-page-sub strong, .section-lead strong {
+  font-weight: 500;
+  font-family: inherit;
+  color: inherit;
 }
 .hero-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 .hero-visual { display: flex; align-items: center; justify-content: center; height: 390px; }
@@ -186,6 +239,11 @@ nav {
 .traj-copy { max-width: 760px; }
 .traj-kicker { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 0.7rem; display:block; }
 .traj-text { font-size: 1rem; color: var(--text-mid); line-height: 1.74; max-width: 760px; margin-bottom: 0; }
+.traj-text + .traj-text { margin-top: 0.6rem; }
+.traj-cred {
+  margin-top: 1rem; display: inline-block;
+  font-size: 0.83rem; color: var(--text-light); letter-spacing: 0.02em; line-height: 1.7;
+}
 .traj-links { display: flex; gap: 1.15rem 1.4rem; flex-wrap: wrap; align-items: center; justify-content:flex-start; margin-top: 1.15rem; }
 .traj-link {
   display: inline-flex; align-items: center; gap: 0.48rem;
@@ -397,8 +455,16 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 860px) {
-  nav { padding: 0.85rem 1.5rem; }
-  .nav-links { display: none; }
+  nav { padding: 0.85rem 1.5rem; align-items: flex-start; flex-direction: column; gap: 0.85rem; }
+  .nav-links { display: flex; width: 100%; gap: 0.25rem; flex-wrap: wrap; align-items: flex-start; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: inline-flex; }
+  .nav-item-dropdown { width: 100%; }
+  .nav-dropdown-menu {
+    position: static; transform: none; min-width: 100%; margin-top: 0.35rem; box-shadow: none;
+    background: rgba(236,230,218,0.7); border-color: var(--border-lt);
+  }
+  .nav-dropdown-link { padding: 0.68rem 0.85rem; font-size: 0.72rem; }
   #hero { padding: 5.8rem 1.5rem 3rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
   .hero-visual { height: 220px; }
@@ -413,6 +479,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
   .frente-card { border-right:none; border-bottom:1px solid var(--border-lt); padding-right:0; }
   .frente-card:last-child { border-bottom:none; }
   .home-intro { padding: 2.1rem 1.5rem 2rem; }
+  .home-intro::after, .inner-page::after { width: 150px; height: 150px; opacity: 0.06; right: -42px; }
   .home-frentes { padding: 2.5rem 1.5rem 3rem; }
   .home-frentes-note { text-align:left; max-width:none; }
   .footer-inner { flex-direction: column; }
@@ -437,13 +504,18 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
     <div class="nav-sub">Maria José Charfuelan Villarreal</div>
   </div>
   <ul class="nav-links">
-    <li><a id="nl-home"       href="#home" onclick="showPage('home', { push: true })">Início</a></li>
-    <li><a id="nl-atuo"       href="#atuo" onclick="showPage('atuo', { push: true })">Frentes de atuação</a></li>
-    <li><a id="nl-pub"        href="#publicacoes" onclick="showPage('publicacoes', { push: true })">Publicações</a></li>
-    <li><a id="nl-analises"   href="#analises" onclick="showPage('analises', { push: true })">Textos breves</a></li>
+    <li><a id="nl-home" href="#home" onclick="showPage('home', { push: true })">Início</a></li>
+    <li><a id="nl-atuo" href="#atuo" onclick="showPage('atuo', { push: true })">Frentes de atuação</a></li>
+    <li class="nav-item-dropdown" id="nav-publicacoes-item">
+      <a id="nl-pub" class="nav-dropdown-toggle" href="#publicacoes" onclick="toggleDropdown(event)">Publicações <span class="nav-caret" aria-hidden="true"></span></a>
+      <ul class="nav-dropdown-menu" aria-label="Submenu de publicações">
+        <li><a id="nl-pub-tecnica" class="nav-dropdown-link" href="#publicacoes" onclick="showPage('publicacoes', { push: true }); closeDropdown();">Produção técnica</a></li>
+        <li><a id="nl-textos-circulacao" class="nav-dropdown-link" href="#textos-circulacao" onclick="showPage('textos-circulacao', { push: true }); closeDropdown();">Textos em circulação</a></li>
+      </ul>
+    </li>
     <li><a id="nl-biblioteca" href="#biblioteca" onclick="showPage('biblioteca', { push: true })">Biblioteca</a></li>
-    <li><a id="nl-disc"       href="#discussoes" onclick="showPage('discussoes', { push: true })">Discussões</a></li>
-    <li><a id="nl-contato"    href="#contato" onclick="goHome('contato-wrap', { push: true })">Contato</a></li>
+    <li><a id="nl-disc" href="#discussoes" onclick="showPage('discussoes', { push: true })">Discussões</a></li>
+    <li><a id="nl-contato" href="#contato" onclick="goHome('contato-wrap', { push: true })">Contato</a></li>
   </ul>
 </nav>
 
@@ -457,9 +529,9 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
   <div id="hero">
     <div class="hero-inner">
       <div>
-        <span class="hero-tag">Energia · Clima · Desenvolvimento</span>
-        <h1 class="hero-title">Inteligência aplicada para <em>energia, clima</em> e políticas públicas</h1>
-        <p class="hero-sub">Transformo informação complexa em análise estratégica para apoiar o planejamento energético, o desenho de políticas públicas e o desenvolvimento de soluções para a transição energética.</p>
+        <span class="hero-tag">Transição energética · Transição justa · Políticas públicas</span>
+        <h1 class="hero-title">Inteligência aplicada para <span class="hero-accent">energia, clima</span> e políticas públicas</h1>
+        <p class="hero-sub">Transição energética, clima e políticas públicas.<br>Análise estratégica, síntese de evidências e subsídios para quem precisa decidir.<br>Atuação junto a governos, organizações e iniciativas de impacto.<br>Do diagnóstico à recomendação — com rigor técnico e clareza.</p>
         <div class="hero-btns">
   <a href="#atuo" onclick="showPage('atuo', { push: true })" class="btn-primary">Frentes de atuação →</a>
   <a href="#publicacoes" onclick="showPage('publicacoes', { push: true })" class="btn-outline">Ver publicações técnicas →</a>
@@ -494,7 +566,9 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
     <div class="traj-block">
       <div class="traj-copy">
         <span class="traj-kicker">Trajetória</span>
-        <p class="traj-text">Atuação em energia, clima e desenvolvimento com base em pesquisa aplicada, análise estratégica e compreensão institucional. Ao longo dessa trajetória, participei de estudos, projetos e entregas desenvolvidos com governo, sociedade civil e organismos internacionais.</p>
+        <p class="traj-text">Trajetória construída na interface entre <strong>pesquisa aplicada, produção técnica e leitura institucional</strong>.</p>
+        <p class="traj-text">Desenvolvimento de estudos, análises e recomendações voltadas à formulação de políticas públicas e à compreensão de contextos complexos em energia e desenvolvimento.</p>
+        <div class="traj-cred">Pesquisadora · Doutora em Energia e Planejamento · Estudos, análise estratégica e subsídios para tomada de decisão</div>
       </div>
       <div class="traj-links">
         <a href="https://www.linkedin.com/in/maria-jose-charfuelan-99b90139/?locale=en" target="_blank" class="traj-link">
@@ -576,7 +650,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
         </a>
       </div>
       <div style="margin-top:1.4rem;">
-        <a href="#analises" onclick="showPage('analises', { push: true })" class="link-arrow">Ver todas as análises →</a>
+        <a href="#textos-circulacao" onclick="goTextosCirculacao(event)" class="link-arrow">Ver todos os textos →</a>
       </div>
     </div>
   </div>
@@ -650,12 +724,12 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 <!-- ════════════════════════════════
      ANÁLISES
 ════════════════════════════════ -->
-<div id="page-analises" class="page">
+<div id="page-textos-circulacao" class="page">
   <div class="inner-page">
     <a href="#home" onclick="showPage('home', { push: true })" class="back-link">← Início</a>
-    <span class="section-label">Textos breves</span>
-    <h1 class="inner-page-title">Textos breves</h1>
-    <p class="inner-page-sub">Textos curtos e publicações breves sobre energia, clima e desenvolvimento.</p>
+    <span class="section-label">Textos em circulação</span>
+    <h1 class="inner-page-title">Textos em circulação</h1>
+    <p class="inner-page-sub">Publicações autorais breves em redes sociais sobre energia, clima e desenvolvimento.</p>
 
     <div class="index-list">
       <a href="https://www.linkedin.com/feed/update/urn:li:activity:7427199462822809600/?originTrackingId=yqFOxXDnEgfFrmndbsVxng%3D%3D" target="_blank" class="index-row">
@@ -889,12 +963,38 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 
 
 <script>
-const validPages = ['home', 'analises', 'biblioteca', 'publicacoes', 'atuo', 'discussoes'];
+const validPages = ['home', 'textos-circulacao', 'biblioteca', 'publicacoes', 'atuo', 'discussoes'];
+
+function closeDropdown() {
+  const item = document.getElementById('nav-publicacoes-item');
+  if (item) item.classList.remove('open');
+}
+
+function toggleDropdown(event) {
+  if (event) event.preventDefault();
+  const item = document.getElementById('nav-publicacoes-item');
+  if (!item) return;
+  const isMobile = window.innerWidth <= 860;
+  if (isMobile) {
+    item.classList.toggle('open');
+  } else {
+    showPage('publicacoes', { push: true });
+    closeDropdown();
+  }
+}
 
 function setActiveNav(name) {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const map = { home:'nl-home', analises:'nl-analises', biblioteca:'nl-biblioteca', publicacoes:'nl-pub', atuo:'nl-atuo', discussoes:'nl-disc' };
+  const map = { home:'nl-home', biblioteca:'nl-biblioteca', publicacoes:'nl-pub-tecnica', 'textos-circulacao':'nl-textos-circulacao', atuo:'nl-atuo', discussoes:'nl-disc' };
   const id = map[name];
+  const topPub = document.getElementById('nl-pub');
+  const item = document.getElementById('nav-publicacoes-item');
+  if (name === 'publicacoes' || name === 'textos-circulacao') {
+    if (topPub) topPub.classList.add('active');
+    if (item) item.classList.add('open');
+  } else if (item) {
+    item.classList.remove('open');
+  }
   if (id) {
     const el = document.getElementById(id);
     if (el) el.classList.add('active');
@@ -908,6 +1008,7 @@ function showPage(name, options = {}) {
   const page = document.getElementById('page-' + target);
   if (page) page.classList.add('active');
   setActiveNav(target);
+  if (target !== 'publicacoes' && target !== 'textos-circulacao') closeDropdown();
   if (updateHash) {
     const desiredHash = '#' + target;
     if (window.location.hash !== desiredHash) {
@@ -944,6 +1045,12 @@ function goAtuoExperiencia(event) {
   }, 140);
 }
 
+function goTextosCirculacao(event) {
+  if (event) event.preventDefault();
+  closeDropdown();
+  showPage('textos-circulacao', { updateHash: true, scrollTop: true });
+}
+
 function loadFromHash() {
   const hash = (window.location.hash || '#home').replace('#', '');
   if (hash === 'contato') {
@@ -966,6 +1073,17 @@ function loadFromHash() {
   }
   showPage(validPages.includes(hash) ? hash : 'home', { updateHash: false, scrollTop: false });
 }
+
+
+document.addEventListener('click', (event) => {
+  const item = document.getElementById('nav-publicacoes-item');
+  if (!item) return;
+  if (!item.contains(event.target)) closeDropdown();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeDropdown();
+});
 
 window.addEventListener('popstate', loadFromHash);
 window.addEventListener('DOMContentLoaded', loadFromHash);
