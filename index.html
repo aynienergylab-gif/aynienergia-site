@@ -209,17 +209,21 @@ nav {
 .hero-title em { font-style: italic; color: var(--sage); }
 .hero-accent { color: var(--sage); font-style: italic; }
 .hero-sub {
-  .hero-sub p {
-  margin: 0 0 12px 0;
-}
-  font-size: 0.96rem; font-weight: 400; color: var(--text-mid);
-  line-height: 1.84; margin-bottom: 2.15rem; max-width: 540px;
+ font-size: 0.96rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.84;
+  margin-bottom: 2.15rem;
+  max-width: 700px;
   text-wrap: pretty;
 }
-.hero-sub strong, .traj-text strong, .inner-page-sub strong, .section-lead strong {
-  font-weight: 500;
-  font-family: inherit;
-  color: inherit;
+
+.hero-sub p {
+  margin: 0 0 0.9rem 0;
+}
+
+.hero-sub p:last-child {
+  margin-bottom: 0;
 }
 .hero-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 .hero-visual { display: flex; align-items: center; justify-content: center; height: 390px; }
@@ -531,21 +535,22 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
   <!-- HERO -->
   <div id="hero">
     <div class="hero-inner">
-      <div>
-        <span class="hero-tag">Transição energética · Transição justa · Políticas públicas</span>
-        <h1 class="hero-title">Inteligência aplicada para <span class="hero-accent">energia, clima</span> e políticas públicas</h1>
-        <div class="hero-sub">
-  <p>Inteligência aplicada para transformar complexidade em direção estratégica.</p>
-  <p>Análise, síntese de evidências e subsídios técnicos para decisões relevantes.</p>
-  <p>Do diagnóstico à recomendação, com rigor e clareza.</p>
-  <p>Para decisões mais consistentes em contextos de transição e mudança.</p>
-</div></div>
-        <div class="hero-btns">
-  <a href="#atuo" onclick="showPage('atuo', { push: true })" class="btn-primary">Frentes de atuação →</a>
-  <a href="#publicacoes" onclick="showPage('publicacoes', { push: true })" class="btn-outline">Ver publicações técnicas →</a>
-</div>
-      </div>
-      <div class="hero-visual">
+     <div>
+  <span class="hero-tag">Transição energética · Transição justa · Políticas públicas</span>
+  <h1 class="hero-title">Inteligência aplicada para <span class="hero-accent">energia, clima</span> e políticas públicas</h1>
+
+  <div class="hero-sub">
+    <p>Inteligência aplicada para transformar complexidade em direção estratégica.</p>
+    <p>Análise, síntese de evidências e subsídios técnicos para decisões relevantes.</p>
+    <p>Do diagnóstico à recomendação, com rigor e clareza.</p>
+    <p>Para decisões mais consistentes em contextos de transição e mudança.</p>
+  </div>
+
+  <div class="hero-btns">
+    <a href="#atuo" onclick="showPage('atuo', { push: true })" class="btn-primary">Frentes de atuação →</a>
+    <a href="#publicacoes" onclick="showPage('publicacoes', { push: true })" class="btn-outline">Ver publicações técnicas →</a>
+  </div>
+</div>      <div class="hero-visual">
         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" fill="none">
           <g class="spiral-outer" style="transform-box:fill-box;">
             <path stroke="#3d5c3d" stroke-width="0.9" d="M200,200 C220,178 242,163 258,170 C280,178 290,202 282,226 C272,252 248,266 220,262 C188,257 165,236 162,206 C158,172 177,142 206,133 C240,122 276,138 294,168 C314,202 304,244 278,265 C249,288 208,292 175,278 C138,261 116,224 120,188 C125,148 154,116 192,108 C236,98 280,116 306,150 C334,188 327,238 300,267 C270,298 225,310 185,298 C140,284 114,248 116,206 C118,160 146,122 185,106"/>
