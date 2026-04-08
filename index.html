@@ -1155,23 +1155,6 @@ function setActiveNav(name) {
 function showPage(name, options = {}) {
   const { updateHash = true, scrollTop = true } = options;
   const target = validPages.includes(name) ? name : 'home';
-
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-
-  const page = document.getElementById('page-' + target);
-  if (page) page.classList.add('active');
-
-  setActiveNav(target);
-
-  closeNavMenu(); // 👈 CERTO
-
-  if (target !== 'publicacoes' && target !== 'textos-circulacao') {
-    closeDropdown();
-  }
-}
-function showPage(name, options = {}) {
-  const { updateHash = true, scrollTop = true } = options;
-  const target = validPages.includes(name) ? name : 'home';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const page = document.getElementById('page-' + target);
   if (page) page.classList.add('active');
