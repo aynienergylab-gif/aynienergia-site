@@ -92,7 +92,39 @@ nav {
 }
 .nav-dropdown-link:hover,
 .nav-dropdown-link.active { background: var(--beige); color: var(--sage); }
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  background: rgba(246,243,238,0.96);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
 
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--text-dark);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 /* ── PAGE ROUTING ── */
 .page { display: none; }
 .page.active { display: block; }
@@ -476,15 +508,51 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 .disc-collab a:hover { text-decoration: underline; }
 
 /* ── RESPONSIVE ── */
-@media
-  (max-width: 860px) {
-  nav { padding: 0.85rem 1.5rem; align-items: flex-start; flex-direction: column; gap: 0.85rem; }
-    #hero {
-    padding-top: 22rem;
+@media (max-width: 860px) {
+  nav {
+    padding: 0.85rem 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 0;
   }
-  .nav-links { display: flex; width: 100%; gap: 0.25rem; flex-wrap: wrap; align-items: flex-start; }
-  .nav-links li { width: 100%; }
-  .nav-links a { display: inline-flex; }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0.8rem 1.2rem 1rem;
+    background: rgba(246,243,238,0.98);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+    z-index: 110;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li,
+  .nav-item-dropdown {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: inline-flex;
+  }
+
+  #hero {
+    padding: 7.2rem 1.5rem 3rem;
+  }
   .nav-item-dropdown { width: 100%; }
   .nav-dropdown-menu {
     position: static; transform: none; min-width: 100%; margin-top: 0.35rem; box-shadow: none;
@@ -553,7 +621,13 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
     <div class="nav-brand-name">Ayni<span>Energia</span></div>
     <div class="nav-sub">Maria José Charfuelan Villarreal</div>
   </div>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" onclick="toggleNavMenu(event)">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<ul class="nav-links" id="nav-links">
     <li><a id="nl-home" href="#home" onclick="showPage('home', { push: true })">Início</a></li>
     <li><a id="nl-atuo" href="#atuo" onclick="showPage('atuo', { push: true })">Frentes de atuação</a></li>
     <li class="nav-item-dropdown" id="nav-publicacoes-item">
@@ -1021,7 +1095,21 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 
 <script>
 const validPages = ['home', 'textos-circulacao', 'biblioteca', 'publicacoes', 'atuo', 'discussoes'];
+function toggleNavMenu(event) {
+  if (event) event.preventDefault();
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  if (!toggle || !links) return;
+  toggle.classList.toggle('active');
+  links.classList.toggle('active');
+}
 
+function closeNavMenu() {
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  if (toggle) toggle.classList.remove('active');
+  if (links) links.classList.remove('active');
+}
 function closeDropdown() {
   const item = document.getElementById('nav-publicacoes-item');
   if (item) item.classList.remove('open');
@@ -1057,7 +1145,23 @@ function setActiveNav(name) {
     if (el) el.classList.add('active');
   }
 }
+function showPage(name, options = {}) {
+  const { updateHash = true, scrollTop = true } = options;
+  const target = validPages.includes(name) ? name : 'home';
 
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+  const page = document.getElementById('page-' + target);
+  if (page) page.classList.add('active');
+
+  setActiveNav(target);
+
+  closeNavMenu(); // 👈 CERTO
+
+  if (target !== 'publicacoes' && target !== 'textos-circulacao') {
+    closeDropdown();
+  }
+}
 function showPage(name, options = {}) {
   const { updateHash = true, scrollTop = true } = options;
   const target = validPages.includes(name) ? name : 'home';
@@ -1065,6 +1169,7 @@ function showPage(name, options = {}) {
   const page = document.getElementById('page-' + target);
   if (page) page.classList.add('active');
   setActiveNav(target);
+  
   if (target !== 'publicacoes' && target !== 'textos-circulacao') closeDropdown();
   if (updateHash) {
     const desiredHash = '#' + target;
@@ -1081,6 +1186,7 @@ function navigateTo(name, event) {
 }
 
 function goHome(id, event) {
+   closeNavMenu(); 
   if (event) event.preventDefault();
   showPage('home', { updateHash: true, scrollTop: true });
   const contatoNav = document.getElementById('nl-contato');
