@@ -314,7 +314,15 @@ nav {
 }
 
 .home-frentes-copy .section-lead {
+  max-width: 900px;
   margin-bottom: 0.9rem;
+}
+
+.home-frentes-copy .section-context {
+  max-width: 900px;
+  color: var(--text-soft);
+  line-height: 1.8;
+  margin-bottom: 0;
 }
 
 .home-frentes-copy p {
@@ -581,7 +589,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
   .frente-card:last-child { border-bottom:none; }
   .home-intro { padding: 2.1rem 1.5rem 2rem; }
   .home-intro::after, .inner-page::after { width: 150px; height: 150px; opacity: 0.06; right: -42px; }
-  .home-frentes { padding: 2.5rem 1.5rem 3rem; }
+  .home-frentes { padding: 2.5rem 1.5rem 2rem; }
   .home-frentes-note { text-align:left; max-width:none; }
   .footer-inner { flex-direction: column; }
   .footer-right { align-items: flex-start; }
@@ -740,9 +748,9 @@ Transição energética, <span class="hero-accent">desenvolvimento</span> e pol�
         Produção de estudos, análises e recomendações para apoiar decisões em energia, clima e desenvolvimento.
       </p>
 
-      <p style="max-width:760px; color:var(--text-soft); line-height:1.8;">
-        Atuação junto a governos, organismos internacionais, organizações da sociedade civil e centros de pesquisa.
-      </p>
+      <p class="section-context">
+  Atuação junto a governos, organismos internacionais, organizações da sociedade civil e centros de pesquisa.
+</p>
 
       <div style="margin-top:1.5rem;">
         <a href="#atuo" onclick="showPage('atuo', { push: true })" class="btn-primary">
