@@ -530,6 +530,69 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 .disc-collab a { color: var(--sage); font-weight: 500; text-decoration: none; }
 .disc-collab a:hover { text-decoration: underline; }
 
+.reflexoes-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2.2rem;
+}
+.linkedin-embed-list { display: grid; gap: 1.6rem; }
+.linkedin-embed-card {
+  background: var(--cream);
+  border: 1px solid var(--border-lt);
+  padding: 1.15rem;
+}
+.linkedin-embed-title {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.34;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+.linkedin-embed-card iframe {
+  width: 100%;
+  max-width: 504px;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+}
+.reflexoes-side {
+  position: sticky;
+  top: 6rem;
+  border-left: 1px solid var(--border-lt);
+  padding-left: 1.25rem;
+}
+.reflexoes-side-title {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: 0.8rem;
+}
+.reflexoes-links {
+  display: grid;
+  gap: 0.65rem;
+}
+.reflexao-link {
+  display: block;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--border-lt);
+  background: var(--beige);
+  color: var(--text-mid);
+  text-decoration: none;
+  font-size: 0.82rem;
+  line-height: 1.42;
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+}
+.reflexao-link:hover {
+  border-color: var(--sage-light);
+  background: var(--sage-pale);
+  color: var(--sage);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 860px) {
   nav {
@@ -606,6 +669,9 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
   .traj-links { gap: 1.2rem; }
   .atuo-shell { max-width: 100%; }
   .atuo-section-head, .atuo-cta { flex-direction: column; align-items: flex-start; }
+  .reflexoes-layout { grid-template-columns: 1fr; }
+  .reflexoes-side { position: static; border-left: 0; border-top: 1px solid var(--border-lt); padding-left: 0; padding-top: 1.25rem; }
+  .linkedin-embed-card { padding: 0.8rem; }
   .exp-row { grid-template-columns: 1fr; gap: 0.55rem; }
   .exp-highlights { grid-template-columns: 1fr; }
   .contrib-desc { max-width: none; }
@@ -875,27 +941,31 @@ Transição energética, <span class="hero-accent">desenvolvimento</span> e pol�
     <h1 class="inner-page-title">Análises e reflexões</h1>
     <p class="inner-page-sub">Publicações autorais breves sobre energia, clima, desenvolvimento e políticas públicas.</p>
 
-    <div class="index-list">
-      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7427199462822809600/?originTrackingId=yqFOxXDnEgfFrmndbsVxng%3D%3D" target="_blank" class="index-row">
-        <span class="index-tag">2025</span>
-        <div class="index-body">
-          <div class="index-title">Eletricidade, desenvolvimento e o risco de olhar só para a potência instalada</div>
-          <div class="index-src">LinkedIn · Maria José Charfuelan</div>
-        </div>
-        <span class="index-arr">↗</span>
-      </a>
-      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7312247327346323456/" target="_blank" class="index-row">
-        <span class="index-tag">2025</span>
-        <div class="index-body">
-          <div class="index-title">Consumo de Eletricidade: O Que Isso Nos Diz Sobre o Brasil e o Mundo?</div>
-          <div class="index-src">LinkedIn · Maria José Charfuelan</div>
-        </div>
-        <span class="index-arr">↗</span>
-      </a>
-    </div>
+    <div class="reflexoes-layout">
+      <div class="linkedin-embed-list">
+        <article class="linkedin-embed-card">
+          <h2 class="linkedin-embed-title">Eletricidade, desenvolvimento e o risco de olhar só para a potência instalada</h2>
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7427199462042955776" height="1350" width="504" frameborder="0" allowfullscreen="" title="Eletricidade, desenvolvimento e o risco de olhar só para a potência instalada"></iframe>
+        </article>
 
-    <div style="margin-top:2rem;padding:1.3rem 1.6rem;background:var(--beige);border:1px dashed var(--border);">
-      <p style="font-size:0.86rem;color:var(--text-light);">Novos textos serão adicionados aqui à medida que forem publicados.</p>
+        <article class="linkedin-embed-card">
+          <h2 class="linkedin-embed-title">Estudos e referências essenciais sobre a trajetória da transição energética no Brasil</h2>
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7403948446178639872" height="1153" width="504" frameborder="0" allowfullscreen="" title="Estudos e referências essenciais sobre a trajetória da transição energética no Brasil"></iframe>
+        </article>
+      </div>
+
+      <aside class="reflexoes-side" aria-label="Outras publicações">
+        <div class="reflexoes-side-title">Outras publicações</div>
+        <div class="reflexoes-links">
+          <a class="reflexao-link" href="https://www.linkedin.com/embed/feed/update/urn:li:share:7399620404291645440" target="_blank">Novo marco legal do setor elétrico: Lei nº 15.269/2025</a>
+          <a class="reflexao-link" href="https://www.linkedin.com/embed/feed/update/urn:li:share:7388734113798639616" target="_blank">Eficiência energética</a>
+          <a class="reflexao-link" href="https://www.linkedin.com/embed/feed/update/urn:li:share:7359010133068210179" target="_blank">Planejar a transição é planejar o desenvolvimento</a>
+          <a class="reflexao-link" href="https://www.linkedin.com/embed/feed/update/urn:li:share:7355346074900824065" target="_blank">Mais energia limpa, mais gente conectada</a>
+          <a class="reflexao-link" href="https://www.linkedin.com/embed/feed/update/urn:li:share:7312247326167785473" target="_blank">Consumo de eletricidade: o que isso nos diz sobre o Brasil e o mundo?</a>
+          <a class="reflexao-link" href="https://www.linkedin.com/embed/feed/update/urn:li:share:7407215065877139456" target="_blank">Silenciando a impostora e celebrando o caminho</a>
+          <a class="reflexao-link" href="https://www.linkedin.com/embed/feed/update/urn:li:share:7435784343006085120" target="_blank">Doutorado e interdisciplinaridade</a>
+        </div>
+      </aside>
     </div>
   </div>
   <footer><div class="footer-inner"><div class="footer-brand">Ayni<span>Energia</span></div><div class="footer-copy">© 2025 Maria José Charfuelan Villarreal</div></div></footer>
