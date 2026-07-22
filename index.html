@@ -518,7 +518,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
   flex-shrink: 0; padding-inline: 1.5rem;
 }
 
-/* DISCUSSÕES */
+/* TEXTOS */
 .disc-wrap { max-width: 520px; margin: 4.5rem auto; text-align: center; padding: 3.5rem 2rem; }
 .disc-mark { width: 42px; height: 42px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.4rem; }
 .disc-mark svg { width: 18px; height: 18px; stroke: var(--text-light); fill: none; stroke-width: 1.5; }
@@ -660,7 +660,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
       </ul>
     </li>
     <li><a id="nl-biblioteca" href="#biblioteca" onclick="showPage('biblioteca', { push: true })">Biblioteca</a></li>
-    <li><a id="nl-disc" href="#discussoes" onclick="showPage('discussoes', { push: true })">Discussões</a></li>
+    <li><a id="nl-disc" href="#textos-circulacao" onclick="showPage('textos-circulacao', { push: true })">Textos</a></li>
     <li><a id="nl-contato" href="#contato" onclick="goHome('contato-wrap', { push: true })">Contato</a></li>
   </ul>
 </nav>
@@ -871,9 +871,9 @@ Transição energética, <span class="hero-accent">desenvolvimento</span> e pol�
 <div id="page-textos-circulacao" class="page">
   <div class="inner-page">
     <a href="#home" onclick="showPage('home', { push: true })" class="back-link">← Início</a>
-    <span class="section-label">Textos em circulação</span>
-    <h1 class="inner-page-title">Textos em circulação</h1>
-    <p class="inner-page-sub">Publicações autorais breves em redes sociais sobre energia, clima e desenvolvimento.</p>
+    <span class="section-label">LinkedIn e circulação pública</span>
+    <h1 class="inner-page-title">Textos</h1>
+    <p class="inner-page-sub">Publicações autorais breves sobre energia, clima, desenvolvimento e políticas públicas.</p>
 
     <div class="index-list">
       <a href="https://www.linkedin.com/feed/update/urn:li:activity:7427199462822809600/?originTrackingId=yqFOxXDnEgfFrmndbsVxng%3D%3D" target="_blank" class="index-row">
@@ -1106,13 +1106,13 @@ Apoiamos governos, organizações da sociedade civil, organismos internacionais,
 
 
 <!-- ════════════════════════════════
-     DISCUSSÕES
+     TEXTOS
 ════════════════════════════════ -->
 <div id="page-discussoes" class="page">
   <div class="inner-page">
     <a href="#home" onclick="showPage('home', { push: true })" class="back-link">← Início</a>
-    <span class="section-label">Diálogos</span>
-    <h1 class="inner-page-title">Discussões</h1>
+    <span class="section-label">LinkedIn e circulação pública</span>
+    <h1 class="inner-page-title">Textos</h1>
 
     <div class="disc-wrap">
       <div class="disc-mark">
@@ -1120,13 +1120,13 @@ Apoiamos governos, organizações da sociedade civil, organismos internacionais,
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
       </div>
-      <div class="disc-title">Novos textos e diálogos serão adicionados aqui.</div>
-      <p class="disc-sub">Para colaborar, entre em contato.</p>
+      <div class="disc-title">Textos autorais sobre energia, clima, desenvolvimento e políticas públicas serão adicionados aqui.</div>
+      <p class="disc-sub">Uma curadoria de publicações breves em circulação.</p>
     </div>
 
     <div class="disc-collab" style="max-width:520px;margin:0 auto;">
-      <span class="dc-label">Contribuições abertas</span>
-      <p>Este espaço está aberto para contribuições de especialistas em energia, clima, desenvolvimento e políticas públicas. Entre em contato pelo <a href="mailto:ayni.energy.lab@gmail.com">ayni.energy.lab@gmail.com</a>.</p>
+      <span class="dc-label">Textos do LinkedIn</span>
+      <p>Este espaço reunirá publicações autorais selecionadas, com links para leitura na íntegra.</p>
     </div>
   <footer>
     <div class="footer-inner">
@@ -1175,7 +1175,7 @@ function toggleDropdown(event) {
 
 function setActiveNav(name) {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const map = { home:'nl-home', biblioteca:'nl-biblioteca', publicacoes:'nl-pub-tecnica', atuo:'nl-atuo', discussoes:'nl-disc' };
+  const map = { home:'nl-home', biblioteca:'nl-biblioteca', publicacoes:'nl-pub-tecnica', 'textos-circulacao':'nl-disc', atuo:'nl-atuo', discussoes:'nl-disc' };
   const id = map[name];
   const topPub = document.getElementById('nl-pub');
   const item = document.getElementById('nav-publicacoes-item');
