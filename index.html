@@ -56,7 +56,7 @@ nav {
 .nav-brand-name { font-family: var(--serif); font-size: 1.42rem; font-weight: 600; color: var(--text-dark); line-height: 1; letter-spacing: 0.01em; }
 .nav-brand-name span { color: var(--sage-mid); }
 .nav-sub { font-size: 0.63rem; font-weight: 400; color: var(--text-light); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.13rem; }
-.nav-author { color: rgba(255,255,255,0.78); text-shadow: 0 1px 2px rgba(24,20,15,0.28); }
+.nav-author { display: block; margin-top: 0.06rem; color: #6f665b; letter-spacing: 0.09em; }
 .nav-links { display: flex; gap: 1.3rem; list-style: none; align-items: center; }
 .nav-links a {
   font-size: 0.76rem; font-weight: 500; color: var(--text-soft);
@@ -635,7 +635,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 <nav>
   <div class="nav-brand" onclick="showPage('home', { push: true })">
     <div class="nav-brand-name">Ayni<span>Energia</span></div>
-    <div class="nav-sub"><span class="nav-author">Maria José Charfuelan</span> · estudos · energia · políticas públicas</div>
+    <div class="nav-sub">Pesquisa aplicada · energia · políticas públicas<span class="nav-author">Maria José Charfuelan</span></div>
   </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" onclick="toggleNavMenu(event)">
   <span></span>
