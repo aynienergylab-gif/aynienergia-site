@@ -649,7 +649,6 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
       <a id="nl-pub" class="nav-dropdown-toggle" href="#publicacoes" onclick="toggleDropdown(event)">Publicações <span class="nav-caret" aria-hidden="true"></span></a>
       <ul class="nav-dropdown-menu" aria-label="Submenu de publicações">
         <li><a id="nl-pub-tecnica" class="nav-dropdown-link" href="#publicacoes" onclick="showPage('publicacoes', { push: true }); closeDropdown();">Produção técnica</a></li>
-        <li><a id="nl-textos-circulacao" class="nav-dropdown-link" href="#textos-circulacao" onclick="showPage('textos-circulacao', { push: true }); closeDropdown();">Textos em circulação</a></li>
       </ul>
     </li>
     <li><a id="nl-biblioteca" href="#biblioteca" onclick="showPage('biblioteca', { push: true })">Biblioteca</a></li>
@@ -1163,7 +1162,7 @@ function toggleDropdown(event) {
 
 function setActiveNav(name) {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const map = { home:'nl-home', biblioteca:'nl-biblioteca', publicacoes:'nl-pub-tecnica', 'textos-circulacao':'nl-textos-circulacao', atuo:'nl-atuo', discussoes:'nl-disc' };
+  const map = { home:'nl-home', biblioteca:'nl-biblioteca', publicacoes:'nl-pub-tecnica', atuo:'nl-atuo', discussoes:'nl-disc' };
   const id = map[name];
   const topPub = document.getElementById('nl-pub');
   const item = document.getElementById('nav-publicacoes-item');
