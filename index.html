@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AyniEnergia — Maria José Charfuelan Villarreal</title>
+<title>AyniEnergia — Estudos em energia e políticas públicas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -299,7 +299,7 @@ nav {
 .traj-link:hover { color: var(--sage); }
 .traj-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; flex-shrink: 0; opacity: 0.72; }
 
-/* ── COMO POSSO CONTRIBUIR — HOME ───────────────────────────── */
+/* ── COMO PODEMOS CONTRIBUIR — HOME ─────────────────────────── */
 
 .home-frentes {
   padding: 3rem 3rem 2.4rem;
@@ -634,7 +634,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 <nav>
   <div class="nav-brand" onclick="showPage('home', { push: true })">
     <div class="nav-brand-name">Ayni<span>Energia</span></div>
-    <div class="nav-sub">Maria José Charfuelan Villarreal</div>
+    <div class="nav-sub">Estudos · energia · políticas públicas</div>
   </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" onclick="toggleNavMenu(event)">
   <span></span>
@@ -644,7 +644,7 @@ footer { background: #110e0a; padding: 1.8rem 3rem; }
 
 <ul class="nav-links" id="nav-links">
     <li><a id="nl-home" href="#home" onclick="showPage('home', { push: true })">Início</a></li>
-    <li><a id="nl-atuo" href="#atuo" onclick="showPage('atuo', { push: true })">Atuação e serviços</a></li>
+    <li><a id="nl-atuo" href="#atuo" onclick="showPage('atuo', { push: true })">Atuação e colaboração</a></li>
     <li class="nav-item-dropdown" id="nav-publicacoes-item">
       <a id="nl-pub" class="nav-dropdown-toggle" href="#publicacoes" onclick="toggleDropdown(event)">Publicações <span class="nav-caret" aria-hidden="true"></span></a>
       <ul class="nav-dropdown-menu" aria-label="Submenu de publicações">
@@ -706,6 +706,31 @@ Transição energética, <span class="hero-accent">desenvolvimento</span> e pol�
 
   <div class="divider-full"></div>
 
+<!-- COMO PODEMOS CONTRIBUIR -->
+<div class="home-frentes">
+  <div class="w">
+    <div class="home-frentes-copy">
+      <h2 class="section-title">Como podemos contribuir</h2>
+
+      <p class="section-lead">
+        Apoiamos a produção e sistematização de conhecimento aplicado, conectando evidências técnicas, contexto institucional e implicações para decisão.
+      </p>
+
+      <p class="section-context">
+  O trabalho pode envolver estudos, diagnósticos, notas técnicas, policy briefs, relatórios, análise documental, recomendações e conteúdos técnicos para públicos especializados.
+</p>
+
+      <div style="margin-top:1.5rem;">
+        <a href="#atuo" onclick="showPage('atuo', { push: true })" class="btn-primary">
+          Ver atuação e colaboração →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="divider-full"></div>
+
   <!-- SOBRE -->
   <div class="home-intro bg-beige">
     <div class="traj-block">
@@ -735,31 +760,6 @@ Transição energética, <span class="hero-accent">desenvolvimento</span> e pol�
       </div>
     </div>
   </div>
-
-  <div class="divider-full"></div>
-
-<!-- COMO POSSO CONTRIBUIR -->
-<div class="home-frentes">
-  <div class="w">
-    <div class="home-frentes-copy">
-      <h2 class="section-title">Como posso contribuir</h2>
-
-      <p class="section-lead">
-        Produção de estudos, análises e recomendações para apoiar decisões em energia, clima e desenvolvimento.
-      </p>
-
-      <p class="section-context">
-  Atuação junto a governos, organismos internacionais, organizações da sociedade civil e centros de pesquisa.
-</p>
-
-      <div style="margin-top:1.5rem;">
-        <a href="#atuo" onclick="showPage('atuo', { push: true })" class="btn-primary">
-          Ver atuação e serviços →
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="divider"></div>
 
@@ -823,7 +823,7 @@ Transição energética, <span class="hero-accent">desenvolvimento</span> e pol�
       <span class="section-label" style="color:var(--gold-light);">Colaboração</span>
       <h2 class="section-title" style="color:#ede6da; margin-bottom:0.6rem;">Contato</h2>
       <p style="font-size:0.96rem;color:#9a9080;line-height:1.78;max-width:480px;font-weight:400;">
-  Entre energia, transição justa, clima e políticas públicas, há muito a ser construído em conjunto. Vamos conversar.
+  Se sua instituição precisa estruturar uma análise, estudo ou material técnico sobre energia, transição energética, regulação ou desenvolvimento territorial, podemos conversar.
       </p>
       <div class="contato-links">
         <a href="mailto:ayni.energy.lab@gmail.com" class="contato-link">
@@ -994,16 +994,16 @@ Transição energética, <span class="hero-accent">desenvolvimento</span> e pol�
   <div class="inner-page atuo-shell">
     <a href="#home" onclick="showPage('home', { push: true })" class="back-link">← Início</a>
     <span class="atuo-kicker">Atuação</span>
-  <h1 class="inner-page-title">Atuação e serviços</h1>
+  <h1 class="inner-page-title">Atuação e colaboração</h1>
     <div class="atuo-header">
      <p class="atuo-intro">
-Atuação na interface entre energia, clima, regulação e desenvolvimento, com foco na produção de estudos, análises e recomendações para apoiar políticas públicas, projetos institucionais e estratégias de transição energética.
+Ayni Energia atua na interface entre energia, clima, regulação e desenvolvimento, com foco na produção de estudos, análises e recomendações para apoiar políticas públicas, projetos institucionais e estratégias de transição energética.
 </p>
 <p class="atuo-line">
-Experiência com governos, organizações da sociedade civil, organismos internacionais e centros de pesquisa.
+Apoiamos governos, organizações da sociedade civil, organismos internacionais, centros de pesquisa e iniciativas do setor energético na organização de evidências e na construção de materiais técnicos.
 </p>
    <div style="margin-top: 1rem; margin-bottom: 0.6rem;">
-  <div class="atuo-section-label" style="text-transform: none;">Áreas de atuação</div>
+  <div class="atuo-section-label" style="text-transform: none;">Frentes de atuação</div>
 </div>
     <div class="contrib-grid">
 
@@ -1024,14 +1024,21 @@ Experiência com governos, organizações da sociedade civil, organismos interna
   <div class="contrib-card">
     <span class="contrib-label">Análise e recomendações</span>
     <p class="contrib-desc">
-      Desenvolvimento de notas técnicas, relatórios, recomendações estratégicas e subsídios para formulação de políticas e tomada de decisão.
+      Desenvolvimento de notas técnicas, policy briefs, relatórios, recomendações estratégicas e subsídios para formulação de políticas e tomada de decisão.
+    </p>
+  </div>
+
+  <div class="contrib-card">
+    <span class="contrib-label">Conteúdos técnicos e formação</span>
+    <p class="contrib-desc">
+      Apoio à elaboração de apresentações, oficinas, materiais de referência e conteúdos técnicos para públicos institucionais e especializados.
     </p>
   </div>
 
 </div>
     <div class="atuo-section-head">
       <span id="experiencia-recente" class="atuo-section-label">Experiência recente</span>
-      <span class="atuo-section-note">Pesquisa aplicada, assessoria técnica e produção estratégica</span>
+      <span class="atuo-section-note">Pesquisa aplicada, produção técnica e apoio institucional</span>
     </div>
 
     <div class="exp-grid">
@@ -1075,7 +1082,7 @@ Experiência com governos, organizações da sociedade civil, organismos interna
     </div>
 
     <div class="atuo-cta">
-      <p>Para diálogos, parcerias ou projetos em energia, transição justa e políticas públicas, vamos conversar.</p>
+      <p>Para projetos, estudos, convites técnicos ou colaborações em energia, transição justa e políticas públicas, vamos conversar.</p>
       <a href="mailto:ayni.energy.lab@gmail.com" class="btn-primary">Entrar em contato</a>
     </div>
   </div>
