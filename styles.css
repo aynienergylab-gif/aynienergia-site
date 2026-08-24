@@ -513,6 +513,19 @@ h3 {
   margin-bottom: 24px;
 }
 
+.publication-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: var(--max);
+}
+
+.publication-heading .text-link {
+  flex: 0 0 auto;
+  margin-bottom: 4px;
+}
+
 #atuacao {
   max-width: 1440px;
   background: var(--paper);
@@ -1224,6 +1237,11 @@ a.publication-item:hover strong {
   .publication-item {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .publication-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .publication-item small {
