@@ -355,33 +355,16 @@ h3 {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(48px, 6vw, 82px) clamp(18px, 4vw, 32px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
-  gap: clamp(28px, 5vw, 58px);
-  align-items: end;
   background: var(--paper);
 }
 
 .trajectory-heading {
-  max-width: 620px;
+  max-width: 760px;
 }
 
 .trajectory-heading h2 {
   margin-bottom: 0;
-  max-width: 620px;
-}
-
-.trajectory-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  padding-top: 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 0;
-}
-
-.trajectory-copy {
-  padding: clamp(18px, 2.4vw, 24px) 0 0;
+  max-width: 720px;
 }
 
 .section {
@@ -446,7 +429,8 @@ h3 {
 }
 
 .credential {
-  margin: 0;
+  max-width: 680px;
+  margin: 18px 0 0;
   color: var(--forest);
   font-weight: 650;
 }
