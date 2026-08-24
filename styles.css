@@ -361,6 +361,24 @@ h3 {
   background: var(--paper);
 }
 
+.trajectory-heading {
+  padding-bottom: clamp(26px, 4vw, 44px);
+  border-bottom: 1px solid var(--line);
+}
+
+.trajectory-heading h2 {
+  margin-bottom: 0;
+  max-width: 820px;
+}
+
+.trajectory-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(300px, 0.92fr);
+  gap: clamp(30px, 6vw, 76px);
+  padding-top: clamp(28px, 4vw, 46px);
+  align-items: start;
+}
+
 .section {
   max-width: 1440px;
   margin: 0 auto;
@@ -398,7 +416,6 @@ h3 {
   text-transform: uppercase;
 }
 
-.trajectory-grid,
 .contact,
 .library,
 .contribution {
@@ -419,10 +436,8 @@ h3 {
 }
 
 .credential {
-  margin: 28px 0 0;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-  font-weight: 750;
+  margin: 0;
+  font-weight: 500;
 }
 
 .profile-links {
