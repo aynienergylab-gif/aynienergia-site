@@ -628,7 +628,7 @@ h3 {
 
 .publications {
   border-top: 1px solid var(--line);
-  background: var(--paper);
+  background: var(--sage-panel);
 }
 
 .publication-group {
@@ -648,7 +648,7 @@ h3 {
   gap: 30px;
   align-items: baseline;
   padding: 19px 8px;
-  background: rgba(251, 250, 248, 0.7);
+  background: rgba(251, 250, 248, 0.76);
 }
 
 a.publication-item:hover strong {
