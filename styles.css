@@ -341,12 +341,13 @@ h3 {
 
 .hero-tags span {
   min-height: 46px;
-  padding: 13px clamp(18px, 4vw, 40px);
+  padding: 13px clamp(16px, 2.6vw, 28px);
   border-right: 1px solid rgba(251, 250, 248, 0.16);
   color: rgba(251, 250, 248, 0.82);
-  font-size: 0.68rem;
+  font-size: clamp(0.58rem, 0.82vw, 0.66rem);
   font-weight: 750;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
