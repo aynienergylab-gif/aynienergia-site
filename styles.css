@@ -466,17 +466,17 @@ h3 {
   flex-direction: column;
   justify-content: center;
   min-height: 220px;
-  padding: 0 0 0 clamp(28px, 4vw, 56px);
+  padding: 0 0 0 clamp(64px, 6vw, 88px);
 }
 
 .contribution-note::before {
   position: absolute;
-  top: 18%;
-  bottom: 18%;
-  left: 0;
+  top: 24%;
+  bottom: 24%;
+  left: clamp(18px, 2vw, 28px);
   width: 1px;
   content: "";
-  background: rgba(63, 90, 99, 0.22);
+  background: rgba(63, 90, 99, 0.18);
 }
 
 .contribution-note span {
