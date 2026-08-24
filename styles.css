@@ -356,9 +356,9 @@ h3 {
   margin: 0 auto;
   padding: clamp(48px, 6vw, 82px) clamp(18px, 4vw, 32px);
   display: grid;
-  grid-template-columns: minmax(320px, 0.86fr) minmax(0, 1.14fr);
-  gap: clamp(34px, 6vw, 74px);
-  align-items: start;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+  gap: clamp(28px, 5vw, 58px);
+  align-items: end;
   background: var(--paper);
 }
 
@@ -375,18 +375,13 @@ h3 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  padding-top: 4px;
+  padding-top: 0;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
 }
 
 .trajectory-copy {
-  padding: clamp(18px, 2.4vw, 24px) 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.trajectory-copy:last-child {
-  border-bottom: 0;
+  padding: clamp(18px, 2.4vw, 24px) 0 0;
 }
 
 .section {
