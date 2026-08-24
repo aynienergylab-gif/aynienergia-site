@@ -181,10 +181,10 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   align-items: end;
-  min-height: min(560px, calc(100vh - 56px));
+  min-height: min(470px, calc(100vh - 56px));
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(42px, 6vw, 72px) clamp(18px, 5vw, 72px) 0;
+  padding: clamp(28px, 4.5vw, 52px) clamp(18px, 5vw, 72px) 0;
   color: var(--paper);
   background:
     linear-gradient(100deg, rgba(30, 58, 60, 0.96) 18%, rgba(30, 58, 60, 0.82) 44%, rgba(30, 58, 60, 0.46) 70%, rgba(30, 58, 60, 0.2) 100%),
@@ -196,7 +196,7 @@ a {
   position: relative;
   z-index: 1;
   max-width: 900px;
-  padding-bottom: clamp(42px, 5vw, 62px);
+  padding-bottom: clamp(22px, 3vw, 36px);
 }
 
 .eyebrow,
@@ -340,11 +340,11 @@ h3 {
 }
 
 .hero-tags span {
-  min-height: 54px;
-  padding: 16px clamp(18px, 4vw, 40px);
+  min-height: 46px;
+  padding: 13px clamp(18px, 4vw, 40px);
   border-right: 1px solid rgba(251, 250, 248, 0.16);
   color: rgba(251, 250, 248, 0.82);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 750;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -460,13 +460,23 @@ h3 {
 }
 
 .contribution-note {
+  position: relative;
   align-self: stretch;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 220px;
-  padding: 0;
-  border-left: 1px solid rgba(63, 90, 99, 0.22);
+  padding: 0 0 0 clamp(28px, 4vw, 56px);
+}
+
+.contribution-note::before {
+  position: absolute;
+  top: 18%;
+  bottom: 18%;
+  left: 0;
+  width: 1px;
+  content: "";
+  background: rgba(63, 90, 99, 0.22);
 }
 
 .contribution-note span {
@@ -713,6 +723,17 @@ a.publication-item:hover strong {
   gap: clamp(30px, 7vw, 92px);
   align-items: end;
   margin-bottom: 28px;
+}
+
+.texts-heading {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.texts-heading p:not(.eyebrow) {
+  max-width: none;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
 }
 
 .reflexoes-layout {
@@ -1082,8 +1103,15 @@ a.publication-item:hover strong {
 
   .contribution-note {
     padding-top: 24px;
-    border-left: 0;
-    border-top: 1px solid rgba(63, 90, 99, 0.22);
+    padding-left: 0;
+  }
+
+  .contribution-note::before {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    width: auto;
+    height: 1px;
   }
 
   .experience-intro p:not(.eyebrow) {
@@ -1159,7 +1187,7 @@ a.publication-item:hover strong {
   }
 
   .hero-tags span {
-    min-height: 46px;
+    min-height: 42px;
   }
 
   .service-grid {
