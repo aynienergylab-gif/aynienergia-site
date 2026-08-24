@@ -359,12 +359,12 @@ h3 {
 }
 
 .trajectory-heading {
-  max-width: 760px;
+  max-width: 1040px;
 }
 
 .trajectory-heading h2 {
   margin-bottom: 0;
-  max-width: 720px;
+  max-width: 900px;
 }
 
 .section {
@@ -429,10 +429,11 @@ h3 {
 }
 
 .credential {
-  max-width: 680px;
+  max-width: 980px;
   margin: 18px 0 0;
-  color: var(--forest);
-  font-weight: 650;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  font-weight: 400;
 }
 
 .profile-links {
