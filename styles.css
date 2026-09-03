@@ -1,18 +1,18 @@
 :root {
   --ink: #1c1e1a;
-  --muted: #6b6d62;
-  --soft: #8a8778;
-  --paper: #fbfaf8;
-  --paper-strong: #f2f0ea;
-  --line: #e4e1d8;
-  --forest: #3f5a63;
-  --leaf: #4a5f4a;
-  --copper: #a56540;
-  --gold: #b7a77e;
-  --gold-soft: #d8c99d;
-  --aqua: #dfeae5;
-  --sage-panel: #edf1eb;
-  --dark: #1e3a3c;
+  --muted: #665f56;
+  --soft: #887760;
+  --paper: #fffaf4;
+  --paper-strong: #fff2e4;
+  --line: #ead7c1;
+  --forest: #40564c;
+  --leaf: #60704f;
+  --copper: #b9673d;
+  --gold: #c08d46;
+  --gold-soft: #e4bf82;
+  --aqua: #f5eadc;
+  --sage-panel: #fff4e8;
+  --dark: #263a32;
   --max: 1180px;
   --radius: 2px;
   --serif: "Newsreader", Georgia, serif;
@@ -192,7 +192,7 @@ a {
   padding: clamp(28px, 4.5vw, 52px) clamp(18px, 5vw, 72px) 0;
   color: var(--paper);
   background:
-    linear-gradient(100deg, rgba(30, 58, 60, 0.96) 18%, rgba(30, 58, 60, 0.82) 44%, rgba(30, 58, 60, 0.46) 70%, rgba(30, 58, 60, 0.2) 100%),
+    linear-gradient(100deg, rgba(38, 58, 50, 0.96) 18%, rgba(38, 58, 50, 0.78) 44%, rgba(91, 66, 43, 0.42) 72%, rgba(185, 103, 61, 0.16) 100%),
     url("assets/espiral-escada.jpg") right 42% center / cover;
   overflow: hidden;
 }
@@ -247,7 +247,7 @@ h2 span {
 }
 
 .hero h1 span {
-  color: #c79a5a;
+  color: var(--gold-soft);
 }
 
 h3 {
@@ -296,8 +296,8 @@ h3 {
 
 .button.primary {
   color: #17201e;
-  border-color: #c79a5a;
-  background: #c79a5a;
+  border-color: var(--gold);
+  background: var(--gold);
 }
 
 .button.ghost {
@@ -324,7 +324,7 @@ h3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0 calc(clamp(18px, 5vw, 72px) * -1);
   border-top: 1px solid rgba(251, 250, 248, 0.24);
-  background: rgba(23, 32, 30, 0.66);
+  background: rgba(38, 58, 50, 0.7);
 }
 
 .hero-tags span {
@@ -343,7 +343,10 @@ h3 {
   max-width: 1440px;
   margin: 0 auto;
   padding: clamp(54px, 7vw, 94px) clamp(18px, 4vw, 48px) 0;
-  background: var(--paper);
+  background:
+    linear-gradient(90deg, rgba(255, 250, 244, 0.98) 0%, rgba(255, 250, 244, 0.94) 48%, rgba(255, 250, 244, 0.74) 100%),
+    url("assets/espiral-fundo-sutil.jpg") right -18vw top 12% / min(840px, 72vw) auto no-repeat,
+    var(--paper);
 }
 
 .trajectory-layout {
@@ -404,6 +407,10 @@ h3 {
   max-width: 1440px;
   margin: 0 auto;
   padding: clamp(48px, 6vw, 82px) clamp(18px, 4vw, 32px);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 244, 0.95), rgba(255, 250, 244, 0.92)),
+    url("assets/espiral-fundo-sutil.jpg") right -28vw top 24% / min(680px, 64vw) auto no-repeat,
+    var(--paper);
 }
 
 .section > .section-heading,
@@ -477,37 +484,46 @@ h3 {
 }
 
 .trajectory-links {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   max-width: var(--max);
-  margin: clamp(42px, 6vw, 70px) auto 0;
-  border-top: 1px solid rgba(251, 250, 248, 0.18);
-  border-bottom: 1px solid rgba(251, 250, 248, 0.18);
-  background: rgba(23, 32, 30, 0.94);
+  margin: clamp(32px, 4.5vw, 50px) auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(165, 101, 64, 0.32);
+  background: transparent;
 }
 
 .trajectory-links a {
-  justify-content: flex-start;
-  min-height: 58px;
-  padding: 0 clamp(12px, 2vw, 22px);
-  border-width: 0 1px 0 0;
-  border-color: rgba(251, 250, 248, 0.16);
-  background: transparent;
-  color: rgba(251, 250, 248, 0.88);
+  position: relative;
+  gap: 9px;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid rgba(165, 101, 64, 0.34);
+  background: rgba(251, 250, 248, 0.74);
+  color: var(--dark);
   transition:
+    transform 180ms ease,
+    border-color 180ms ease,
     color 180ms ease,
     background 180ms ease;
 }
 
-.trajectory-links a:first-child {
-  border-left: 1px solid rgba(251, 250, 248, 0.16);
+.trajectory-links a::after {
+  content: "↗";
+  color: var(--copper);
+  font-size: 0.78rem;
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
 .trajectory-links a:hover,
 .trajectory-links a:focus-visible {
-  color: #fff;
-  background: rgba(251, 250, 248, 0.08);
+  transform: translateY(-2px);
+  border-color: rgba(165, 101, 64, 0.72);
+  color: var(--copper);
+  background: #fff;
 }
 
 .section-heading {
@@ -530,7 +546,10 @@ h3 {
 
 #atuacao {
   max-width: 1440px;
-  background: var(--paper);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(255, 250, 244, 0.9)),
+    url("assets/espiral-fundo-sutil.jpg") left -24vw top 18% / min(760px, 68vw) auto no-repeat,
+    var(--paper);
 }
 
 .service-grid {
@@ -545,7 +564,7 @@ h3 {
   padding: 24px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: rgba(237, 241, 235, 0.46);
+  background: linear-gradient(145deg, rgba(255, 244, 232, 0.82), rgba(250, 232, 212, 0.54));
   transition:
     transform 180ms ease,
     background 180ms ease;
@@ -553,7 +572,7 @@ h3 {
 
 .service-card:hover {
   transform: translateY(-4px);
-  background: rgba(237, 241, 235, 0.72);
+  background: linear-gradient(145deg, rgba(255, 239, 221, 0.96), rgba(247, 221, 196, 0.74));
 }
 
 .publication-item span,
@@ -639,7 +658,10 @@ h3 {
 
 .publications {
   border-top: 1px solid var(--line);
-  background: var(--sage-panel);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 244, 0.86), rgba(255, 242, 228, 0.82)),
+    url("assets/espiral-fundo-sutil.jpg") right -22vw center / min(760px, 66vw) auto no-repeat,
+    var(--sage-panel);
 }
 
 .publication-group {
@@ -650,7 +672,7 @@ h3 {
   display: grid;
   gap: 1px;
   margin-top: 16px;
-  background: var(--line);
+  background: rgba(185, 103, 61, 0.18);
 }
 
 .publication-item {
@@ -659,7 +681,7 @@ h3 {
   gap: 30px;
   align-items: baseline;
   padding: 19px 8px;
-  background: rgba(251, 250, 248, 0.82);
+  background: rgba(255, 250, 244, 0.9);
 }
 
 a.publication-item:hover strong {
@@ -696,7 +718,7 @@ a.publication-item:hover strong {
   padding: clamp(52px, 7vw, 78px) clamp(18px, 4vw, 40px);
   color: var(--paper);
   background:
-    linear-gradient(90deg, rgba(30, 58, 60, 0.96), rgba(30, 58, 60, 0.82)),
+    linear-gradient(90deg, rgba(38, 58, 50, 0.96), rgba(77, 62, 43, 0.84)),
     url("assets/espiral-escada.jpg") center / cover;
   overflow: hidden;
 }
@@ -840,7 +862,7 @@ a.publication-item:hover strong {
 .blog-list {
   display: grid;
   gap: 1px;
-  background: var(--line);
+  background: rgba(185, 103, 61, 0.18);
 }
 
 .blog-post {
@@ -849,7 +871,7 @@ a.publication-item:hover strong {
   gap: clamp(18px, 3vw, 34px);
   align-items: baseline;
   padding: 24px 10px;
-  background: rgba(251, 250, 248, 0.82);
+  background: rgba(255, 250, 244, 0.9);
   transition:
     background 180ms ease,
     color 180ms ease;
@@ -884,7 +906,10 @@ a.publication-item:hover strong {
   margin: 0 auto;
   padding: clamp(70px, 9vw, 118px) clamp(18px, 4vw, 48px);
   color: var(--paper);
-  background: var(--dark);
+  background:
+    linear-gradient(90deg, rgba(38, 58, 50, 0.98), rgba(38, 58, 50, 0.92)),
+    url("assets/espiral-fundo-sutil.jpg") right -14vw center / min(780px, 66vw) auto no-repeat,
+    var(--dark);
   grid-template-columns: minmax(260px, 0.8fr) minmax(420px, 1.2fr);
 }
 
@@ -906,7 +931,7 @@ a.publication-item:hover strong {
   gap: 20px;
   min-height: 96px;
   padding: 24px;
-  background: rgba(23, 32, 30, 0.34);
+  background: rgba(64, 77, 66, 0.34);
   font-family: var(--serif);
   font-size: clamp(1.35rem, 2.5vw, 1.9rem);
   font-weight: 300;
@@ -935,7 +960,10 @@ a.publication-item:hover strong {
   margin: 0 auto;
   padding: clamp(50px, 7vw, 82px) clamp(18px, 4vw, 32px);
   border-top: 1px solid var(--line);
-  background: var(--paper);
+  background:
+    linear-gradient(90deg, rgba(255, 250, 244, 0.98), rgba(255, 250, 244, 0.9)),
+    url("assets/espiral-fundo-sutil.jpg") right -20vw bottom -18vw / min(620px, 72vw) auto no-repeat,
+    var(--paper);
 }
 
 .contact .contact-copy h2 {
@@ -992,7 +1020,7 @@ a.publication-item:hover strong {
   gap: 10px;
   min-height: 104px;
   padding: 20px 22px;
-  background: var(--paper-strong);
+  background: rgba(255, 242, 228, 0.82);
 }
 
 .contact-direct {
@@ -1015,7 +1043,7 @@ a.publication-item:hover strong {
   display: grid;
   gap: 16px;
   padding: 22px;
-  background: var(--paper-strong);
+  background: rgba(255, 242, 228, 0.82);
 }
 
 .contact-meta strong {
@@ -1256,15 +1284,11 @@ a.publication-item:hover strong {
   }
 
   .trajectory-links {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
   }
 
-  .trajectory-links a:nth-child(odd) {
-    border-left: 1px solid rgba(251, 250, 248, 0.16);
-  }
-
-  .trajectory-links a:nth-child(n + 3) {
-    border-top: 1px solid rgba(251, 250, 248, 0.16);
+  .trajectory-links a {
+    flex: 1 1 calc(50% - 10px);
   }
 
   .service-grid {
