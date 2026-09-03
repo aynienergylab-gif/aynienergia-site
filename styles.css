@@ -240,9 +240,13 @@ h2 {
   letter-spacing: 0;
 }
 
-h1 span,
-h2 span {
+h1 span {
   color: var(--forest);
+  font-weight: 500;
+}
+
+h2 span {
+  color: var(--copper);
   font-weight: 500;
 }
 
@@ -365,6 +369,11 @@ h3 {
 
 .trajectory-main h2 span {
   color: var(--copper);
+}
+
+.analysis-teaser h2 span,
+.library h2 span {
+  color: var(--gold-soft);
 }
 
 .trajectory-summary {
@@ -531,6 +540,14 @@ h3 {
   margin-bottom: 24px;
 }
 
+.section-heading h2,
+.experience-intro h2,
+.analysis-copy h2,
+.library-copy h2,
+.contact .contact-copy h2 {
+  color: var(--copper);
+}
+
 .publication-heading {
   display: flex;
   align-items: flex-end;
@@ -607,7 +624,6 @@ h3 {
 
 .experience-intro h2 {
   max-width: 15em;
-  color: var(--forest);
   font-size: clamp(1.9rem, 2.55vw, 2.75rem);
   line-height: 1.12;
 }
