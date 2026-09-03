@@ -461,7 +461,7 @@ h3 {
   align-items: start;
 }
 
-.section-heading p,
+.section-heading p:not(.eyebrow):not(.section-kicker),
 .split-heading p,
 .library-copy p,
 .contact-copy p {
