@@ -15,15 +15,14 @@
       gtag("js", new Date());
       gtag("config", "G-T81W5QX1NH");
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,ital,wght@6..72,0,300;6..72,0,400;6..72,0,500;6..72,1,300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260903" />
+    <!-- System fonts remove render-blocking font requests. -->
+    <link rel="stylesheet" href="styles.css?v=20260919" />
   </head>
   <body>
-    <header class="site-header" data-elevate>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Ayni Energia">
-        <span class="brand-mark">A</span>
+        <span class="brand-mark" aria-hidden="true">A</span>
         <span>
           <strong>Ayni Energia</strong>
           <small>Maria José Charfuelan Villarreal</small>
@@ -45,9 +44,11 @@
       </nav>
     </header>
 
-    <main>
+    <main id="conteudo" tabindex="-1">
+      <div class="opening">
       <section class="hero" id="inicio">
-        <div class="hero-copy reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Ayni Energia / Pesquisa e estratégia</p>
           <h1><span>Transição energética</span>, desenvolvimento e políticas públicas</h1>
           <p class="hero-lead">
             Pesquisa aplicada e produção técnica em planejamento energético, regulação e
@@ -58,16 +59,24 @@
             <a class="button ghost" href="#publicacoes">Ver publicações técnicas</a>
           </div>
         </div>
-        <div class="hero-tags reveal" aria-label="Temas de atuação">
-          <span>Transição energética</span>
-          <span>Política energética e climática</span>
-          <span>Regulação</span>
-          <span>Produção técnica</span>
-        </div>
+        <!-- Explicit dimensions reserve image space and prevent layout shifts. -->
+        <figure class="hero-figure">
+          <img src="assets/hero-960.webp" srcset="assets/hero-480.webp 480w, assets/hero-960.webp 960w" sizes="(min-width: 960px) 49vw, 100vw" width="800" height="1200" fetchpriority="high" alt="Escada em espiral vista de baixo, com luz no centro" />
+        </figure>
       </section>
 
+      <!-- The topic strip follows the opening without increasing its content height. -->
+      <div class="topic-strip" aria-label="Temas de atuação">
+        <span>Transição energética</span>
+        <span>Política energética e climática</span>
+        <span>Regulação</span>
+        <span>Produção técnica</span>
+      </div>
+
+      </div>
+
       <section class="trajectory" id="trajetoria">
-        <div class="trajectory-layout reveal">
+        <div class="trajectory-layout">
           <div class="trajectory-main">
             <p class="section-kicker">Trajetória</p>
             <h2>Pesquisa em energia, planejamento e <span>políticas públicas.</span></h2>
@@ -88,7 +97,7 @@
             </div>
           </dl>
         </div>
-        <div class="profile-links trajectory-links reveal">
+        <div class="profile-links trajectory-links">
           <a href="https://www.linkedin.com/in/maria-jose-charfuelan-99b90139/?locale=en" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://lattes.cnpq.br/4251788422492176" target="_blank" rel="noreferrer">Lattes</a>
           <a href="https://orcid.org/0000-0001-9863-5562" target="_blank" rel="noreferrer">ORCID</a>
@@ -97,7 +106,8 @@
       </section>
 
       <section class="section" id="atuacao">
-        <div class="section-heading reveal">
+        <div class="services-overview">
+        <div class="section-heading">
           <p class="section-kicker">Atuação e serviços</p>
           <h2>Energia, clima, regulação e desenvolvimento.</h2>
           <p>
@@ -107,25 +117,26 @@
         </div>
 
         <div class="service-grid">
-          <article class="service-card reveal">
+          <article class="service-card">
             <h3>Estudos e diagnósticos</h3>
             <p>Diagnósticos setoriais e territoriais, análise de contexto, indicadores e identificação de oportunidades em energia, clima e desenvolvimento.</p>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <h3>Pesquisa aplicada</h3>
             <p>Organização e interpretação de evidências, literatura especializada, indicadores e documentos técnicos para apoiar projetos e agendas institucionais.</p>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <h3>Análise e recomendações</h3>
             <p>Desenvolvimento de notas técnicas, relatórios, recomendações estratégicas e subsídios para formulação de políticas e tomada de decisão.</p>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card">
             <h3>Conteúdos técnicos e formação</h3>
             <p>Apoio à elaboração de apresentações, oficinas, materiais de referência e conteúdos técnicos para públicos institucionais e especializados.</p>
           </article>
         </div>
 
-        <div class="experience-block reveal">
+        </div>
+        <div class="experience-block">
           <div class="experience-intro">
             <h2>Projetos selecionados</h2>
             <p>
@@ -159,7 +170,7 @@
       </section>
 
       <section class="section publications" id="publicacoes">
-        <div class="section-heading publication-heading reveal">
+        <div class="section-heading publication-heading">
           <div>
             <p class="section-kicker">Produção técnica</p>
             <h2>Publicações</h2>
@@ -167,7 +178,7 @@
           <a class="text-link" href="https://drive.google.com/drive/folders/1T_lpRsS12T8BWPcaViuAoCMknTKBAK8a?usp=drive_link" target="_blank" rel="noreferrer">Ver biblioteca completa</a>
         </div>
 
-        <div class="publication-group reveal">
+        <div class="publication-group">
           <h3>Relatórios e documentos técnicos</h3>
           <div class="publication-list">
             <a class="publication-item" href="https://www.oxfam.org.br/encruzilhada-climatica-um-retrato-das-desigualdades-brasileiras/" target="_blank" rel="noreferrer">
@@ -193,7 +204,7 @@
           </div>
         </div>
 
-        <div class="publication-group reveal">
+        <div class="publication-group">
           <h3>Artigos científicos</h3>
           <div class="publication-list">
             <a class="publication-item" href="https://dx.doi.org/10.1016/j.enpol.2016.04.030" target="_blank" rel="noreferrer">
@@ -216,7 +227,7 @@
       </section>
 
       <section class="analysis-teaser" id="analises-chamada">
-        <div class="analysis-copy reveal">
+        <div class="analysis-copy">
           <p class="eyebrow">Blog</p>
           <h2>Textos em circulação pública</h2>
           <p>
@@ -225,7 +236,7 @@
           </p>
           <a class="button dark-ghost" href="analises.html">Ver todos os textos</a>
         </div>
-        <div class="analysis-list reveal" aria-label="Textos em destaque">
+        <div class="analysis-list" aria-label="Textos em destaque">
           <a href="analises.html">Eletricidade, desenvolvimento e o risco de olhar só para a potência instalada</a>
           <a href="analises.html">Consumo de eletricidade: o que isso nos diz sobre o Brasil e o mundo?</a>
           <a href="analises.html">+ outras publicações</a>
@@ -233,7 +244,7 @@
       </section>
 
       <section class="library" id="biblioteca">
-        <div class="library-copy reveal">
+        <div class="library-copy">
           <p class="eyebrow">Biblioteca</p>
           <h2>Acervo de referência</h2>
           <p>
@@ -241,7 +252,7 @@
             públicas. A biblioteca será expandida com curadoria por tema.
           </p>
         </div>
-        <div class="library-links reveal">
+        <div class="library-links">
           <a href="https://drive.google.com/drive/folders/1T_lpRsS12T8BWPcaViuAoCMknTKBAK8a?usp=sharing" target="_blank" rel="noreferrer">Projetos e Publicações <span>Google Drive</span></a>
           <a href="https://drive.google.com/drive/folders/18kYQZV75MYP3D3YKOVLc_DKn26-DZy8O?usp=drive_link" target="_blank" rel="noreferrer">Biblioteca compartilhada <span>Google Drive</span></a>
           <a href="https://drive.google.com/drive/folders/1CQqhjFSC--zAZSEOJXDsgycJHDUDQxMB" target="_blank" rel="noreferrer">Materiais Didáticos <span>Google Drive</span></a>
@@ -249,22 +260,27 @@
       </section>
 
       <section class="contact" id="contato">
-        <div class="contact-copy reveal">
+        <div class="contact-copy">
           <p class="eyebrow">Colaboração</p>
           <h2>Vamos estruturar sua próxima análise técnica</h2>
           <p>
             Entre energia, transição justa, clima e políticas públicas, há muito a ser
             construído em conjunto.
           </p>
-          <form class="contact-form reveal" action="mailto:ayni.energy.lab@gmail.com" method="post" enctype="text/plain">
-            <input name="nome" placeholder="Seu nome completo" required />
-            <input name="email" type="email" placeholder="Seu e-mail" required />
-            <input name="organizacao" placeholder="Organização (opcional)" />
-            <textarea name="mensagem" rows="4" placeholder="Como podemos colaborar?" required></textarea>
-            <button class="button primary" type="submit">Enviar mensagem</button>
+          <p id="contact-help">O botão abre seu aplicativo de e-mail com a mensagem preenchida.</p>
+          <form aria-describedby="contact-help" class="contact-form" action="mailto:ayni.energy.lab@gmail.com" method="post" enctype="text/plain">
+            <label for="nome">Nome completo</label>
+            <input id="nome" autocomplete="name" name="nome" placeholder="Seu nome completo" required />
+            <label for="email">E-mail</label>
+            <input id="email" autocomplete="email" name="email" type="email" placeholder="Seu e-mail" required />
+            <label for="organizacao">Organização (opcional)</label>
+            <input id="organizacao" autocomplete="organization" name="organizacao" placeholder="Organização (opcional)" />
+            <label for="mensagem">Como podemos colaborar?</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos colaborar?" required></textarea>
+            <button class="button primary" type="submit">Preparar e-mail</button>
           </form>
         </div>
-        <div class="contact-panel reveal">
+        <div class="contact-panel">
           <a class="contact-line contact-direct" href="mailto:ayni.energy.lab@gmail.com">
             <span>Contato direto</span>
             <strong>ayni.energy.lab@gmail.com</strong>
@@ -295,6 +311,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260903"></script>
+    <script defer src="script.js?v=20260919"></script>
   </body>
 </html>

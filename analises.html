@@ -15,15 +15,14 @@
       gtag("js", new Date());
       gtag("config", "G-T81W5QX1NH");
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,ital,wght@6..72,0,300;6..72,0,400;6..72,0,500;6..72,1,300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260903" />
+    <!-- System fonts remove render-blocking font requests. -->
+    <link rel="stylesheet" href="styles.css?v=20260919" />
   </head>
   <body>
-    <header class="site-header" data-elevate>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
       <a class="brand" href="index.html#inicio" aria-label="Ayni Energia">
-        <span class="brand-mark">A</span>
+        <span class="brand-mark" aria-hidden="true">A</span>
         <span>
           <strong>Ayni Energia</strong>
           <small>Maria José Charfuelan Villarreal</small>
@@ -45,46 +44,41 @@
       </nav>
     </header>
 
-    <main>
+    <main id="conteudo" tabindex="-1">
       <section class="section texts page-top" id="analises">
-        <a class="back-link reveal" href="index.html#inicio">← Início</a>
-        <div class="texts-heading reveal">
+        <a class="back-link" href="index.html#inicio">← Início</a>
+        <div class="texts-heading">
           <p class="eyebrow">LinkedIn e circulação pública</p>
+          <h1 class="visually-hidden">Análises e reflexões</h1>
           <p>Publicações autorais breves sobre energia, clima, desenvolvimento e políticas públicas.</p>
         </div>
 
-        <div class="reflexoes-layout reveal">
+        <div class="reflexoes-layout">
           <div class="featured-reflexoes">
             <article class="featured-reflexao">
               <h2>Publicação recente no LinkedIn</h2>
               <div class="linkedin-frame">
-                <iframe
-                  src="https://www.linkedin.com/embed/feed/update/urn:li:share:7501431147831291904"
-                  title="Publicação recente no LinkedIn"
-                  allowfullscreen>
-                </iframe>
+                <a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:share:7501431147831291904" target="_blank" rel="noreferrer">Ler no LinkedIn ↗</a>
+                <!-- Native lazy loading preserves the original embedded reading experience. -->
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7501431147831291904" title="Publicação recente no LinkedIn" loading="lazy" allowfullscreen></iframe>
               </div>
             </article>
 
             <article class="featured-reflexao">
               <h2>Eletricidade, desenvolvimento e o risco de olhar só para a potência instalada</h2>
               <div class="linkedin-frame">
-                <iframe
-                  src="https://www.linkedin.com/embed/feed/update/urn:li:share:7427199462042955776"
-                  title="Publicação no LinkedIn: Eletricidade, desenvolvimento e o risco de olhar só para a potência instalada"
-                  allowfullscreen>
-                </iframe>
+                <a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:share:7427199462042955776" target="_blank" rel="noreferrer">Ler no LinkedIn ↗</a>
+                <!-- Native lazy loading preserves the original embedded reading experience. -->
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7427199462042955776" title="Publicação no LinkedIn: Eletricidade, desenvolvimento e o risco de olhar só para a potência instalada" loading="lazy" allowfullscreen></iframe>
               </div>
             </article>
 
             <article class="featured-reflexao">
               <h2>Estudos e referências essenciais sobre a trajetória da transição energética no Brasil</h2>
               <div class="linkedin-frame">
-                <iframe
-                  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7403948446178639872"
-                  title="Publicação no LinkedIn: Estudos e referências essenciais sobre a trajetória da transição energética no Brasil"
-                  allowfullscreen>
-                </iframe>
+                <a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7403948446178639872" target="_blank" rel="noreferrer">Ler no LinkedIn ↗</a>
+                <!-- Native lazy loading preserves the original embedded reading experience. -->
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7403948446178639872" title="Publicação no LinkedIn: Estudos e referências essenciais sobre a trajetória da transição energética no Brasil" loading="lazy" allowfullscreen></iframe>
               </div>
             </article>
           </div>
@@ -109,7 +103,7 @@
     <footer class="footer">
       <div>
         <strong>Ayni Energia</strong>
-        <span>© 2025 Maria José Charfuelan Villarreal · Brasil</span>
+        <span>© 2026 Maria José Charfuelan Villarreal · Brasil</span>
       </div>
       <div class="footer-links">
         <a href="https://lattes.cnpq.br/4251788422492176" target="_blank" rel="noreferrer">Lattes — CNPq</a>
@@ -118,6 +112,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260903"></script>
+    <script defer src="script.js?v=20260919"></script>
   </body>
 </html>
