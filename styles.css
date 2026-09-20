@@ -887,17 +887,19 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.045em; }
 .nav a, .button { font-weight: 600; letter-spacing: -.02em; }
 
 /* Scope the editorial composition to projects so the published site retains its identity. */
-#atuacao .experience-block { display:block; background:#f9ead4; padding:3rem var(--gutter); margin-top:0; }
-.experience-intro { display:grid; gap:1rem 3rem; margin-bottom:2rem; }
-.experience-intro h2 { color:#465331; font-size:clamp(2rem,3.4vw,3.2rem); max-width:12ch; }
-.experience-intro p { margin:0; color:#536058; }
-.experience-list { display:grid; grid-template-columns:minmax(0,1fr); gap:0 2.5rem; }
-.experience-list article { padding:1.5rem 0; border-color:#c9cec3; }
-.experience-list article:first-child { background:#465331; color:#fff3df; padding:2rem; border:0; }
-.experience-list article:first-child p, .experience-list article:first-child a { color:#fff3df; }
+#atuacao .experience-block { display:block; background:var(--paper); padding:2.25rem var(--gutter); margin-top:0; }
+.experience-intro { display:grid; gap:1rem 2rem; margin-bottom:1.5rem; }
+#atuacao .experience-intro h2 { color:var(--ink); font-size:clamp(1.8rem,2.6vw,2.5rem); max-width:18ch; }
+.experience-intro p { margin:0; color:var(--muted); font-size:.95rem; line-height:1.5; }
+.experience-list { display:grid; grid-template-columns:minmax(0,1fr); gap:0 2rem; }
+.experience-list article { padding:1rem 0; border-color:var(--line); }
+.experience-list h3 { font-size:1.15rem; margin:.5rem 0; }
+.experience-list p { font-size:.93rem; line-height:1.5; }
+.experience-list article:first-child { background:var(--ink); color:var(--paper); padding:1.5rem; border:0; }
+.experience-list article:first-child p, .experience-list article:first-child a { color:var(--paper); }
 .experience-list article:first-child a:hover { color:#fff; }
-.experience-list article:first-child :focus-visible { outline-color:#fff3df; }
-.experience-list article:first-child h3 { font-size:clamp(1.8rem,3vw,2.9rem); line-height:1.12; max-width:19ch; margin:1.5rem 0; }
+.experience-list article:first-child :focus-visible { outline-color:var(--paper); }
+.experience-list article:first-child h3 { font-size:clamp(1.65rem,2.5vw,2.35rem); line-height:1.15; max-width:21ch; margin:1rem 0; }
 @media(min-width:700px) {
  .experience-intro { grid-template-columns:1.1fr 1fr; }
  .experience-list { grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); }
