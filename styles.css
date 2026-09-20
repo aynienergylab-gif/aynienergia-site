@@ -976,3 +976,15 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.045em; }
 .trajectory,.library{padding-block:2.5rem;}
 }
 @media(max-width:359px){.library-drawing{height:140px;}}
+/* One shared panel treatment connects services and resources without extra colors. */
+#atuacao .section-heading { display:block; }
+#atuacao .section-heading h2 { max-width:28ch; }
+.service-grid { gap:1rem; border:0; }
+.service-grid .service-card { display:flex; flex-direction:column; padding:1.5rem; background:var(--white); color:var(--ink); border:1px solid var(--line); }
+.service-grid .service-card h3 { font-size:1.25rem; line-height:1.25; }
+.service-grid .service-card p { margin-top:1.5rem; padding-top:1rem; border-top:1px dotted var(--line); color:var(--muted); }
+.library-links a, .library-links a:first-child, .library-links a:last-child { background:var(--white); color:var(--ink); border:1px solid var(--line); }
+.library-links a > span { border-color:var(--line); }
+.library-links a:first-child:focus-visible { outline-color:var(--accent); }
+@media (min-width:700px) and (max-width:959px) { .service-grid .service-card:nth-child(2) { border-right:1px solid var(--line); } }
+@media (max-width:699px) { .service-grid .service-card { padding:1.25rem; } }
