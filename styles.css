@@ -885,3 +885,26 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.045em; }
 .analysis-list a { font-family: var(--sans); font-weight: 500; letter-spacing: -.025em; }
 .service-card h3, .experience-list h3 { font-weight: 600; letter-spacing: -.035em; }
 .nav a, .button { font-weight: 600; letter-spacing: -.02em; }
+
+/* Scope the editorial composition to projects so the published site retains its identity. */
+#atuacao .experience-block { display:block; background:#f9ead4; padding:3rem var(--gutter); margin-top:0; }
+.experience-intro { display:grid; gap:1rem 3rem; margin-bottom:2rem; }
+.experience-intro h2 { color:#465331; font-size:clamp(2rem,3.4vw,3.2rem); max-width:12ch; }
+.experience-intro p { margin:0; color:#536058; }
+.experience-list { display:grid; grid-template-columns:minmax(0,1fr); gap:0 2.5rem; }
+.experience-list article { padding:1.5rem 0; border-color:#c9cec3; }
+.experience-list article:first-child { background:#465331; color:#fff3df; padding:2rem; border:0; }
+.experience-list article:first-child p, .experience-list article:first-child a { color:#fff3df; }
+.experience-list article:first-child a:hover { color:#fff; }
+.experience-list article:first-child :focus-visible { outline-color:#fff3df; }
+.experience-list article:first-child h3 { font-size:clamp(1.8rem,3vw,2.9rem); line-height:1.12; max-width:19ch; margin:1.5rem 0; }
+@media(min-width:700px) {
+ .experience-intro { grid-template-columns:1.1fr 1fr; }
+ .experience-list { grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); }
+ .experience-list article:first-child { grid-row:span 3; display:flex; flex-direction:column; justify-content:center; }
+}
+@media(max-width:699px) {
+ #atuacao .experience-block { padding:2rem 1.25rem; }
+ .experience-list { gap:1rem; }
+ .experience-list article:first-child { padding:1.5rem; }
+}
