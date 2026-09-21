@@ -46,7 +46,7 @@ form?.addEventListener('submit', (event) => {
   const value = (name) => String(data.get(name) || '').trim();
   const body = `Nome: ${value('nome')}\nE-mail: ${value('email')}\nOrganização: ${value('organizacao') || 'Não informada'}\n\n${value('mensagem')}`;
   // This site has no mail backend: hand off explicitly without claiming delivery.
-  location.href = `mailto:ayni.energy.lab@gmail.com?subject=${encodeURIComponent(`Contato pelo site - ${value('nome')}`)}&body=${encodeURIComponent(body)}`;
+  location.href = `mailto:contato@aynienergia.com.br?subject=${encodeURIComponent(`Contato pelo site - ${value('nome')}`)}&body=${encodeURIComponent(body)}`;
 });
 /* Measure the real header so display scaling does not expose the next section. */
 const header = document.querySelector('.site-header');
