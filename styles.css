@@ -1217,3 +1217,10 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.045em; }
 
 #trajetoria .trajectory-main .trajectory-facts { margin-top: 0; padding-top: 0; }
 #trajetoria .trajectory-main .trajectory-facts div { border-top: 0; padding-top: 0; }
+
+@media (min-width:1100px) {
+ #trajetoria .trajectory-main .trajectory-links { font-size: .9rem; line-height: 1.6; align-items: baseline; }
+ #trajetoria .trajectory-main .trajectory-links a { line-height: inherit; }
+ #trajetoria .trajectory-portrait-column .trajectory-facts dd { font-size: .9rem; line-height: 1.6; }
+}
+@media (min-width:1100px) { #trajetoria .trajectory-main .trajectory-links a { padding-block:0; } }
