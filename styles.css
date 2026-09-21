@@ -1214,3 +1214,6 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.045em; }
  #trajetoria .trajectory-portrait-column .trajectory-facts { margin-top: auto; padding-top: .75rem; }
  #trajetoria .trajectory-facts dd { margin-bottom: 0; }
 }
+
+#trajetoria .trajectory-main .trajectory-facts { margin-top: 0; padding-top: 0; }
+#trajetoria .trajectory-main .trajectory-facts div { border-top: 0; padding-top: 0; }
