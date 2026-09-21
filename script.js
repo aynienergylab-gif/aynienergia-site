@@ -44,7 +44,7 @@ form?.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = new FormData(form);
   const value = (name) => String(data.get(name) || '').trim();
-  const body = `Nome: ${value('nome')}\nE-mail: ${value('email')}\nOrganização: ${value('organizacao') || 'Não informada'}\n\n${value('mensagem')}`;
+  const body = `Nome: ${value('nome')}\nE-mail: ${value('email')}\n\n${value('mensagem')}`;
   // This site has no mail backend: hand off explicitly without claiming delivery.
   location.href = `mailto:contato@aynienergia.com.br?subject=${encodeURIComponent(`Contato pelo site - ${value('nome')}`)}&body=${encodeURIComponent(body)}`;
 });

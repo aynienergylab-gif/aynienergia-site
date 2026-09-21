@@ -1115,3 +1115,11 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.045em; }
 @media (max-width: 699px) {
   #biblioteca .library-links strong { min-height: 0; }
 }
+
+/* A quieter, shorter contact form on the shared beige background. */
+#contato { background: var(--paper); }
+#contato .contact-form { gap: .3rem; margin-top: 1rem; }
+#contato .contact-form label { margin-top: .45rem; }
+#contato .contact-form input, #contato .contact-form textarea { padding: .5rem .65rem; font-size: .9rem; line-height: 1.5; border-color: var(--line); }
+#contato .contact-form input { min-height: 44px; }
+#contato .contact-form button { margin-top: .65rem; }
