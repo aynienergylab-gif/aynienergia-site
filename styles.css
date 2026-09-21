@@ -1123,3 +1123,21 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.045em; }
 #contato .contact-form input, #contato .contact-form textarea { padding: .5rem .65rem; font-size: .9rem; line-height: 1.5; border-color: var(--line); }
 #contato .contact-form input { min-height: 44px; }
 #contato .contact-form button { margin-top: .65rem; }
+
+/* Preview proposal: repeated green accents connect the light sections. */
+#atuacao .services-overview { background: var(--white); border-top: 1px solid var(--line); }
+#analises-chamada { background: var(--paper); border-bottom: 1px solid var(--line); }
+#analises-chamada .analysis-copy { border-left: 4px solid var(--dark); padding-left: 1.25rem; }
+#analises-chamada .button { background: var(--dark); color: var(--paper); }
+#biblioteca { background: var(--white); }
+#contato { background: var(--paper); align-items: start; gap: 2rem 3rem; }
+#contato .contact-copy { border-top: 4px solid var(--dark); padding-top: 1.25rem; }
+#contato .contact-copy > p:not(.eyebrow) { max-width: 43ch; margin-top: 1rem; }
+#contato .contact-panel { margin-top: 1.5rem; }
+#contato .contact-line, #contato .contact-meta > a { padding: .8rem 0; border-color: var(--line); }
+#contato .contact-form { margin: 0; padding: 1.5rem; background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--dark); }
+#contato .contact-form label { margin-top: .2rem; }
+#contato .contact-form input, #contato .contact-form textarea { background: var(--paper); }
+#contato .contact-form button { min-width: 120px; }
+@media (min-width: 800px) { #contato { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+@media (max-width: 799px) { #contato { grid-template-columns: minmax(0, 1fr); } }
