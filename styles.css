@@ -464,33 +464,11 @@ main:focus {
   line-height: 1.2;
 }
 
-.service-drawing {
-  flex: none;
-  width: 88px;
-  height: 88px;
-  margin: 20px auto;
-  color: var(--terracota);
-}
-
 .servico p {
+  margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--linha);
   color: var(--texto-suave);
-}
-
-.servico-destaque {
-  border-color: var(--verde);
-  background: var(--verde);
-  color: var(--creme);
-}
-
-.servico-destaque .service-drawing {
-  color: var(--creme);
-}
-
-.servico-destaque p {
-  border-top-color: rgb(231 220 194 / 0.3);
-  color: var(--creme-suave);
 }
 
 /* Trajetória */
