@@ -446,6 +446,7 @@ main:focus {
   display: grid;
   gap: 12px;
   margin-top: 32px;
+  text-align: left;
 }
 
 .servico {
