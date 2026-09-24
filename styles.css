@@ -485,7 +485,7 @@ main:focus {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  object-position: 50% 38%;
+  object-position: 50% 46%;
 }
 
 .trajetoria-texto {
@@ -1040,7 +1040,7 @@ main:focus {
   .trajetoria-foto img {
     height: 100%;
     min-height: 560px;
-    object-position: 50% 40%;
+    object-position: 50% 50%;
   }
 
   .cartoes-destaque,
