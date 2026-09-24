@@ -469,22 +469,11 @@ main:focus {
 }
 
 .linhas-item {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 12px;
   padding: 28px 0;
 }
 
 .linhas-item + .linhas-item {
   border-top: 1px solid var(--linha);
-}
-
-.linhas-numero {
-  color: var(--terracota);
-  font-size: 32px;
-  font-weight: 800;
-  font-stretch: 112%;
-  line-height: 1;
 }
 
 .linhas-item h3 {
@@ -989,15 +978,6 @@ main:focus {
 
   .titulo-longo {
     font-size: clamp(34px, 4.5vw, 56px);
-  }
-
-  .linhas-item {
-    grid-template-columns: 72px minmax(0, 1fr);
-    gap: 16px;
-  }
-
-  .linhas-numero {
-    font-size: 40px;
   }
 
   .servicos {
