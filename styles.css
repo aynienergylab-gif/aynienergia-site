@@ -440,54 +440,6 @@ main:focus {
   font-weight: 600;
 }
 
-/* Linhas de trabalho */
-
-.linhas {
-  display: grid;
-  gap: 12px;
-}
-
-.linhas-painel {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  border-radius: var(--raio);
-  background: var(--verde);
-  color: var(--creme);
-}
-
-.linhas-painel .titulo-secao {
-  padding: 28px 24px 32px;
-}
-
-.linhas-lista {
-  padding: 0 clamp(16px, 3vw, 40px);
-  border: 1px solid var(--linha);
-  border-radius: var(--raio);
-  background: var(--creme-claro);
-}
-
-.linhas-item {
-  padding: 28px 0;
-}
-
-.linhas-item + .linhas-item {
-  border-top: 1px solid var(--linha);
-}
-
-.linhas-item h3 {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.linhas-refs {
-  margin-top: 8px;
-  color: var(--texto-suave);
-  font-size: 15px;
-}
-
 /* Atuação e serviços */
 
 .servicos {
@@ -594,9 +546,13 @@ main:focus {
   margin-top: 20px;
 }
 
-/* Produção (faixa verde) */
+/* Linhas de trabalho (fundo claro) e Produção (faixa verde) */
 
-.producao-faixa {
+.secao-centrada {
+  text-align: center;
+}
+
+.faixa {
   margin-top: var(--respiro);
   padding: var(--respiro) var(--margem-lateral);
   background: var(--verde);
@@ -604,11 +560,11 @@ main:focus {
   text-align: center;
 }
 
-.producao-faixa .rotulo {
+.faixa .rotulo {
   color: var(--creme-suave);
 }
 
-.cartoes-producao {
+.cartoes-destaque {
   display: grid;
   gap: 12px;
   margin-top: 40px;
@@ -637,10 +593,18 @@ main:focus {
   color: var(--terracota);
 }
 
-.cartao-producao {
-  min-height: 240px;
+.cartao-creme {
   background: var(--creme);
   color: var(--verde);
+}
+
+.cartao-producao {
+  min-height: 240px;
+}
+
+.cartao-linha {
+  gap: 20px;
+  background: var(--salvia);
 }
 
 .cartao-meta {
@@ -648,13 +612,15 @@ main:focus {
   font-size: 14px;
 }
 
-.cartao-producao h3 {
+.cartao-creme h3,
+.cartao-linha h3 {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .cartao-producao .cartao-abrir,
+.cartao-linha .cartao-meta,
 .cartao-biblioteca .cartao-abrir,
 .cartao-texto .cartao-meta {
   margin-top: auto;
@@ -980,8 +946,13 @@ main:focus {
     font-size: clamp(34px, 4.5vw, 56px);
   }
 
-  .servicos {
+  .servicos,
+  .cartoes-linhas {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cartao-linha {
+    min-height: 200px;
   }
 
   .trajetoria-foto img {
@@ -1070,14 +1041,8 @@ main:focus {
     text-decoration: none;
   }
 
-  .linhas {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  }
-
-  .linhas-lista {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .cartoes-destaque.cartoes-linhas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .servicos {
@@ -1099,7 +1064,7 @@ main:focus {
     object-position: 50% 40%;
   }
 
-  .cartoes-producao,
+  .cartoes-destaque,
   .cartoes-textos {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
