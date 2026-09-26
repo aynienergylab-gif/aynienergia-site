@@ -411,7 +411,7 @@ main:focus {
   text-wrap: balance;
 }
 
-/* Celular: nome e atuação em duas linhas; a partir de 640px, uma linha com separador. */
+/* Celular e tablet: nome e atuação em linhas separadas; a partir de 1024px, uma linha com separador. */
 .hero-rotulo span {
   display: block;
 }
@@ -1110,11 +1110,6 @@ main:focus {
     display: none;
   }
 
-  .hero-rotulo span,
-  .hero-rotulo .hero-rotulo-sep {
-    display: inline;
-  }
-
   .servicos,
   .cartoes-linhas {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1144,6 +1139,11 @@ main:focus {
 /* ---------- 1024px ---------- */
 
 @media (min-width: 1024px) {
+  .hero-rotulo span,
+  .hero-rotulo .hero-rotulo-sep {
+    display: inline;
+  }
+
   body {
     font-size: 18px;
   }
