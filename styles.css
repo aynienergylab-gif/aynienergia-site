@@ -189,8 +189,8 @@ main:focus {
 }
 
 .titulo-pagina {
-  margin-top: 12px;
-  font-size: clamp(40px, 6vw, 88px);
+  margin-top: 8px;
+  font-size: clamp(36px, 5vw, 64px);
 }
 
 .rotulo + .titulo-secao,
@@ -982,11 +982,11 @@ main:focus {
 /* ---------- Páginas internas ---------- */
 
 .pagina-topo {
-  margin: clamp(40px, 6vw, 80px) var(--margem-lateral) 0;
+  margin: clamp(20px, 3vw, 40px) var(--margem-lateral) 0;
 }
 
 .voltar {
-  margin-bottom: 20px;
+  margin-bottom: 4px;
   text-decoration: none;
 }
 
@@ -1001,7 +1001,7 @@ main:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .pilula {
@@ -1025,12 +1025,12 @@ main:focus {
 
 .grupo {
   display: grid;
-  gap: 24px;
-  margin: var(--respiro) var(--margem-lateral) 0;
+  gap: 16px;
+  margin: clamp(40px, 5vw, 64px) var(--margem-lateral) 0;
 }
 
 .grupo-descricao {
-  margin-top: 16px;
+  margin-top: 8px;
   color: var(--texto-suave);
 }
 
@@ -1321,8 +1321,15 @@ main:focus {
   }
 
   .grupo {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     gap: 48px;
+  }
+
+  /* Título do grupo acompanha a lista ao rolar. */
+  .grupo-intro {
+    position: sticky;
+    top: 24px;
+    align-self: start;
   }
 
   .textos-layout {
