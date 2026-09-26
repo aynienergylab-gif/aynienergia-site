@@ -446,6 +446,7 @@ main:focus {
 
 .servicos {
   display: grid;
+  align-items: start;
   gap: 12px;
   margin-top: 32px;
   text-align: left;
@@ -458,19 +459,66 @@ main:focus {
   border: 1px solid var(--linha);
   border-radius: var(--raio-cartao);
   background: var(--creme-claro);
+  cursor: default;
+  position: relative;
+}
+
+/* "+" indica que o cartão abre; gira para "×" quando aberto. Oculto de leitores de tela. */
+.servico::after {
+  content: "+" / "";
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: var(--terracota);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.servico:focus-within::after {
+  transform: rotate(45deg);
 }
 
 .servico h3 {
+  padding-right: 28px;
   font-size: 22px;
   font-weight: 600;
   line-height: 1.2;
 }
 
+/* Descrição recolhida: aparece no hover (mouse) ou ao receber foco (toque ou teclado). */
 .servico p {
+  max-height: 0;
+  margin-top: 0;
+  padding-top: 0;
+  overflow: hidden;
+  border-top: 1px solid transparent;
+  color: var(--texto-suave);
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease, padding-top 0.35s ease, border-color 0.25s ease;
+}
+
+.servico:focus-within p {
+  max-height: 12em;
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid var(--linha);
-  color: var(--texto-suave);
+  border-top-color: var(--linha);
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .servico:hover::after {
+    transform: rotate(45deg);
+  }
+
+  .servico:hover p {
+    max-height: 12em;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top-color: var(--linha);
+    opacity: 1;
+  }
 }
 
 /* Trajetória */
@@ -1028,6 +1076,11 @@ main:focus {
 
   .servicos {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* Títulos com altura de duas linhas: cartões fechados ficam iguais. */
+  .servico h3 {
+    min-height: 2.4em;
   }
 
   .trajetoria {
