@@ -226,9 +226,11 @@ main:focus {
   border-radius: var(--raio-botao);
 }
 
-/* Página inicial: sem bloco da marca; no celular fica só o botão do menu. */
-.sem-marca::before {
-  display: none;
+/* Página inicial: no celular e tablet, só o nome ao lado do menu; no desktop, só o menu centralizado. */
+.brand-nome-pessoa {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 .brand {
@@ -416,9 +418,13 @@ main:focus {
   text-wrap: balance;
 }
 
-/* Celular e tablet: nome e atuação em linhas separadas; a partir de 1024px, uma linha com separador. */
+/* Celular e tablet: só a atuação (o nome está no cabeçalho); a partir de 1024px, nome · atuação. */
 .hero-rotulo span {
   display: block;
+}
+
+.hero-rotulo .hero-rotulo-nome {
+  display: none;
 }
 
 .hero-rotulo .hero-rotulo-sep {
@@ -580,6 +586,10 @@ main:focus {
   flex: none;
   width: clamp(26px, 6vw, 38px);
   height: clamp(26px, 6vw, 38px);
+}
+
+.friso-contato {
+  margin: clamp(28px, 4vw, 40px) auto 0;
 }
 
 .friso-claro {
@@ -1173,8 +1183,8 @@ main:focus {
 /* ---------- 1024px ---------- */
 
 @media (min-width: 1024px) {
-  .sem-marca::before {
-    display: block;
+  .brand-so-nome {
+    display: none;
   }
 
   .site-header.sem-marca .nav,
@@ -1187,6 +1197,7 @@ main:focus {
   }
 
   .hero-rotulo span,
+  .hero-rotulo .hero-rotulo-nome,
   .hero-rotulo .hero-rotulo-sep {
     display: inline;
   }
