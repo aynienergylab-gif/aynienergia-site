@@ -394,7 +394,9 @@ main:focus {
 }
 
 .hero-frase {
-  max-width: 700px;
+  /* Largura para caber em duas linhas no desktop; balance evita palavra solta no celular. */
+  max-width: 34em;
+  text-wrap: balance;
   margin-top: clamp(20px, 2.5vw, 32px);
   color: var(--creme-suave);
   font-size: clamp(19px, 2.6vw, 29px);
