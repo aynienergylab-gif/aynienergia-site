@@ -226,6 +226,11 @@ main:focus {
   border-radius: var(--raio-botao);
 }
 
+/* Página inicial: sem bloco da marca; no celular fica só o botão do menu. */
+.sem-marca::before {
+  display: none;
+}
+
 .brand {
   grid-column: 1;
   grid-row: 1;
@@ -471,18 +476,13 @@ main:focus {
 }
 
 .ayni-popover .titulo-frase {
-  margin-top: 16px;
+  margin-top: 20px;
   padding-right: 32px;
 }
 
 .ayni-popover p {
   margin-top: 16px;
   color: var(--texto-suave);
-}
-
-.ayni-logo {
-  width: 40px;
-  height: 40px;
 }
 
 .ayni-fechar {
@@ -552,6 +552,39 @@ main:focus {
 .cartao-abrir {
   font-size: 15px;
   font-weight: 600;
+}
+
+/* Símbolos ancestrais (sol, água, vento, fogo, terra) */
+
+.simbolo {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  color: var(--terracota);
+}
+
+.friso {
+  display: flex;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 28px);
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 28px;
+  padding: 12px clamp(8px, 2vw, 16px);
+  border-top: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  color: var(--ocre);
+}
+
+.friso-icone {
+  flex: none;
+  width: clamp(26px, 6vw, 38px);
+  height: clamp(26px, 6vw, 38px);
+}
+
+.friso-claro {
+  margin: 0;
+  color: var(--terracota);
 }
 
 /* Atuação e serviços */
@@ -883,6 +916,7 @@ main:focus {
 
 .contato-frase {
   max-width: 40ch;
+  text-wrap: balance;
   margin: 16px auto 0;
   color: var(--creme-suave);
   font-size: clamp(18px, 2vw, 24px);
@@ -1139,6 +1173,19 @@ main:focus {
 /* ---------- 1024px ---------- */
 
 @media (min-width: 1024px) {
+  .sem-marca::before {
+    display: block;
+  }
+
+  .site-header.sem-marca .nav,
+  .site-header.sem-marca .nav-lista {
+    justify-content: center;
+  }
+
+  .site-header.sem-marca .nav {
+    padding-left: 8px;
+  }
+
   .hero-rotulo span,
   .hero-rotulo .hero-rotulo-sep {
     display: inline;
