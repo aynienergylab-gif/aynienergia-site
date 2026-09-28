@@ -395,7 +395,7 @@ main:focus {
   object-position: 50% 62%;
 }
 
-/* Título + assinatura: "Transição energética" grande (até 68px) e
+/* Título + assinatura: "Transição energética" grande (até 75px) e
    "Desenvolvimento econômico" pequeno, espaçado e em creme translúcido. */
 .hero-titulo {
   line-height: 1.05;
@@ -407,7 +407,7 @@ main:focus {
 }
 
 .hero-titulo span:first-child {
-  font-size: clamp(30px, 4.72vw, 68px);
+  font-size: clamp(30px, 5.21vw, 75px);
 }
 
 .hero-titulo span + span {
