@@ -396,11 +396,18 @@ main:focus {
 }
 
 .hero-titulo {
-  max-width: 16em;
-  font-size: clamp(22px, 6.8vw, 80px);
+  font-size: clamp(21px, 4.4vw, 52px);
   /* Título em várias linhas: entrelinha 1 evita que cedilhas encostem nos acentos. */
   line-height: 1;
   text-wrap: balance;
+}
+
+.hero-titulo span {
+  display: block;
+}
+
+.hero-titulo span + span {
+  margin-top: 0.08em;
 }
 
 .hero-acoes {
@@ -427,12 +434,14 @@ main:focus {
   color: var(--creme);
   font: inherit;
   font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
 }
 
 .botao-contorno:hover {
   border-color: var(--creme);
+  color: var(--creme);
   background: rgb(244 241 230 / 0.12);
 }
 
@@ -489,7 +498,7 @@ main:focus {
   text-wrap: balance;
   margin-top: clamp(20px, 2.5vw, 32px);
   color: var(--creme-suave);
-  font-size: clamp(19px, 2.6vw, 29px);
+  font-size: clamp(16px, 1.7vw, 21px);
   font-weight: 500;
   line-height: 1.4;
 }
