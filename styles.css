@@ -396,7 +396,9 @@ main:focus {
 }
 
 .hero-titulo {
-  font-size: clamp(21px, 4.4vw, 58px);
+  font-size: clamp(21px, 4.5vw, 60px);
+  /* Letras um pouco estreitas: título mais alto e menos espalhado na largura. */
+  font-stretch: 88%;
   /* Título em várias linhas: entrelinha 1 evita que cedilhas encostem nos acentos. */
   line-height: 1;
   text-wrap: balance;
@@ -410,9 +412,9 @@ main:focus {
   margin-top: 0.08em;
 }
 
-/* "Transição energética" maior que a segunda linha (66px × 58px no desktop). */
+/* "Transição energética" maior que a segunda linha (76px × 60px no desktop). */
 .hero-titulo span:first-child {
-  font-size: 1.138em;
+  font-size: 1.2667em;
 }
 
 .hero-acoes {
