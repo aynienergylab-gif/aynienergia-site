@@ -424,7 +424,7 @@ main:focus {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: clamp(28px, 3.5vw, 40px);
+  margin-top: clamp(40px, 6vw, 80px);
 }
 
 .hero-acoes .botao-claro {
@@ -994,6 +994,41 @@ main:focus {
 
 .rodape-lista a:hover {
   text-decoration: underline;
+}
+
+/* Botão flutuante "voltar ao início": aparece após sair do topo (sem JS, fica sempre visível). */
+.voltar-topo {
+  position: fixed;
+  right: clamp(16px, 2.5vw, 32px);
+  bottom: clamp(16px, 2.5vw, 32px);
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgb(231 220 194 / 0.5);
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--creme);
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgb(15 59 44 / 0.25);
+  transition: opacity 0.25s, visibility 0.25s, background-color 0.2s;
+}
+
+.voltar-topo:hover {
+  background: var(--terracota);
+  color: var(--creme);
+}
+
+.voltar-topo:focus-visible {
+  outline-color: var(--terracota);
+}
+
+.js .voltar-topo:not(.visivel) {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* ---------- Páginas internas ---------- */

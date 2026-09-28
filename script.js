@@ -32,3 +32,12 @@ if (pills.length) {
   addEventListener('hashchange', syncPills);
   syncPills();
 }
+
+// Botão "voltar ao início": visível só depois que o cabeçalho sai da tela.
+const voltarTopo = document.querySelector('.voltar-topo');
+const topo = document.getElementById('topo');
+if (voltarTopo && topo && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => {
+    voltarTopo.classList.toggle('visivel', !entry.isIntersecting);
+  }, { rootMargin: '200px 0px 0px 0px' }).observe(topo);
+}
