@@ -843,6 +843,33 @@ main:focus {
   color: var(--verde);
 }
 
+/* Artigo com versão publicada + manuscrito aceito: dois links lado a lado. */
+.cartao-links,
+.trabalho-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+}
+
+.cartao-links {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+
+.trabalho-links {
+  margin-top: 4px;
+}
+
+.cartao-links a,
+.trabalho-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 /* Textos */
 
 .cartoes-textos,
