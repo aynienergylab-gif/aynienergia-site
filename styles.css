@@ -396,7 +396,7 @@ main:focus {
 }
 
 .hero-titulo {
-  font-size: clamp(21px, 4.4vw, 52px);
+  font-size: clamp(21px, 4.4vw, 58px);
   /* Título em várias linhas: entrelinha 1 evita que cedilhas encostem nos acentos. */
   line-height: 1;
   text-wrap: balance;
