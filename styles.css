@@ -410,9 +410,9 @@ main:focus {
   margin-top: 0.08em;
 }
 
-/* "Transição energética" maior que a segunda linha (64px × 58px no desktop). */
+/* "Transição energética" maior que a segunda linha (66px × 58px no desktop). */
 .hero-titulo span:first-child {
-  font-size: 1.1035em;
+  font-size: 1.138em;
 }
 
 .hero-acoes {
