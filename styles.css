@@ -996,6 +996,35 @@ main:focus {
   text-decoration: underline;
 }
 
+/* Rodapé enxuto: marca + biblioteca e perfis */
+.rodape-enxuto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-top: var(--respiro);
+  padding: 32px var(--margem-lateral);
+  border-top: 1px solid var(--linha);
+}
+
+.rodape-enxuto ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+}
+
+.rodape-enxuto a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.rodape-enxuto a:hover {
+  text-decoration: underline;
+}
+
 /* ---------- Páginas internas ---------- */
 
 .pagina-topo {
