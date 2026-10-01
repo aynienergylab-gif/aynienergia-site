@@ -30,7 +30,7 @@
         <ul class="nav-lista">
           <li><a href="#atuacao">Atuação</a></li>
           <li><a href="#trabalhos">Trabalhos</a></li>
-          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
           <li><a href="#textos">Textos</a></li>
           <li class="nav-contato"><a href="#contato">Contato →</a></li>
         </ul>
@@ -44,15 +44,20 @@
         <img class="hero-foto" src="assets/espiral-fibra-1600.webp" srcset="assets/espiral-fibra-800.webp 800w, assets/espiral-fibra-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1064" fetchpriority="high" />
         <h1 class="hero-titulo" id="titulo-inicio"><span>Transição energética</span> <span>Desenvolvimento econômico</span></h1>
         <p class="hero-frase">Estudos, análises e recomendações técnicas para políticas de energia com impacto nos territórios.</p>
-        <div class="hero-acoes"><a class="botao-contorno" href="#contato">Vamos conversar</a></div>
+        <div class="hero-acoes"><a class="botao-contorno" href="#contato">Vamos conversar</a><button class="botao-contorno" type="button" popovertarget="significado-ayni">Ayni</button></div>
       </section>
 
-      <!-- 2. Credenciais em uma linha -->
-      <p class="credenciais" aria-label="Credenciais">Doutora em Energia (UFABC) <span>·</span> SEDE-MG <span>·</span> PNUD <span>·</span> Oxfam Brasil <span>·</span> Agenda Pública</p>
+
+      <div class="ayni-popover" id="significado-ayni" popover role="dialog" aria-labelledby="titulo-ayni">
+        <button class="ayni-fechar" type="button" popovertarget="significado-ayni" popovertargetaction="hide" aria-label="Fechar">×</button>
+        <h2 class="titulo-frase" id="titulo-ayni">O significado de Ayni</h2>
+        <p>Ayni é um princípio de reciprocidade presente nas culturas andinas. É a prática de ajudar e de retribuir, fortalecendo os vínculos entre as pessoas e a comunidade.</p>
+        <p>Na Ayni Energia, essa ideia inspira um olhar para a transição energética que valoriza a cooperação, o compartilhamento de conhecimento e o cuidado nas relações entre sociedade e natureza.</p>
+      </div>
 
       <!-- 3. Atuação: serviços + temas fundidos em 4 blocos -->
       <section class="secao secao-centrada" id="atuacao" aria-labelledby="titulo-atuacao">
-        <p class="rotulo rotulo-terracota">Atuação</p>
+        <p class="rotulo rotulo-terracota">Atuação e serviços</p>
         <h2 class="titulo-frase" id="titulo-atuacao">Energia, clima, regulação e desenvolvimento.</h2>
         <ol class="cartoes-destaque cartoes-linhas">
           <li class="cartao cartao-linha">
@@ -107,22 +112,21 @@
         <a class="botao-claro" href="producao.html">Toda a produção <span aria-hidden="true">→</span></a>
       </section>
 
-      <!-- 5. Sobre: trajetória + significado de Ayni (substitui o popover) -->
-      <section class="secao" id="sobre" aria-labelledby="titulo-trajetoria">
+      <!-- 5. Trajetória: igual ao site atual -->
+      <section class="secao" id="trajetoria" aria-labelledby="titulo-trajetoria">
         <div class="trajetoria">
           <picture class="trajetoria-foto">
             <source type="image/webp" srcset="assets/maria-jose-retrato.webp" />
             <img src="assets/maria-jose-verde.png" alt="Retrato de Maria José Charfuelan Villarreal" width="1024" height="1536" loading="lazy" />
           </picture>
           <div class="trajetoria-texto">
-            <h2 class="titulo-secao" id="titulo-trajetoria">Sobre</h2>
+            <h2 class="titulo-secao" id="titulo-trajetoria">Trajetória</h2>
             <p class="trajetoria-formacao">Doutora em Energia (UFABC) · Engenheira Eletricista (Universidad Nacional de Colombia)</p>
             <dl class="trajetoria-lista">
               <div><dt>Governo estadual</dt><dd>SEDE-MG — Diretoria de Energia</dd></div>
               <div><dt>Organismos internacionais e sociedade civil</dt><dd>PNUD · Oxfam Brasil · Agenda Pública</dd></div>
               <div><dt>Pesquisa e docência</dt><dd>UFABC · Universidad Nacional de Colombia Abierta y a Distancia</dd></div>
             </dl>
-            <p class="sobre-ayni"><strong>Ayni</strong> é um princípio andino de reciprocidade: ajudar e retribuir. Na Ayni Energia, inspira uma transição energética que valoriza cooperação, compartilhamento de conhecimento e cuidado na relação entre sociedade e natureza.</p>
             <ul class="links-perfil" aria-label="Perfis acadêmicos e profissionais">
               <li><a class="link-seta" href="https://lattes.cnpq.br/4251788422492176" target="_blank" rel="noreferrer">Lattes ↗</a></li>
               <li><a class="link-seta" href="https://orcid.org/0000-0001-9863-5562" target="_blank" rel="noreferrer">ORCID ↗</a></li>
