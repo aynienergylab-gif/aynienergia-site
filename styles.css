@@ -408,6 +408,26 @@ main:focus {
   object-position: 50% 62%;
 }
 
+/* A lâmpada fica livre no centro; a gradação mais transparente preserva o
+   pôr do sol e deixa o texto descansar na área escura à esquerda. */
+.hero--lampada {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero--lampada::before {
+  background: linear-gradient(90deg, rgb(8 50 36 / 0.72) 0%, rgb(15 59 44 / 0.54) 37%, rgb(15 59 44 / 0.26) 62%, rgb(15 59 44 / 0.1) 100%);
+  opacity: 1;
+}
+
+.hero--lampada .hero-foto {
+  object-position: center;
+}
+
+.hero--lampada .hero-titulo span:first-child {
+  max-width: 12ch;
+}
+
 /* Título + assinatura: "Transição energética" grande (até 75px) e
    "Desenvolvimento econômico" pequeno, espaçado e em creme translúcido. */
 .hero-titulo {
