@@ -408,15 +408,15 @@ main:focus {
   object-position: 50% 62%;
 }
 
-/* A lâmpada fica livre no centro; a gradação mais transparente preserva o
-   pôr do sol e deixa o texto descansar na área escura à esquerda. */
+/* A lâmpada acompanha um título central; a camada uniforme sustenta a leitura
+   sem perder o pôr do sol e as eólicas ao fundo. */
 .hero--lampada {
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
 .hero--lampada::before {
-  background: linear-gradient(90deg, rgb(8 50 36 / 0.72) 0%, rgb(15 59 44 / 0.54) 37%, rgb(15 59 44 / 0.26) 62%, rgb(15 59 44 / 0.1) 100%);
+  background: linear-gradient(180deg, rgb(8 50 36 / 0.54), rgb(15 59 44 / 0.64));
   opacity: 1;
 }
 
@@ -426,6 +426,12 @@ main:focus {
 
 .hero--lampada .hero-titulo span:first-child {
   max-width: 12ch;
+  margin-inline: auto;
+}
+
+/* Encobre suavemente o soquete escuro e aproxima o título da luz. */
+.hero--lampada .hero-titulo {
+  transform: translateY(clamp(-44px, -3vw, -28px));
 }
 
 /* Título + assinatura: "Transição energética" grande (até 75px) e
