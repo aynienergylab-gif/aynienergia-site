@@ -1381,3 +1381,116 @@ main:focus {
     transition: none !important;
   }
 }
+
+/* ---------- Produção: abertura compacta ---------- */
+
+.production-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.production-header::before {
+  display: none;
+}
+
+.production-header .brand {
+  position: static;
+  min-height: 48px;
+  padding: 8px 0;
+}
+
+.production-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.production-home-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.production-header .header-contato {
+  display: inline-flex;
+  position: static;
+  min-height: 44px;
+  padding: 0 18px;
+}
+
+.production-topo {
+  margin-top: clamp(20px, 3vw, 32px);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.production-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 20px;
+}
+
+.production-topo .titulo-pagina {
+  margin: 0;
+  font-size: clamp(34px, 4.5vw, 56px);
+  line-height: 1;
+}
+
+.production-topline p {
+  max-width: 42ch;
+  color: var(--texto-suave);
+  font-size: 16px;
+}
+
+.production-text-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  margin-top: 18px;
+}
+
+.production-text-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  border-bottom: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.production-text-nav a:hover,
+.production-text-nav a:focus-visible {
+  border-bottom-color: currentColor;
+  color: var(--terracota);
+}
+
+@media (max-width: 639px) {
+  .production-header {
+    align-items: flex-start;
+  }
+
+  .production-header .brand-autora {
+    display: none;
+  }
+
+  .production-header-actions {
+    gap: 8px;
+  }
+
+  .production-home-link {
+    display: none;
+  }
+
+  .production-header .header-contato {
+    padding: 0 14px;
+  }
+}
