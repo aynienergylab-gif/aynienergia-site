@@ -1285,7 +1285,7 @@ main:focus {
   }
 
   .hero {
-    min-height: clamp(560px, 65vh, 640px);
+    min-height: 580px;
   }
 
   .hero-descobrir {
