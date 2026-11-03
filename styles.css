@@ -1494,3 +1494,67 @@ main:focus {
     padding: 0 14px;
   }
 }
+
+/* ---------- Início: abertura minimalista ---------- */
+
+.homepage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.homepage-header::before {
+  display: none;
+}
+
+.homepage-header .brand {
+  position: static;
+  min-height: 48px;
+  padding: 8px 0;
+}
+
+.homepage-header .header-contato {
+  display: inline-flex;
+  position: static;
+  min-height: 44px;
+  padding: 0 18px;
+}
+
+.hero-sobre-ayni {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 14px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--creme-suave);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-sobre-ayni:hover,
+.hero-sobre-ayni:focus-visible {
+  border-bottom-color: currentColor;
+  color: var(--creme);
+}
+
+@media (max-width: 639px) {
+  .homepage-header {
+    align-items: flex-start;
+  }
+
+  .homepage-header .brand-autora {
+    display: none;
+  }
+
+  .homepage-header .header-contato {
+    padding: 0 14px;
+  }
+}
