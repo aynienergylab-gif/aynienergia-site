@@ -431,7 +431,7 @@ main:focus {
 
 /* Encobre suavemente o soquete escuro e aproxima o título da luz. */
 .hero--lampada .hero-titulo {
-  transform: translateY(clamp(-44px, -3vw, -28px));
+  transform: translateY(clamp(-32px, -2vw, -18px));
 }
 
 /* Título + assinatura: "Transição energética" grande (até 75px) e
