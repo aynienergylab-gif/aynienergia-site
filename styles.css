@@ -429,9 +429,11 @@ main:focus {
   margin-inline: auto;
 }
 
-/* Encobre suavemente o soquete escuro e aproxima o título da luz. */
-.hero--lampada .hero-titulo {
-  transform: translateY(clamp(-32px, -2vw, -18px));
+/* Opção 1: bloco tipográfico desce e o título passa sobre o soquete. */
+.hero--lampada .hero-titulo,
+.hero--lampada .hero-frase,
+.hero--lampada .hero-sobre-ayni {
+  transform: translateY(clamp(12px, 1.5vw, 24px));
 }
 
 @media (min-width: 640px) {
