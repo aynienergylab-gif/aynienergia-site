@@ -400,7 +400,7 @@ main:focus {
 /* A foto vertical é aproximada para revelar a pessoa e os círculos de cobre;
    a camada verde deixa as bobinas presentes, sem competir com o conteúdo. */
 .hero--bobinas::before {
-  background: linear-gradient(110deg, rgb(8 50 36 / 0.78), rgb(15 59 44 / 0.52));
+  background: linear-gradient(110deg, rgb(8 50 36 / 0.78) 0%, rgb(15 59 44 / 0.56) 56%, rgb(15 59 44 / 0.42) 100%);
   opacity: 1;
 }
 
