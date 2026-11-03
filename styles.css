@@ -1434,8 +1434,8 @@ main:focus {
 .production-topline {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px 20px;
+  align-items: center;
+  gap: 8px 28px;
 }
 
 .production-topo .titulo-pagina {
@@ -1444,17 +1444,10 @@ main:focus {
   line-height: 1;
 }
 
-.production-topline p {
-  max-width: 42ch;
-  color: var(--texto-suave);
-  font-size: 16px;
-}
-
 .production-text-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 22px;
-  margin-top: 18px;
 }
 
 .production-text-nav a {
