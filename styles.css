@@ -434,6 +434,14 @@ main:focus {
   transform: translateY(clamp(-32px, -2vw, -18px));
 }
 
+@media (min-width: 640px) {
+  /* As duas palavras do título partem do mesmo eixo visual. */
+  .hero--lampada .hero-titulo span:first-child {
+    margin-inline: 0;
+    text-align: left;
+  }
+}
+
 /* Título + assinatura: "Transição energética" grande (até 75px) e
    "Desenvolvimento econômico" pequeno, espaçado e em creme translúcido. */
 .hero-titulo {
