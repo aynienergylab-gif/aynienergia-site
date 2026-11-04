@@ -456,7 +456,7 @@ main:focus {
   /* No desktop, a lâmpada ocupa o intervalo entre título e assinatura. */
   .hero--lampada .hero-titulo {
     position: absolute;
-    top: 48px;
+    top: 74px;
     left: 50%;
     width: min(calc(100% - 48px), 720px);
     transform: translateX(-50%);
@@ -469,7 +469,7 @@ main:focus {
 
   .hero--lampada .hero-titulo span + span {
     position: absolute;
-    top: 350px;
+    top: 274px;
     left: 50%;
     width: max-content;
     margin: 0;
@@ -479,7 +479,7 @@ main:focus {
 
   .hero--lampada .hero-frase {
     position: absolute;
-    top: 430px;
+    top: 390px;
     left: 50%;
     width: min(calc(100% - 48px), 620px);
     margin: 0;
@@ -488,7 +488,7 @@ main:focus {
 
   .hero--lampada .hero-sobre-ayni {
     position: absolute;
-    top: 505px;
+    top: 465px;
     left: 50%;
     margin: 0;
     transform: translateX(-50%);
