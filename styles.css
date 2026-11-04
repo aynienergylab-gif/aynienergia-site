@@ -429,11 +429,11 @@ main:focus {
   margin-inline: auto;
 }
 
-/* Composição central: bloco alinhado à esquerda sobre o eixo da lâmpada. */
+/* Composição centrada no eixo da lâmpada. */
 .hero--lampada .hero-titulo,
 .hero--lampada .hero-frase {
   width: min(100%, 610px);
-  text-align: left;
+  text-align: center;
 }
 
 /* A lâmpada cria uma pausa visual entre o título e a assinatura, como na
@@ -453,10 +453,10 @@ main:focus {
 }
 
 @media (min-width: 640px) {
-  /* As duas palavras do título partem do mesmo eixo visual. */
+  /* As duas linhas do título acompanham o centro da lâmpada. */
   .hero--lampada .hero-titulo span:first-child {
-    margin-inline: 0;
-    text-align: left;
+    margin-inline: auto;
+    text-align: center;
   }
 }
 
