@@ -389,14 +389,16 @@ main:focus {
 }
 
 @media (min-width: 640px) {
+  /* Grade de duas colunas iguais: o vão central cai exatamente no eixo
+     do hero, qualquer que seja a largura de cada palavra. */
   .hero--lampada .hero-titulo {
     position: absolute;
-    top: 118px;
+    top: 112px;
     left: 50%;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: baseline;
-    gap: clamp(56px, 10vw, 168px);
+    column-gap: clamp(60px, 10.5vw, 176px);
     width: calc(100% - 32px);
     max-width: none;
     transform: translateX(-50%);
@@ -407,9 +409,17 @@ main:focus {
     white-space: nowrap;
   }
 
+  .hero--lampada .hero-titulo span:first-child {
+    text-align: right;
+  }
+
+  .hero--lampada .hero-titulo span + span {
+    text-align: left;
+  }
+
   .hero-assinatura {
     position: absolute;
-    top: 254px;
+    top: 246px;
     left: 50%;
     margin: 0;
     transform: translateX(-50%);
@@ -418,18 +428,22 @@ main:focus {
     letter-spacing: 0.22em;
   }
 
+  /* Frase e assinatura ancoradas na base: o respiro fica igual em
+     qualquer altura de tela. */
   .hero--lampada .hero-frase {
     position: absolute;
-    top: 402px;
+    top: auto;
+    bottom: 96px;
     left: 50%;
-    width: min(calc(100% - 48px), 620px);
+    width: min(calc(100% - 48px), 600px);
     margin: 0;
     transform: translateX(-50%);
   }
 
   .hero--lampada .hero-sobre-ayni {
     position: absolute;
-    top: 474px;
+    top: auto;
+    bottom: 36px;
     left: 50%;
     margin: 0;
     transform: translateX(-50%);
@@ -1649,4 +1663,9 @@ main:focus {
   .trabalho-links a {
     min-height: 34px;
   }
+}
+
+/* Papel exercido em cada trabalho. */
+.trabalho-meta i {
+  font-style: italic;
 }
