@@ -1652,3 +1652,8 @@ main:focus {
     justify-content: flex-end;
   }
 }
+
+/* A primeira seção começa logo abaixo do título da página. */
+.production-topo + .grupo {
+  margin-top: clamp(20px, 2.2vw, 28px);
+}
