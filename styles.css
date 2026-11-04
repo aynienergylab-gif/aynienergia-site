@@ -1657,3 +1657,19 @@ main:focus {
 .production-topo + .grupo {
   margin-top: clamp(20px, 2.2vw, 28px);
 }
+
+/* Itens da lista de produção mais próximos entre si. */
+.lista-trabalhos li {
+  padding: 12px 0;
+}
+
+.trabalho-links {
+  margin-top: 0;
+}
+
+@media (min-width: 1024px) {
+  /* No desktop o ponteiro é preciso: o alvo do link pode ser menor. */
+  .trabalho-links a {
+    min-height: 34px;
+  }
+}
