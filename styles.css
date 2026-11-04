@@ -429,11 +429,18 @@ main:focus {
   margin-inline: auto;
 }
 
-/* Opção 1: bloco tipográfico desce e o título passa sobre o soquete. */
+/* Composição central: bloco alinhado à esquerda sobre o eixo da lâmpada. */
+.hero--lampada .hero-titulo,
+.hero--lampada .hero-frase {
+  width: min(100%, 610px);
+  text-align: left;
+}
+
+/* Título passa sobre o soquete; texto mantém um ritmo compacto abaixo. */
 .hero--lampada .hero-titulo,
 .hero--lampada .hero-frase,
 .hero--lampada .hero-sobre-ayni {
-  transform: translateY(clamp(12px, 1.5vw, 24px));
+  transform: translateY(clamp(24px, 2.4vw, 40px));
 }
 
 @media (min-width: 640px) {
