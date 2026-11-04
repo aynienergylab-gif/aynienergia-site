@@ -433,7 +433,7 @@ main:focus {
   .hero--lampada .hero-frase {
     position: absolute;
     top: auto;
-    bottom: 96px;
+    bottom: 124px;
     left: 50%;
     width: min(calc(100% - 48px), 600px);
     margin: 0;
@@ -443,7 +443,7 @@ main:focus {
   .hero--lampada .hero-sobre-ayni {
     position: absolute;
     top: auto;
-    bottom: 36px;
+    bottom: 64px;
     left: 50%;
     margin: 0;
     transform: translateX(-50%);
@@ -1668,4 +1668,32 @@ main:focus {
 /* Papel exercido em cada trabalho. */
 .trabalho-meta i {
   font-style: italic;
+}
+
+/* Telas baixas (notebook pequeno, ou navegador com zoom): a abertura
+   encolhe para o "Sobre Ayni" caber sem rolar. */
+@media (min-width: 640px) and (max-height: 640px) {
+  .hero {
+    min-height: 460px;
+  }
+
+  .hero--lampada .hero-titulo {
+    top: 64px;
+  }
+
+  .hero--lampada .hero-titulo span {
+    font-size: clamp(26px, 4.2vw, 60px);
+  }
+
+  .hero-assinatura {
+    top: 168px;
+  }
+
+  .hero--lampada .hero-frase {
+    bottom: 92px;
+  }
+
+  .hero--lampada .hero-sobre-ayni {
+    bottom: 40px;
+  }
 }
