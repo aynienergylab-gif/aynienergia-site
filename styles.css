@@ -453,10 +453,45 @@ main:focus {
 }
 
 @media (min-width: 640px) {
-  /* As duas linhas do título acompanham o centro da lâmpada. */
+  /* No desktop, a lâmpada ocupa o intervalo entre título e assinatura. */
+  .hero--lampada .hero-titulo {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    width: min(calc(100% - 48px), 720px);
+    transform: translateX(-50%);
+  }
+
   .hero--lampada .hero-titulo span:first-child {
     margin-inline: auto;
     text-align: center;
+  }
+
+  .hero--lampada .hero-titulo span + span {
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    width: max-content;
+    margin: 0;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .hero--lampada .hero-frase {
+    position: absolute;
+    top: 430px;
+    left: 50%;
+    width: min(calc(100% - 48px), 620px);
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .hero--lampada .hero-sobre-ayni {
+    position: absolute;
+    top: 505px;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
   }
 }
 
