@@ -360,6 +360,82 @@ main:focus {
 
 /* ---------- Início (hero) ---------- */
 
+/* Título em uma linha, com o bocal da lâmpada no vão entre as palavras. */
+.hero-titulo {
+  line-height: 1.02;
+}
+
+.hero--lampada .hero-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 610px);
+  text-align: center;
+}
+
+.hero--lampada .hero-titulo span {
+  display: block;
+  max-width: none;
+  font-size: clamp(30px, 8.6vw, 58px);
+}
+
+.hero-assinatura {
+  margin-top: 16px;
+  color: var(--creme-suave);
+  font-size: clamp(12px, 3.1vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .hero--lampada .hero-titulo {
+    position: absolute;
+    top: 118px;
+    left: 50%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: clamp(56px, 10vw, 168px);
+    width: calc(100% - 32px);
+    max-width: none;
+    transform: translateX(-50%);
+  }
+
+  .hero--lampada .hero-titulo span {
+    font-size: clamp(28px, 5.2vw, 76px);
+    white-space: nowrap;
+  }
+
+  .hero-assinatura {
+    position: absolute;
+    top: 254px;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: clamp(13px, 1.3vw, 18px);
+    letter-spacing: 0.22em;
+  }
+
+  .hero--lampada .hero-frase {
+    position: absolute;
+    top: 402px;
+    left: 50%;
+    width: min(calc(100% - 48px), 620px);
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .hero--lampada .hero-sobre-ayni {
+    position: absolute;
+    top: 474px;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+}
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -422,101 +498,6 @@ main:focus {
 
 .hero--lampada .hero-foto {
   object-position: center;
-}
-
-.hero--lampada .hero-titulo span:first-child {
-  max-width: 12ch;
-  margin-inline: auto;
-}
-
-/* Composição centrada no eixo da lâmpada. */
-.hero--lampada .hero-titulo,
-.hero--lampada .hero-frase {
-  width: min(100%, 610px);
-  text-align: center;
-}
-
-/* A lâmpada cria uma pausa visual entre o título e a assinatura, como na
-   composição de referência. */
-.hero--lampada .hero-titulo,
-.hero--lampada .hero-frase,
-.hero--lampada .hero-sobre-ayni {
-  transform: translateY(clamp(-22px, -1.35vw, -14px));
-}
-
-.hero--lampada .hero-titulo span + span {
-  margin-top: clamp(64px, 6vw, 86px);
-}
-
-.hero--lampada .hero-frase {
-  margin-top: 8px;
-}
-
-@media (min-width: 640px) {
-  /* No desktop, a lâmpada ocupa o intervalo entre título e assinatura. */
-  .hero--lampada .hero-titulo {
-    position: absolute;
-    top: 104px;
-    left: 50%;
-    width: min(calc(100% - 48px), 720px);
-    transform: translateX(-50%);
-  }
-
-  .hero--lampada .hero-titulo span:first-child {
-    margin-inline: auto;
-    text-align: center;
-  }
-
-  .hero--lampada .hero-titulo span + span {
-    position: absolute;
-    top: 244px;
-    left: 50%;
-    width: max-content;
-    margin: 0;
-    transform: translateX(-50%);
-    white-space: nowrap;
-  }
-
-  .hero--lampada .hero-frase {
-    position: absolute;
-    top: 390px;
-    left: 50%;
-    width: min(calc(100% - 48px), 620px);
-    margin: 0;
-    transform: translateX(-50%);
-  }
-
-  .hero--lampada .hero-sobre-ayni {
-    position: absolute;
-    top: 465px;
-    left: 50%;
-    margin: 0;
-    transform: translateX(-50%);
-  }
-}
-
-/* Título + assinatura: "Transição energética" grande (até 75px) e
-   "Desenvolvimento econômico" pequeno, espaçado e em creme translúcido. */
-.hero-titulo {
-  line-height: 1.05;
-  text-wrap: balance;
-}
-
-.hero-titulo span {
-  display: block;
-}
-
-.hero-titulo span:first-child {
-  font-size: clamp(30px, 5.21vw, 75px);
-}
-
-.hero-titulo span + span {
-  margin-top: 0.8em;
-  color: var(--creme-suave);
-  font-size: clamp(14px, 1.8vw, 26px);
-  font-weight: 600;
-  /* Espaçamento menor no celular para caber em uma linha. */
-  letter-spacing: 0.1em;
 }
 
 .hero-acoes {
@@ -1298,10 +1279,6 @@ main:focus {
 
   .nav-contato {
     display: none;
-  }
-
-  .hero-titulo span + span {
-    letter-spacing: 0.22em;
   }
 
   .servicos,
