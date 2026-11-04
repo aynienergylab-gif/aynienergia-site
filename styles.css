@@ -393,7 +393,7 @@ main:focus {
      do hero, qualquer que seja a largura de cada palavra. */
   .hero--lampada .hero-titulo {
     position: absolute;
-    top: 112px;
+    top: 19%;
     left: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -419,7 +419,7 @@ main:focus {
 
   .hero-assinatura {
     position: absolute;
-    top: 246px;
+    top: 43%;
     left: 50%;
     margin: 0;
     transform: translateX(-50%);
@@ -433,7 +433,7 @@ main:focus {
   .hero--lampada .hero-frase {
     position: absolute;
     top: auto;
-    bottom: 124px;
+    bottom: 19%;
     left: 50%;
     width: min(calc(100% - 48px), 600px);
     margin: 0;
@@ -443,7 +443,7 @@ main:focus {
   .hero--lampada .hero-sobre-ayni {
     position: absolute;
     top: auto;
-    bottom: 64px;
+    bottom: 7%;
     left: 50%;
     margin: 0;
     transform: translateX(-50%);
@@ -1277,6 +1277,13 @@ main:focus {
     font-size: 17px;
   }
 
+  /* A abertura nunca passa da altura da janela: o "Sobre Ayni" fica
+     sempre visível sem rolar. */
+  .hero {
+    min-height: 0;
+    height: min(600px, calc(100svh - 132px));
+  }
+
   .site-header {
     grid-template-columns: minmax(0, 1fr) auto auto;
   }
@@ -1373,8 +1380,11 @@ main:focus {
     grid-column: 3;
   }
 
+  /* A abertura nunca passa da altura da janela: o "Sobre Ayni" fica
+     sempre visível sem rolar. */
   .hero {
-    min-height: 580px;
+    min-height: 0;
+    height: min(580px, calc(100svh - 132px));
   }
 
   .hero-descobrir {
@@ -1670,30 +1680,3 @@ main:focus {
   font-style: italic;
 }
 
-/* Telas baixas (notebook pequeno, ou navegador com zoom): a abertura
-   encolhe para o "Sobre Ayni" caber sem rolar. */
-@media (min-width: 640px) and (max-height: 640px) {
-  .hero {
-    min-height: 460px;
-  }
-
-  .hero--lampada .hero-titulo {
-    top: 64px;
-  }
-
-  .hero--lampada .hero-titulo span {
-    font-size: clamp(26px, 4.2vw, 60px);
-  }
-
-  .hero-assinatura {
-    top: 168px;
-  }
-
-  .hero--lampada .hero-frase {
-    bottom: 92px;
-  }
-
-  .hero--lampada .hero-sobre-ayni {
-    bottom: 40px;
-  }
-}
