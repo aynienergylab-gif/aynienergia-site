@@ -456,7 +456,7 @@ main:focus {
   /* No desktop, a lâmpada ocupa o intervalo entre título e assinatura. */
   .hero--lampada .hero-titulo {
     position: absolute;
-    top: 74px;
+    top: 104px;
     left: 50%;
     width: min(calc(100% - 48px), 720px);
     transform: translateX(-50%);
@@ -469,7 +469,7 @@ main:focus {
 
   .hero--lampada .hero-titulo span + span {
     position: absolute;
-    top: 274px;
+    top: 244px;
     left: 50%;
     width: max-content;
     margin: 0;
