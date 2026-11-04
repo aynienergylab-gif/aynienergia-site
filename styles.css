@@ -329,14 +329,6 @@ main:focus {
   font-weight: 700;
 }
 
-.nav-contagem {
-  margin-left: 6px;
-  color: var(--texto-suave);
-  font-size: 13px;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-}
-
 .header-contato {
   display: none;
   align-items: center;
@@ -1206,7 +1198,6 @@ main:focus {
   color: var(--creme);
 }
 
-
 /* ---------- Trilha de navegação ---------- */
 
 .trilha {
@@ -1237,49 +1228,6 @@ main:focus {
 }
 
 /* ---------- Textos: destaque e lista ---------- */
-
-.texto-destaque {
-  position: relative;
-  margin: clamp(32px, 4vw, 48px) var(--margem-lateral) 0;
-  padding: clamp(24px, 4vw, 44px);
-  border: 1px solid var(--linha);
-  border-left: 4px solid var(--terracota);
-  border-radius: var(--raio-cartao);
-  background: var(--creme-claro);
-}
-
-.texto-destaque .titulo-frase {
-  margin-top: 12px;
-  max-width: 24ch;
-}
-
-.texto-destaque:hover .cartao-link {
-  color: var(--terracota);
-}
-
-.texto-destaque:has(.cartao-link:focus-visible) {
-  outline: 3px solid var(--terracota);
-  outline-offset: 3px;
-}
-
-.texto-meta {
-  margin-top: 12px;
-  color: var(--texto-suave);
-  font-size: 15px;
-}
-
-.texto-destaque-cta {
-  display: inline-block;
-  margin-top: 20px;
-  font-weight: 600;
-}
-
-.grupo-contagem {
-  margin-top: 6px;
-  color: var(--texto-suave);
-  font-size: 14px;
-  font-variant-numeric: tabular-nums;
-}
 
 .trabalho-resumo {
   max-width: 62ch;
@@ -1359,38 +1307,78 @@ main:focus {
     padding-bottom: 4px;
   }
 
-  /* Lista por ano: coluna do ano estreita, para a leitura ficar na lista. */
-  .grupo--anos {
-    grid-template-columns: minmax(0, 8em) minmax(0, 1fr);
-    gap: 40px;
-  }
-
-  /* Destaque em duas colunas: título à esquerda, data e chamada à direita. */
-  .texto-destaque {
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-    align-items: end;
-    gap: 16px 48px;
-  }
-
-  .texto-destaque .rotulo,
-  .texto-destaque .titulo-frase {
-    grid-column: 1;
-  }
-
-  .texto-destaque .texto-meta,
-  .texto-destaque .texto-destaque-cta {
-    grid-column: 2;
-    margin: 0;
-  }
-
-  .texto-destaque .texto-destaque-cta {
-    font-size: 17px;
-  }
 }
 
-.grupo--anos .grupo-intro .titulo-frase {
-  font-size: clamp(32px, 3.6vw, 46px);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.01em;
+/* ---------- Textos: lista tipográfica ---------- */
+
+.lista-textos {
+  margin: clamp(32px, 5vw, 64px) var(--margem-lateral) 0;
+  max-width: 24em;
+  border-top: 1px solid var(--linha);
+}
+
+.lista-textos li {
+  border-bottom: 1px solid var(--linha);
+}
+
+.texto-data {
+  color: var(--texto-suave);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.lista-textos h2 {
+  margin-top: 10px;
+  font-size: clamp(23px, 2.6vw, 34px);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.lista-textos a {
+  display: block;
+  padding: clamp(28px, 3.5vw, 44px) 0;
+  text-decoration: none;
+}
+
+.lista-textos li:has(a:hover) .texto-data,
+.lista-textos li:has(a:focus-visible) .texto-data {
+  color: var(--terracota);
+}
+
+/* A data acompanha o link: um alvo de clique por texto. */
+.lista-textos li {
+  position: relative;
+}
+
+.lista-textos .texto-data {
+  position: absolute;
+  top: clamp(28px, 3.5vw, 44px);
+  left: 0;
+}
+
+.lista-textos h2 {
+  margin-top: 0;
+}
+
+.lista-textos a {
+  padding-top: calc(clamp(28px, 3.5vw, 44px) + 26px);
+}
+
+@media (min-width: 1024px) {
+  /* Data na lateral, título solto: a página respira na horizontal. */
+  .lista-textos {
+    max-width: none;
+  }
+
+  .lista-textos .texto-data {
+    top: clamp(28px, 3.5vw, 44px);
+    width: 8em;
+  }
+
+  .lista-textos a {
+    padding-top: clamp(28px, 3.5vw, 44px);
+    padding-left: 11em;
+    max-width: 44em;
+  }
 }
