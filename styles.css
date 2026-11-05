@@ -1725,3 +1725,7 @@ main:focus {
   font-style: italic;
 }
 
+
+/* Apresentação da atuação integrada aos trabalhos selecionados. */
+.atuacao-resumo { max-width: 700px; margin: 22px auto 0; font-size: 18px; line-height: 1.6; color: var(--creme-suave); }
+@media (max-width: 640px) { .atuacao-resumo { font-size: 16px; } }
