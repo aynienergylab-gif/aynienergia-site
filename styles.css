@@ -941,6 +941,29 @@ main:focus {
   color: var(--verde);
 }
 
+/* Ações da faixa de trabalhos selecionados. */
+.trabalhos-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 24px;
+  margin-top: 40px;
+}
+
+.trabalhos-acoes .botao-claro {
+  margin-top: 0;
+}
+
+.link-producao {
+  color: var(--creme);
+  font-weight: 600;
+}
+
+.link-producao:hover {
+  color: var(--creme-suave);
+}
+
 /* Artigo com versão publicada + manuscrito aceito: dois links lado a lado. */
 .cartao-links,
 .trabalho-links {
@@ -1055,6 +1078,19 @@ main:focus {
   overflow-wrap: anywhere;
   text-decoration-thickness: 0.06em;
   text-underline-offset: 0.15em;
+}
+
+.contato-pdf {
+  display: block;
+  width: fit-content;
+  margin: 4px auto 0;
+  color: var(--creme-suave);
+  font-weight: 600;
+  text-underline-offset: 0.16em;
+}
+
+.contato-pdf:hover {
+  color: var(--creme);
 }
 
 /* ---------- Rodapé ---------- */
@@ -1568,6 +1604,11 @@ main:focus {
 }
 
 @media (max-width: 639px) {
+  .trabalhos-acoes {
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .production-header {
     align-items: flex-start;
   }
