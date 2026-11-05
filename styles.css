@@ -343,12 +343,13 @@ main:focus {
   display: none;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
+  min-height: 42px;
+  padding: 0 15px;
   border: 1px solid var(--linha);
   border-radius: var(--raio-botao);
   background: #fff;
   color: var(--verde);
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -1528,8 +1529,8 @@ main:focus {
 .production-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 18px;
   padding: 0 0 12px;
   border-bottom: 1px solid var(--linha);
 }
@@ -1548,22 +1549,33 @@ main:focus {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: auto;
 }
 
 .production-home-link {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 36px;
+  color: var(--verde);
+  font-size: 13px;
   font-weight: 600;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
   white-space: nowrap;
+}
+
+.production-home-link:hover,
+.production-home-link:focus-visible {
+  border-bottom-color: currentColor;
 }
 
 .production-header .header-contato {
   display: inline-flex;
   position: static;
-  min-height: 44px;
-  padding: 0 18px;
+  min-height: 36px;
+  padding: 0 13px;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .production-topo {
@@ -1626,11 +1638,12 @@ main:focus {
   }
 
   .production-home-link {
-    display: none;
+    min-height: 32px;
   }
 
   .production-header .header-contato {
-    padding: 0 14px;
+    min-height: 32px;
+    padding: 0 11px;
   }
 }
 

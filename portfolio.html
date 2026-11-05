@@ -40,16 +40,15 @@
       .pf-btn.branco{background:#fff;color:var(--verde)!important;border-color:#fff}
       .pf-sub{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
       .pf-sub a{text-decoration:none}
+      .portfolio-header{justify-content:flex-start;gap:18px}
       /* Abertura */
-      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.65fr);gap:clamp(32px,5vw,68px);align-items:start;padding-block:clamp(36px,4.5vw,56px) 38px}
+      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
-      .pf-hero h1{margin:0;max-width:14ch;font-size:clamp(34px,4vw,50px);line-height:1.06;font-weight:700;color:var(--verde);letter-spacing:-.015em;font-stretch:100%;text-transform:none}
+      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.06;font-weight:700;color:var(--verde);letter-spacing:-.015em;font-stretch:100%;text-transform:none}
       .pf-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-top:4px}
-      .pf-voltar{display:inline-flex;align-items:center;min-height:44px;color:var(--verde);font-size:15px;font-weight:600;text-decoration:none;border-bottom:1px solid transparent}
-      .pf-voltar:hover,.pf-voltar:focus-visible{border-bottom-color:currentColor}
-      .pf-perfil{width:min(100%,320px);max-width:320px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;gap:10px}
-      .pf-perfil img{width:100%;height:350px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
+      .pf-perfil{width:min(100%,310px);max-width:310px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;gap:10px}
+      .pf-perfil img{width:100%;height:330px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
       .pf-perfil figcaption{display:flex;flex-direction:column;gap:2px;border-top:1px solid #14201A;padding-top:10px}
       .pf-perfil strong{font-size:17px;font-weight:600}
       .pf-perfil .grau{font-size:15px;color:var(--terracota);font-weight:600}
@@ -137,6 +136,7 @@
         .pf-etapas{grid-template-columns:1fr 1fr}
       }
       @media (max-width:700px){
+        .portfolio-header{gap:12px}
         .pf-sub{justify-content:flex-start}
         .pf-hero{grid-template-columns:1fr;gap:28px;padding-block:32px}
         .pf-hero h1{max-width:16ch}
@@ -152,7 +152,7 @@
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <!-- CABEÇALHO: o mesmo de producao.html -->
-    <header class="site-header production-header">
+    <header class="site-header production-header portfolio-header">
       <a class="brand" href="index.html">
         <img class="brand-logo" src="assets/espiral-logo.svg" alt="" width="30" height="30" />
         <span>
@@ -160,6 +160,7 @@
           <span class="brand-autora">Maria José Charfuelan Villarreal</span>
         </span>
       </a>
+      <a class="production-home-link" href="index.html">Início</a>
     </header>
 
     <main id="conteudo" tabindex="-1" class="pf">
@@ -179,7 +180,6 @@
             <div class="pf-acoes">
               <a class="pf-btn cheio" href="#casos">Ver os casos</a>
               <a class="pf-btn vazado" href="assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11" download>Baixar o portfólio em PDF</a>
-              <a class="pf-voltar" href="index.html">← Início</a>
             </div>
           </div>
           <figure class="pf-perfil">
