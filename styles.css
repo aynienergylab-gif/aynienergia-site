@@ -53,7 +53,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--creme);
+  /* Fundo contínuo e neutro para todas as páginas. Os tons quentes ficam
+     reservados a detalhes pequenos, não a blocos inteiros da interface. */
+  background: #fff;
   color: var(--verde);
   font-family: var(--fonte);
   font-size: 16px;
@@ -221,7 +223,7 @@ main:focus {
   grid-column: 1;
   grid-row: 1;
   z-index: -1;
-  background: var(--creme-claro);
+  background: #fff;
   border: 1px solid var(--linha);
   border-radius: var(--raio-botao);
 }
@@ -314,7 +316,7 @@ main:focus {
 
 .nav-lista {
   padding: 6px;
-  background: var(--creme-claro);
+  background: #fff;
   border: 1px solid var(--linha);
   border-radius: var(--raio-botao);
 }
@@ -345,7 +347,7 @@ main:focus {
   padding: 0 18px;
   border: 1px solid var(--linha);
   border-radius: var(--raio-botao);
-  background: var(--creme-claro);
+  background: #fff;
   color: var(--verde);
   font-weight: 600;
   text-decoration: none;
@@ -698,7 +700,7 @@ main:focus {
   padding: 24px;
   border: 1px solid var(--linha);
   border-radius: var(--raio-cartao);
-  background: var(--creme-claro);
+  background: #fff;
   cursor: default;
   position: relative;
 }
@@ -768,7 +770,7 @@ main:focus {
   overflow: hidden;
   border: 1px solid var(--linha);
   border-radius: var(--raio);
-  background: var(--creme-claro);
+  background: #fff;
 }
 
 .trajetoria-foto img {
@@ -890,7 +892,7 @@ main:focus {
 }
 
 .cartao-creme {
-  background: var(--creme);
+  background: #fff;
   color: var(--verde);
 }
 
@@ -1004,7 +1006,7 @@ main:focus {
   min-height: 180px;
   gap: 20px;
   border: 1px solid var(--linha);
-  background: var(--creme-claro);
+  background: #fff;
 }
 
 .cartao-texto h3,
@@ -1188,6 +1190,8 @@ main:focus {
   padding: 0 18px;
   border: 1px solid var(--linha);
   border-radius: 999px;
+  /* Controle pequeno: um creme quase branco ajuda a agrupar filtros sem
+     voltar a colorir a superfície da página. */
   background: var(--creme-claro);
   font-size: 15px;
   font-weight: 500;
@@ -1264,7 +1268,7 @@ main:focus {
   padding: clamp(16px, 3vw, 28px);
   border: 1px solid var(--linha);
   border-radius: var(--raio-cartao);
-  background: var(--creme-claro);
+  background: #fff;
 }
 
 .cartao-embed h2 {
