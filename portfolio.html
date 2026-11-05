@@ -11,7 +11,7 @@
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Ayni Energia" />
     <meta property="og:title" content="Portfólio de atuação | Ayni Energia" />
-    <meta property="og:description" content="Dados, indicadores e programas para decisões públicas de energia em estados e territórios." />
+    <meta property="og:description" content="Evidência para a transição energética nos territórios." />
     <meta property="og:url" content="https://aynienergia.com.br/portfolio.html" />
     <meta property="og:image" content="https://aynienergia.com.br/assets/og-ayni.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -41,18 +41,19 @@
       .pf-sub{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
       .pf-sub a{text-decoration:none}
       /* Abertura */
-      .pf-hero{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;padding-block:clamp(48px,6vw,72px) 48px}
-      .pf-hero-texto{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:20px}
+      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.65fr);gap:clamp(32px,5vw,68px);align-items:start;padding-block:clamp(36px,4.5vw,56px) 38px}
+      .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
-      .pf-hero h1{margin:0;font-size:clamp(36px,4.6vw,54px);line-height:1.06;font-weight:700;color:var(--verde);letter-spacing:-.015em;font-stretch:100%;text-transform:none}
-      .pf-hero .pf-lead{margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.5;color:#33413A;max-width:640px}
-      .pf-acoes{display:flex;flex-wrap:wrap;gap:12px;padding-top:6px}
-      .pf-perfil{flex:1 1 280px;max-width:360px;min-width:0;margin:0;display:flex;flex-direction:column;gap:14px}
-      .pf-perfil img{width:100%;height:400px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
-      .pf-perfil figcaption{display:flex;flex-direction:column;gap:4px;border-top:1px solid #14201A;padding-top:12px}
-      .pf-perfil strong{font-size:18px;font-weight:600}
+      .pf-hero h1{margin:0;max-width:14ch;font-size:clamp(34px,4vw,50px);line-height:1.06;font-weight:700;color:var(--verde);letter-spacing:-.015em;font-stretch:100%;text-transform:none}
+      .pf-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-top:4px}
+      .pf-voltar{display:inline-flex;align-items:center;min-height:44px;color:var(--verde);font-size:15px;font-weight:600;text-decoration:none;border-bottom:1px solid transparent}
+      .pf-voltar:hover,.pf-voltar:focus-visible{border-bottom-color:currentColor}
+      .pf-perfil{width:min(100%,320px);max-width:320px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;gap:10px}
+      .pf-perfil img{width:100%;height:350px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
+      .pf-perfil figcaption{display:flex;flex-direction:column;gap:2px;border-top:1px solid #14201A;padding-top:10px}
+      .pf-perfil strong{font-size:17px;font-weight:600}
       .pf-perfil .grau{font-size:15px;color:var(--terracota);font-weight:600}
-      .pf-perfil .bio{font-size:15px;line-height:1.5;color:#33413A}
+      .pf-perfil .atuacao{font-size:15px;line-height:1.5;color:#33413A}
       .pf-capas{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;align-items:end}
       .pf-capas img{width:100%;height:auto;display:block;box-shadow:0 0 0 1px #DCE3DD}
       .pf-nota{margin:12px 0 0;font-size:13px;color:#55645B}
@@ -128,15 +129,23 @@
       .pf-contato .perfis{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:15px}
       .pf-contato .perfis a{color:#DCE6DF!important}
       @media (max-width:900px){
+        .pf-hero{grid-template-columns:minmax(0,1fr) minmax(240px,.62fr);gap:32px}
+        .pf-perfil{max-width:300px}
         .pf-capas{grid-template-columns:repeat(3,minmax(0,1fr))}
         .pf-duas,.pf-etapa-texto,.pf-tres{grid-template-columns:1fr}
         .pf-frentes{grid-template-columns:1fr 1fr}
         .pf-etapas{grid-template-columns:1fr 1fr}
-        .pf-perfil{max-width:none}
+      }
+      @media (max-width:700px){
+        .pf-sub{justify-content:flex-start}
+        .pf-hero{grid-template-columns:1fr;gap:28px;padding-block:32px}
+        .pf-hero h1{max-width:16ch}
+        .pf-perfil{width:100%;max-width:400px;justify-self:start}
+        .pf-perfil img{height:360px}
       }
       @media (max-width:560px){
         .pf-frentes,.pf-etapas{grid-template-columns:1fr}
-        .pf-perfil img{height:340px}
+        .pf-perfil img{height:320px}
       }
     </style>
   </head>
@@ -151,10 +160,6 @@
           <span class="brand-autora">Maria José Charfuelan Villarreal</span>
         </span>
       </a>
-      <div class="production-header-actions">
-        <a class="production-home-link" href="index.html"><span aria-hidden="true">←</span>&nbsp;Início</a>
-        <a class="header-contato" href="index.html#contato">Contato →</a>
-      </div>
     </header>
 
     <main id="conteudo" tabindex="-1" class="pf">
@@ -164,7 +169,6 @@
           <a href="#metodo">Método</a>
           <a href="#frentes">Frentes</a>
           <a href="#colaboracao">Colaboração</a>
-          <a class="pf-btn vazado" style="padding:8px 14px;font-size:15px" href="assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11" download>Baixar PDF ↓</a>
         </nav>
 
         <section class="pf-hero" aria-labelledby="pf-titulo">
@@ -172,18 +176,18 @@
             <span class="pf-traco" aria-hidden="true"></span>
             <p class="pf-rotulo">Portfólio de atuação · 2026</p>
             <h1 id="pf-titulo">Evidência para a transição energética nos territórios</h1>
-            <p class="pf-lead">Dados, indicadores e programas para decisões públicas de energia em estados e territórios.</p>
             <div class="pf-acoes">
               <a class="pf-btn cheio" href="#casos">Ver os casos</a>
               <a class="pf-btn vazado" href="assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11" download>Baixar o portfólio em PDF</a>
+              <a class="pf-voltar" href="index.html">← Início</a>
             </div>
           </div>
           <figure class="pf-perfil">
             <img src="assets/portfolio/retrato-maria-jose.webp" alt="Retrato de Maria José Charfuelan Villarreal" width="800" height="960" />
             <figcaption>
               <strong>Maria José Charfuelan Villarreal</strong>
-              <span class="grau">Doutora em Energia</span>
-              <span class="bio">Atuação em políticas públicas, regulação e planejamento energético, com trajetória no setor público, em consultoria e pesquisa aplicada.</span>
+              <span class="grau">Doutora em Energia (UFABC)</span>
+              <span class="atuacao">Política e planejamento energético</span>
             </figcaption>
           </figure>
         </section>
