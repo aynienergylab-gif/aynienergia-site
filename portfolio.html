@@ -51,7 +51,7 @@
       .pf-sub a[aria-current="location"]{border-bottom-color:var(--ocre);color:var(--verde);font-weight:600}
       /* Abertura: foto de fundo suave (parte direita da imagem de capa do site), com desvanecimento nas bordas para manter o texto legível */
       .pf-topo{position:relative;isolation:isolate;overflow:hidden}
-      .pf-topo::before{content:"";position:absolute;z-index:-1;inset:0 0 0 auto;width:min(66%,960px);background:url("assets/portfolio/fundo-topo.webp") 50% 40%/cover no-repeat;opacity:.9;
+      .pf-topo::before{content:"";position:absolute;z-index:-1;inset:0 0 0 auto;width:min(66%,960px);background:linear-gradient(rgba(15,59,44,.62),rgba(15,59,44,.62)),url("assets/portfolio/fundo-topo.webp") 50% 40%/cover no-repeat;background-blend-mode:multiply;opacity:.9;
         -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);-webkit-mask-composite:source-in;
         mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);mask-composite:intersect}
       .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
