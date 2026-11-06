@@ -46,10 +46,8 @@
       .pf-sub{display:flex;flex-wrap:wrap;gap:0 22px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
       .pf-sub a{text-decoration:none;display:inline-block;padding:14px 0 11px;border-bottom:3px solid transparent}
       .pf-sub a[aria-current="location"]{border-bottom-color:var(--ocre);color:var(--verde);font-weight:600}
-      .pf-barra-pdf{flex:none;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--verde);border-radius:6px;padding:6px 12px;white-space:nowrap}
-      .pf-barra-pdf:hover{background:var(--verde);color:#fff!important}
       .portfolio-header{justify-content:flex-start;gap:18px}
-      /* Abertura: foto de fundo suave (parte direita da imagem de capa do site), com véu branco para manter o texto legível */
+      /* Abertura: foto de fundo suave (parte direita da imagem de capa do site), com desvanecimento nas bordas para manter o texto legível */
       .pf-topo{position:relative;isolation:isolate;overflow:hidden}
       .pf-topo::before{content:"";position:absolute;z-index:-1;inset:0 0 0 auto;width:min(66%,960px);background:url("assets/portfolio/fundo-topo.webp") 50% 40%/cover no-repeat;opacity:.9;
         -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);-webkit-mask-composite:source-in;
@@ -162,9 +160,8 @@
       }
       @media (max-width:700px){
         .portfolio-header{gap:12px}
-        .pf-barra .pf-wrap{justify-content:space-between;min-height:50px}
+        .pf-barra .pf-wrap{justify-content:flex-start;min-height:50px}
         .pf-sub{justify-content:flex-start;gap:0 16px;font-size:14px}
-        .pf-barra-pdf{padding:5px 10px}
         .pf-topo::before{width:100%;inset:0;opacity:.55;background-position:60% 20%;
           -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);-webkit-mask-composite:source-over;mask-composite:add}
         /* No celular, capa, número e documentos vêm antes do texto longo, em uma linha compacta */
@@ -204,9 +201,8 @@
             <a href="#casos">Casos</a>
             <a href="#metodo">Método</a>
             <a href="#frentes">Frentes</a>
-            <a href="#contato">Contato</a>
+            <a href="#colaboracao">Contato</a>
           </nav>
-          <a class="pf-barra-pdf" href="assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11" download>PDF <span aria-hidden="true">↓</span><span class="visually-hidden">Baixar o portfólio em PDF</span></a>
         </div>
       </div>
 
@@ -533,14 +529,14 @@
         /* Barra de seções: sombra ao rolar e destaque da seção em leitura */
         var links = Array.prototype.slice.call(document.querySelectorAll(".pf-sub a"));
         var secoes = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
-        var extra = document.getElementById("colaboracao");
+        var contato = document.getElementById("contato");
         var espera = false;
         function atualizar() {
           espera = false;
           if (barra) barra.classList.toggle("preso", barra.getBoundingClientRect().top <= 0);
           var ref = (barra ? barra.offsetHeight : 0) + 80, atual = -1;
           secoes.forEach(function (sec, i) { if (sec && sec.getBoundingClientRect().top <= ref) atual = i; });
-          if (extra && extra.getBoundingClientRect().top <= ref && atual < links.length - 1) atual = -1;
+          if (contato && contato.getBoundingClientRect().top <= ref) atual = links.length - 1;
           if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4) atual = links.length - 1;
           links.forEach(function (a, i) {
             if (i === atual) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
