@@ -38,10 +38,22 @@
       .pf-btn.cheio:hover{background:#0a2a1f}
       .pf-btn.vazado{background:transparent;color:var(--verde)}
       .pf-btn.branco{background:#fff;color:var(--verde)!important;border-color:#fff}
-      .pf-sub{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
-      .pf-sub a{text-decoration:none}
+      html{scroll-padding-top:64px}
+      /* Barra de seções: fica fixa no topo ao rolar, destaca onde o leitor está e mantém o PDF a um clique */
+      .pf-barra{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+      .pf-barra.preso{border-bottom-color:#DCE3DD;box-shadow:0 4px 14px rgba(15,59,44,.07)}
+      .pf-barra .pf-wrap{display:flex;align-items:center;justify-content:flex-end;gap:10px 22px;min-height:54px}
+      .pf-sub{display:flex;flex-wrap:wrap;gap:0 22px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
+      .pf-sub a{text-decoration:none;display:inline-block;padding:14px 0 11px;border-bottom:3px solid transparent}
+      .pf-sub a[aria-current="location"]{border-bottom-color:var(--ocre);color:var(--verde);font-weight:600}
+      .pf-barra-pdf{flex:none;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--verde);border-radius:6px;padding:6px 12px;white-space:nowrap}
+      .pf-barra-pdf:hover{background:var(--verde);color:#fff!important}
       .portfolio-header{justify-content:flex-start;gap:18px}
-      /* Abertura */
+      /* Abertura: foto de fundo suave (parte direita da imagem de capa do site), com véu branco para manter o texto legível */
+      .pf-topo{position:relative;isolation:isolate;overflow:hidden}
+      .pf-topo::before{content:"";position:absolute;z-index:-1;inset:0 0 0 auto;width:min(66%,960px);background:url("assets/portfolio/fundo-topo.webp") 50% 40%/cover no-repeat;opacity:.9;
+        -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);-webkit-mask-composite:source-in;
+        mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);mask-composite:intersect}
       .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
@@ -49,12 +61,16 @@
       .pf-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-top:4px}
       .pf-perfil{width:min(100%,310px);max-width:310px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;gap:10px}
       .pf-perfil img{width:100%;height:330px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
-      .pf-perfil figcaption{display:flex;flex-direction:column;gap:2px;border-top:1px solid #14201A;padding-top:10px}
+      .pf-perfil figcaption{display:flex;flex-direction:column;gap:2px;border-top:1px solid #14201A;padding:10px 14px 12px;background:rgba(255,255,255,.94)}
       .pf-perfil strong{font-size:17px;font-weight:600}
       .pf-perfil .grau{font-size:15px;color:var(--terracota);font-weight:600}
       .pf-perfil .atuacao{font-size:15px;line-height:1.5;color:#33413A}
       .pf-capas{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;align-items:end}
-      .pf-capas img{width:100%;height:auto;display:block;box-shadow:0 0 0 1px #DCE3DD}
+      .pf-capas a{display:block;transition:transform .2s,box-shadow .2s}
+      .pf-capas a:hover{transform:translateY(-4px)}
+      .pf-capas a:hover img{box-shadow:0 0 0 1px var(--ocre),0 10px 22px rgba(15,59,44,.18)}
+      .pf-capas a:focus-visible{outline:3px solid var(--terracota);outline-offset:3px}
+      .pf-capas img{width:100%;height:auto;display:block;box-shadow:0 0 0 1px #DCE3DD;background:#fff}
       .pf-nota{margin:12px 0 0;font-size:13px;color:#55645B}
       /* Tese */
       .pf-tese{background:#fff;border-block:1px solid #DCE3DD;margin-top:56px}
@@ -92,8 +108,14 @@
       .pf-docs{display:flex;flex-direction:column;gap:6px}
       .pf-docs span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#55645B}
       .pf-docs a{font-size:15px;font-weight:600}
-      /* Método */
-      .pf-metodo{background:var(--verde);color:#fff}
+      .pf-passo{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;border-top:1px solid #DCE3DD;padding-top:16px;font-size:15px;font-weight:600}
+      .pf-passo a{text-decoration:none}
+      .pf-passo .meio{color:#55645B;font-weight:500}
+      .pf-passo a:hover{text-decoration:underline}
+      /* Método: foto sob camada verde (mesmo tratamento do Contato na página inicial) */
+      .pf-metodo{position:relative;isolation:isolate;background:var(--verde);color:#fff}
+      .pf-metodo::before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(15,59,44,.96) 0,rgba(15,59,44,.9) 55%,rgba(15,59,44,.78) 100%)}
+      .pf-metodo-foto{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
       .pf-metodo .pf-wrap{padding-block:72px;display:flex;flex-direction:column;gap:24px}
       .pf-metodo h2{margin:0;font-size:clamp(28px,3vw,36px);line-height:1.15;font-weight:700;color:#fff;font-stretch:100%;text-transform:none}
       .pf-metodo .intro{margin:0;font-size:17px;color:#DCE6DF;max-width:780px}
@@ -122,9 +144,12 @@
       .pf-tres p{margin:0;font-size:16px;color:#33413A}
       .pf-colab .obs{margin:28px 0 0;font-size:16px;color:#55645B;max-width:760px}
       /* Contato */
-      .pf-contato{background:var(--verde);color:#fff}
+      .pf-contato{position:relative;isolation:isolate;background:var(--verde);color:#fff}
+      .pf-contato::before{content:"";position:absolute;z-index:-1;inset:0;background:var(--verde);opacity:.86}
+      .pf-contato-foto{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
       .pf-contato .pf-wrap{padding-block:56px;display:flex;flex-wrap:wrap;gap:28px 56px;justify-content:space-between;align-items:flex-end}
-      .pf-contato .mail{display:block;margin-top:10px;font-size:clamp(22px,2.6vw,30px);font-weight:700;color:#fff!important;text-decoration:none}
+      .pf-contato .pf-wrap>div{min-width:0}
+      .pf-contato .mail{display:block;overflow-wrap:anywhere;margin-top:10px;font-size:clamp(22px,2.6vw,30px);font-weight:700;color:#fff!important;text-decoration:none}
       .pf-contato .perfis{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:15px}
       .pf-contato .perfis a{color:#DCE6DF!important}
       @media (max-width:900px){
@@ -137,7 +162,16 @@
       }
       @media (max-width:700px){
         .portfolio-header{gap:12px}
-        .pf-sub{justify-content:flex-start}
+        .pf-barra .pf-wrap{justify-content:space-between;min-height:50px}
+        .pf-sub{justify-content:flex-start;gap:0 16px;font-size:14px}
+        .pf-barra-pdf{padding:5px 10px}
+        .pf-topo::before{width:100%;inset:0;opacity:.55;background-position:60% 20%;
+          -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);-webkit-mask-composite:source-over;mask-composite:add}
+        /* No celular, capa, número e documentos vêm antes do texto longo, em uma linha compacta */
+        .pf-painel{gap:22px}
+        .pf-lado{order:-1;max-width:none;width:100%;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px 18px;align-items:start}
+        .pf-lado img{grid-row:1/3;width:96px}
+        .pf-lado .pf-numero b{font-size:32px}
         .pf-hero{grid-template-columns:1fr;gap:28px;padding-block:32px}
         .pf-hero h1{max-width:16ch}
         .pf-perfil{width:100%;max-width:400px;justify-self:start}
@@ -164,14 +198,20 @@
     </header>
 
     <main id="conteudo" tabindex="-1" class="pf">
-      <div class="pf-wrap">
-        <nav class="pf-sub" aria-label="Seções do portfólio" style="padding-top:18px">
-          <a href="#casos">Casos</a>
-          <a href="#metodo">Método</a>
-          <a href="#frentes">Frentes</a>
-          <a href="#contato">Contato</a>
-        </nav>
+      <div class="pf-barra" id="pf-barra">
+        <div class="pf-wrap">
+          <nav class="pf-sub" aria-label="Seções do portfólio">
+            <a href="#casos">Casos</a>
+            <a href="#metodo">Método</a>
+            <a href="#frentes">Frentes</a>
+            <a href="#contato">Contato</a>
+          </nav>
+          <a class="pf-barra-pdf" href="assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11" download>PDF <span aria-hidden="true">↓</span><span class="visually-hidden">Baixar o portfólio em PDF</span></a>
+        </div>
+      </div>
 
+      <div class="pf-topo">
+      <div class="pf-wrap">
         <section class="pf-hero" aria-labelledby="pf-titulo">
           <div class="pf-hero-texto">
             <span class="pf-traco" aria-hidden="true"></span>
@@ -194,15 +234,16 @@
 
         <section aria-label="Publicações citadas">
           <div class="pf-capas">
-            <img src="assets/portfolio/capa-panorama.webp" alt="Capa do Panorama do Setor Elétrico de Minas Gerais 2025" loading="lazy" />
-            <img src="assets/portfolio/capa-eficiencia-industria.webp" alt="Capa do Estudo de Oportunidade de Eficiência Energética na Indústria" loading="lazy" />
-            <img src="assets/portfolio/capa-programa-baixa-emissao.webp" alt="Capa do Programa de Tecnologias de Baixa Emissão" loading="lazy" />
-            <img src="assets/portfolio/capa-guia-edificios.webp" alt="Capa do Guia para Municípios de Eficiência Energética nos Edifícios Públicos" loading="lazy" />
-            <img src="assets/portfolio/capa-guia-solar.webp" alt="Capa do Guia Geral para Municípios sobre Energia Solar Fotovoltaica" loading="lazy" />
-            <img src="assets/portfolio/capa-oxfam.webp" alt="Capa de Encruzilhada Climática, Oxfam Brasil" loading="lazy" />
+            <a href="#caso-1" aria-label="Abrir o Caso 1: Panorama do Setor Elétrico de Minas Gerais"><img src="assets/portfolio/capa-panorama.webp" alt="Capa do Panorama do Setor Elétrico de Minas Gerais 2025" loading="lazy" /></a>
+            <a href="#caso-2" aria-label="Abrir o Caso 2: Eficiência Energética na Indústria"><img src="assets/portfolio/capa-eficiencia-industria.webp" alt="Capa do Estudo de Oportunidade de Eficiência Energética na Indústria" loading="lazy" /></a>
+            <a href="#caso-3" aria-label="Abrir o Caso 3: Programa de Tecnologias de Baixa Emissão"><img src="assets/portfolio/capa-programa-baixa-emissao.webp" alt="Capa do Programa de Tecnologias de Baixa Emissão" loading="lazy" /></a>
+            <a href="#caso-6" aria-label="Abrir o Caso 6: Guias para gestores municipais"><img src="assets/portfolio/capa-guia-edificios.webp" alt="Capa do Guia para Municípios de Eficiência Energética nos Edifícios Públicos" loading="lazy" /></a>
+            <a href="#caso-6" aria-label="Abrir o Caso 6: Guias para gestores municipais"><img src="assets/portfolio/capa-guia-solar.webp" alt="Capa do Guia Geral para Municípios sobre Energia Solar Fotovoltaica" loading="lazy" /></a>
+            <a href="#caso-4" aria-label="Abrir o Caso 4: Transição energética na Amazônia Legal"><img src="assets/portfolio/capa-oxfam.webp" alt="Capa de Encruzilhada Climática, Oxfam Brasil" loading="lazy" /></a>
           </div>
-          <p class="pf-nota">Publicações citadas neste portfólio, todas de acesso público.</p>
+          <p class="pf-nota">Publicações citadas neste portfólio, todas de acesso público. Clique em uma capa para abrir o caso.</p>
         </section>
+      </div>
       </div>
 
       <section class="pf-tese">
@@ -329,6 +370,7 @@
       </section>
 
       <section class="pf-metodo" id="metodo" aria-labelledby="t-metodo">
+        <img class="pf-metodo-foto" src="assets/espiral-fibra-1600.webp" alt="" width="1600" height="1064" loading="lazy" />
         <div class="pf-wrap">
           <p class="pf-rotulo claro">Método</p>
           <h2 id="t-metodo">Dos dados oficiais à decisão pública</h2>
@@ -374,6 +416,7 @@
       </section>
 
       <section class="pf-contato" id="contato" aria-label="Contato">
+        <img class="pf-contato-foto" src="assets/producao-fundo.jpg" alt="" width="1600" height="1066" loading="lazy" />
         <div class="pf-wrap">
           <div>
             <p class="pf-rotulo claro">Contato</p>
@@ -406,11 +449,14 @@
     </footer>
 
     <script>
-      /* Abas acessíveis (casos e método): clique, setas do teclado, Home/End. */
+      /* Abas acessíveis (casos e método): clique, setas do teclado, Home/End.
+         Nos casos: link direto (#caso-3), passo a passo entre casos e rolagem até o caso aberto. */
       (function () {
-        function abas(lista) {
+        var barra = document.getElementById("pf-barra");
+
+        function abas(lista, aoMudar) {
           var tabs = Array.prototype.slice.call(lista.querySelectorAll('[role="tab"]'));
-          function ativar(t, foco) {
+          function ativar(t, foco, origem) {
             tabs.forEach(function (x) {
               var on = x === t;
               x.setAttribute("aria-selected", on ? "true" : "false");
@@ -419,20 +465,90 @@
               if (p) p.hidden = !on;
             });
             if (foco) t.focus();
+            if (aoMudar) aoMudar(tabs.indexOf(t), origem);
           }
           tabs.forEach(function (t, i) {
-            t.addEventListener("click", function () { ativar(t, false); });
+            t.addEventListener("click", function () { ativar(t, false, "clique"); });
             t.addEventListener("keydown", function (e) {
               var k = e.key, n = null;
               if (k === "ArrowDown" || k === "ArrowRight") n = tabs[(i + 1) % tabs.length];
               if (k === "ArrowUp" || k === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
               if (k === "Home") n = tabs[0];
               if (k === "End") n = tabs[tabs.length - 1];
-              if (n) { e.preventDefault(); ativar(n, true); }
+              if (n) { e.preventDefault(); ativar(n, true, "teclado"); }
             });
           });
+          return { tabs: tabs, ativar: ativar };
         }
-        document.querySelectorAll('[role="tablist"]').forEach(abas);
+
+        /* Leva o leitor ao caso aberto: no celular (lista e caso empilhados) até o início do caso;
+           no computador só se o caso ficou fora da tela (acima ou bem abaixo). */
+        function revelar(painel, lista) {
+          var altura = barra ? barra.offsetHeight : 0;
+          var empilhado = painel.getBoundingClientRect().top >= lista.getBoundingClientRect().bottom - 2;
+          var alvo = empilhado ? painel : lista;
+          var topo = alvo.getBoundingClientRect().top;
+          if (empilhado || topo < altura || topo > window.innerHeight - 220) window.scrollTo(0, window.pageYOffset + topo - altura - 12);
+        }
+
+        var casos = document.querySelector(".pf-abas");
+        if (casos) {
+          var painelDe = function (i) { return document.getElementById("caso-" + (i + 1)); };
+          var ctl = abas(casos, function (i, origem) {
+            var n = i + 1;
+            if (history.replaceState && location.hash !== "#caso-" + n) history.replaceState(null, "", "#caso-" + n);
+            if (origem === "clique" || origem === "hash") revelar(painelDe(i), casos);
+          });
+          var total = ctl.tabs.length;
+
+          /* Passo a passo no fim de cada caso */
+          ctl.tabs.forEach(function (_, i) {
+            var texto = painelDe(i).querySelector(".pf-painel-texto");
+            if (!texto) return;
+            var nav = document.createElement("nav");
+            nav.className = "pf-passo";
+            nav.setAttribute("aria-label", "Navegar entre os casos");
+            var ant = i > 0 ? '<a href="#caso-' + i + '">← Caso ' + i + '</a>' : '<span></span>';
+            var prox = i < total - 1 ? '<a href="#caso-' + (i + 2) + '">Caso ' + (i + 2) + ' →</a>' : '<span></span>';
+            nav.innerHTML = ant + '<a class="meio" href="#casos">Todos os casos ↑</a>' + prox;
+            texto.appendChild(nav);
+          });
+
+          function doHash() {
+            var m = /^#caso-(\d+)$/.exec(location.hash);
+            if (!m) return;
+            var i = Number(m[1]) - 1;
+            if (i >= 0 && i < total) ctl.ativar(ctl.tabs[i], false, "hash");
+          }
+          addEventListener("hashchange", doHash);
+          if (/^#caso-\d+$/.test(location.hash)) {
+            doHash();
+            addEventListener("load", function () { doHash(); });
+          }
+        }
+
+        var metodo = document.querySelector(".pf-etapas");
+        if (metodo) abas(metodo);
+
+        /* Barra de seções: sombra ao rolar e destaque da seção em leitura */
+        var links = Array.prototype.slice.call(document.querySelectorAll(".pf-sub a"));
+        var secoes = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+        var extra = document.getElementById("colaboracao");
+        var espera = false;
+        function atualizar() {
+          espera = false;
+          if (barra) barra.classList.toggle("preso", barra.getBoundingClientRect().top <= 0);
+          var ref = (barra ? barra.offsetHeight : 0) + 80, atual = -1;
+          secoes.forEach(function (sec, i) { if (sec && sec.getBoundingClientRect().top <= ref) atual = i; });
+          if (extra && extra.getBoundingClientRect().top <= ref && atual < links.length - 1) atual = -1;
+          if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4) atual = links.length - 1;
+          links.forEach(function (a, i) {
+            if (i === atual) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
+          });
+        }
+        addEventListener("scroll", function () { if (!espera) { espera = true; requestAnimationFrame(atualizar); } }, { passive: true });
+        addEventListener("resize", atualizar);
+        atualizar();
       })();
     </script>
     <script defer src="script.js"></script>
