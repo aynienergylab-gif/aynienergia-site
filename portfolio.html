@@ -24,10 +24,10 @@
     </script>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=header-compact-20261105-2" />
+    <link rel="stylesheet" href="styles.css?v=home-aprovada-20261105" />
     <style>
-      /* Estilos próprios da página de portfólio (prefixo pf-). A tipografia segue o sistema do site (styles.css): Archivo, cores da marca,
-         rótulos de 13px com 0,2em, títulos em frase de 42px/700 e títulos de destaque 800 largos. */
+      /* Estilos próprios do Portfólio. A tipografia e o cabeçalho compartilham
+         o sistema da página inicial: Archivo, títulos densos e verde da marca. */
       .pf{background:#fff;color:var(--verde)}
       .pf a{color:var(--verde)}
       .pf a:hover{color:var(--terracota)}
@@ -57,7 +57,7 @@
       .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
-      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.06;font-weight:700;color:var(--verde);letter-spacing:-.015em;font-stretch:100%;text-transform:none}
+      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.02;font-weight:800;color:var(--verde);letter-spacing:-.015em;font-stretch:112%;text-transform:none}
       /* Texto principal da abertura (rótulo, título e botões): mantido como no desenho original da página */
       .pf-hero .pf-rotulo{letter-spacing:.14em;line-height:1.6}
       .pf-hero .pf-btn{font-size:16px}
@@ -186,15 +186,9 @@
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <!-- CABEÇALHO: o mesmo da página inicial e do Blog, com "Início" na faixa e "Portfólio" como página atual -->
+    <!-- Cabeçalho compartilhado com a página inicial; Portfólio apenas acrescenta o atalho de Início. -->
     <header class="site-header">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="assets/espiral-logo.svg" alt="" width="30" height="30" />
-        <span>
-          <span class="brand-nome">Ayni Energia</span>
-          <span class="brand-autora">Maria José Charfuelan Villarreal</span>
-        </span>
-      </a>
+      <a class="brand" href="index.html#inicio"><img class="brand-logo" src="assets/espiral-logo.svg" alt="" width="30" height="30" /><span><span class="brand-pessoa">Maria José Charfuelan Villarreal</span><span class="brand-autora">Pesquisa aplicada em energia e políticas públicas</span></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
         <span></span>
         <span></span>
@@ -207,8 +201,10 @@
           <li><a href="producao.html">Produção</a></li>
           <li><a href="index.html#trajetoria">Trajetória</a></li>
           <li><a href="analises.html">Blog</a></li>
+          <li class="nav-contato"><a href="#contato">Contato →</a></li>
         </ul>
       </nav>
+      <a class="header-contato" href="#contato">Contato →</a>
     </header>
 
     <main id="conteudo" tabindex="-1" class="pf">
