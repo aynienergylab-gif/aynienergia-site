@@ -49,11 +49,8 @@
       .pf-sub{display:flex;flex-wrap:wrap;gap:0 22px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
       .pf-sub a{text-decoration:none;display:inline-block;padding:14px 0 11px;border-bottom:3px solid transparent}
       .pf-sub a[aria-current="location"]{border-bottom-color:var(--ocre);color:var(--verde);font-weight:600}
-      /* Abertura: foto de fundo suave (parte direita da imagem de capa do site), com desvanecimento nas bordas para manter o texto legível */
-      .pf-topo{position:relative;isolation:isolate;overflow:hidden}
-      .pf-topo::before{content:"";position:absolute;z-index:-1;inset:0 0 0 auto;width:min(66%,960px);background:linear-gradient(rgba(15,59,44,.62),rgba(15,59,44,.62)),url("assets/portfolio/fundo-topo.webp") 50% 40%/cover no-repeat;background-blend-mode:multiply;opacity:.9;
-        -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);-webkit-mask-composite:source-in;
-        mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);mask-composite:intersect}
+      /* Abertura limpa, como na página principal: fundo branco e fotografia apenas no retrato. */
+      .pf-topo{background:#fff}
       .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
@@ -166,8 +163,6 @@
       @media (max-width:700px){
         .pf-barra .pf-wrap{justify-content:flex-start;min-height:50px}
         .pf-sub{justify-content:flex-start;gap:0 16px;font-size:14px}
-        .pf-topo::before{width:100%;inset:0;opacity:.55;background-position:60% 20%;
-          -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);-webkit-mask-composite:source-over;mask-composite:add}
         /* No celular, capa, número e documentos vêm antes do texto longo, em uma linha compacta */
         .pf-painel{gap:22px}
         .pf-lado{order:-1;max-width:none;width:100%;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px 18px;align-items:start}
