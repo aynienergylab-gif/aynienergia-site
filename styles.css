@@ -1029,19 +1029,26 @@ main:focus {
 
 .contato--objetivo {
   margin: var(--respiro) 0 0;
-  background-color: rgb(15 59 44 / 0.62);
-  background-image: url("assets/foto-trabalho-1000.webp");
+  background-color: var(--verde);
+  background-image: url("assets/contato-fundo-verde.webp");
   background-position: 58% 72%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
   color: var(--creme);
 }
 
 .contato-colaboracao {
   max-width: 1180px;
+  width: 100%;
   margin: 0 auto;
   padding: clamp(48px, 6vw, 80px) var(--margem-lateral);
+}
+
+.contato--objetivo:target {
+  display: grid;
+  align-content: center;
+  min-height: 100svh;
+  scroll-margin-top: 0;
 }
 
 .contato-colaboracao .rotulo {
@@ -1643,9 +1650,11 @@ main:focus {
 }
 
 .production-topo {
-  margin-top: clamp(20px, 3vw, 32px);
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--linha);
+  margin-top: 12px;
+  padding: clamp(26px, 3.6vw, 44px) clamp(20px, 3vw, 40px);
+  border-radius: var(--raio);
+  background: var(--verde) url("assets/producao-faixa-topo.webp") center / cover no-repeat;
+  color: var(--creme);
 }
 
 .production-topline {
@@ -1657,6 +1666,7 @@ main:focus {
 
 .production-topo .titulo-pagina {
   margin: 0;
+  color: inherit;
   font-size: clamp(34px, 4.5vw, 56px);
   line-height: 1;
 }
@@ -1672,6 +1682,7 @@ main:focus {
   align-items: center;
   min-height: 36px;
   border-bottom: 1px solid transparent;
+  color: inherit;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -1680,7 +1691,33 @@ main:focus {
 .production-text-nav a:hover,
 .production-text-nav a:focus-visible {
   border-bottom-color: currentColor;
-  color: var(--terracota);
+  color: var(--creme-suave);
+}
+
+.production-text-nav a:focus-visible {
+  outline-color: var(--creme);
+}
+
+.grupo-imagem {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  margin-top: 26px;
+  border-radius: var(--raio-cartao);
+  object-fit: cover;
+}
+
+.grupo-imagem--larga {
+  aspect-ratio: 16 / 7;
+}
+
+@media (max-width: 700px) {
+  .grupo-imagem {
+    max-width: none;
+    aspect-ratio: 16 / 7;
+  }
 }
 
 @media (max-width: 639px) {
@@ -1745,6 +1782,52 @@ main:focus {
 
   .contato-pdf {
     padding: 12px 16px;
+  }
+}
+
+@media (max-height: 800px) {
+  .contato--objetivo:target .contato-colaboracao,
+  .contato--objetivo:target .contato-faixa-interna {
+    padding-block: clamp(16px, 4svh, 32px);
+  }
+
+  .contato--objetivo:target h2 {
+    margin-bottom: 20px;
+  }
+
+  .contato--objetivo:target .contato-frentes,
+  .contato--objetivo:target .contato-faixa-interna {
+    row-gap: 14px;
+  }
+}
+
+@media (max-width: 480px) and (max-height: 700px) {
+  .contato--objetivo:target .contato-colaboracao,
+  .contato--objetivo:target .contato-faixa-interna {
+    padding-block: 14px;
+  }
+
+  .contato--objetivo:target h2 {
+    margin: 8px 0 14px;
+    font-size: 26px;
+  }
+
+  .contato--objetivo:target .contato-frentes,
+  .contato--objetivo:target .contato-faixa-interna {
+    row-gap: 10px;
+  }
+
+  .contato--objetivo:target .contato-frentes div {
+    padding-top: 8px;
+  }
+
+  .contato--objetivo:target .contato-frentes h3 {
+    margin-bottom: 4px;
+  }
+
+  .contato--objetivo:target .contato-email {
+    margin-top: 4px;
+    font-size: clamp(18px, 5.4vw, 24px);
   }
 }
 
