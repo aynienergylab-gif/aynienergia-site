@@ -1908,9 +1908,10 @@ main:focus {
 /* ---------- Trabalhos selecionados (página inicial): cartões de vidro e mais respiro ---------- */
 /* Os cartões brancos viram vidro verde com borda fina em creme; "Toda a produção" vira link sublinhado,
    deixando "Ver portfólio" como a ação principal. Escopo: somente a seção #atuacao. */
+#atuacao.faixa { padding-block: clamp(36px, 7vh, 64px); }
 #atuacao .titulo-faixa { font-size: clamp(34px, 4vw, 54px); }
 #atuacao .atuacao-resumo { max-width: 52ch; margin-inline: auto; }
-#atuacao .cartoes-destaque { margin-top: 44px; gap: 16px; }
+#atuacao .cartoes-destaque { margin-top: 28px; gap: 16px; }
 #atuacao .cartao-creme {
   min-height: 0;
   padding: 26px 26px 22px;
@@ -1926,7 +1927,7 @@ main:focus {
 #atuacao .cartao-producao .cartao-abrir { margin-top: auto; padding-top: 18px; color: var(--creme-suave); }
 #atuacao .cartao:hover { border-color: rgb(244 241 230 / 0.55); background: rgb(244 241 230 / 0.13); }
 #atuacao .cartao:hover .cartao-link { color: var(--creme); }
-#atuacao .trabalhos-acoes { margin-top: 36px; }
+#atuacao .trabalhos-acoes { margin-top: 24px; }
 #atuacao .trabalhos-acoes .botao-claro + .botao-claro {
   min-height: 0;
   padding: 0;
