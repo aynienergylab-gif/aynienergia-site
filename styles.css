@@ -1028,25 +1028,14 @@ main:focus {
 /* Contato */
 
 .contato--objetivo {
-  position: relative;
-  isolation: isolate;
   margin: var(--respiro) 0 0;
-  background-color: var(--verde);
+  background-color: rgb(15 59 44 / 0.62);
   background-image: url("assets/foto-trabalho-1000.webp");
   background-position: 58% 72%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-blend-mode: multiply;
   color: var(--creme);
-}
-
-/* Mesmo verde das faixas (.faixa): a marca a 88% sobre a foto, em mistura normal. */
-.contato--objetivo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--verde);
-  opacity: 0.88;
 }
 
 .contato-colaboracao {

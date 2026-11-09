@@ -24,7 +24,7 @@
     </script>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=fundos-verdes-20261109" />
+    <link rel="stylesheet" href="styles.css?v=fundos-leves-20261109" />
     <style>
       /* Estilos próprios do Portfólio. A tipografia e o cabeçalho compartilham
          o sistema da página inicial: Archivo, títulos densos e verde da marca. */
@@ -52,9 +52,7 @@
       /* A abertura retoma a fotografia da página inicial em uma camada verde sólida,
          sem usar degradê e preservando a leitura dos textos. */
       .pf-topo{background:#fff}
-      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding:clamp(34px,4vw,50px);position:relative;isolation:isolate;overflow:hidden;background-color:var(--verde);background-image:url("assets/hero-lampada-eolica-final.jpg");background-position:center;background-size:cover;background-repeat:no-repeat;border-radius:var(--raio)}
-      /* Mesmo verde das faixas da página inicial: a marca a 88% sobre a foto, em mistura normal. */
-      .pf-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--verde);opacity:.88}
+      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding:clamp(34px,4vw,50px);background-color:rgb(15 59 44 / .62);background-image:url("assets/hero-lampada-eolica-final.jpg");background-position:center;background-size:cover;background-repeat:no-repeat;background-blend-mode:multiply;border-radius:var(--raio)}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
       .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.02;font-weight:800;color:var(--creme);letter-spacing:-.015em;font-stretch:112%;text-transform:none}
