@@ -1904,3 +1904,34 @@ main:focus {
 /* Apresentação da atuação integrada aos trabalhos selecionados. */
 .atuacao-resumo { max-width: 700px; margin: 22px auto 0; font-size: 18px; line-height: 1.6; color: var(--creme-suave); }
 @media (max-width: 640px) { .atuacao-resumo { font-size: 16px; } }
+
+/* ---------- Trabalhos selecionados (página inicial): cartões de vidro e mais respiro ---------- */
+/* Os cartões brancos viram vidro verde com borda fina em creme; "Toda a produção" vira link sublinhado,
+   deixando "Ver portfólio" como a ação principal. Escopo: somente a seção #atuacao. */
+#atuacao .titulo-faixa { font-size: clamp(34px, 4vw, 54px); }
+#atuacao .atuacao-resumo { max-width: 52ch; margin-inline: auto; }
+#atuacao .cartoes-destaque { margin-top: 44px; gap: 16px; }
+#atuacao .cartao-creme {
+  min-height: 0;
+  padding: 26px 26px 22px;
+  border: 1px solid rgb(231 220 194 / 0.3);
+  background: rgb(244 241 230 / 0.07);
+  color: var(--creme);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+#atuacao .cartao-meta { color: var(--creme-suave); }
+#atuacao .cartao-creme h3 { font-size: 22px; color: var(--creme); }
+#atuacao .cartao-creme h3 a { color: var(--creme); }
+#atuacao .cartao-producao .cartao-abrir { margin-top: auto; padding-top: 18px; color: var(--creme-suave); }
+#atuacao .cartao:hover { border-color: rgb(244 241 230 / 0.55); background: rgb(244 241 230 / 0.13); }
+#atuacao .cartao:hover .cartao-link { color: var(--creme); }
+#atuacao .trabalhos-acoes { margin-top: 36px; }
+#atuacao .trabalhos-acoes .botao-claro + .botao-claro {
+  min-height: 0;
+  padding: 0;
+  border-bottom: 1px solid rgb(231 220 194 / 0.7);
+  border-radius: 0;
+  background: transparent;
+  color: var(--creme);
+}
