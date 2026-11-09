@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aynienergia.com.br/sitemap.xml

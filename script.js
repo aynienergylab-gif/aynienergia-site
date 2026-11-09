@@ -1,9 +1,11 @@
 // Menu em disclosure abaixo de 1024px; sem JavaScript a navegação fica sempre visível.
 const menuToggle = document.querySelector('.menu-toggle');
 if (menuToggle) {
+  const rotuloAbrir = menuToggle.dataset.rotuloAbrir || 'Abrir menu';
+  const rotuloFechar = menuToggle.dataset.rotuloFechar || 'Fechar menu';
   const setMenu = (open) => {
     menuToggle.setAttribute('aria-expanded', String(open));
-    menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    menuToggle.setAttribute('aria-label', open ? rotuloFechar : rotuloAbrir);
   };
   const isOpen = () => menuToggle.getAttribute('aria-expanded') === 'true';
   menuToggle.addEventListener('click', () => setMenu(!isOpen()));

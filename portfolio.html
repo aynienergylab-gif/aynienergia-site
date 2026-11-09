@@ -6,6 +6,14 @@
     <title>Portfólio de atuação | Ayni Energia</title>
     <meta name="description" content="Evidência para a transição energética nos territórios: dados, indicadores e programas para decisões públicas de energia em estados e territórios." />
     <link rel="canonical" href="https://aynienergia.com.br/portfolio.html" />
+    <!-- i18n:hreflang -->
+    <link rel="alternate" hreflang="pt-BR" href="https://aynienergia.com.br/portfolio.html" />
+    <link rel="alternate" hreflang="es" href="https://aynienergia.com.br/es/portafolio.html" />
+    <link rel="alternate" hreflang="en" href="https://aynienergia.com.br/en/portfolio.html" />
+    <link rel="alternate" hreflang="x-default" href="https://aynienergia.com.br/portfolio.html" />
+    <meta property="og:locale:alternate" content="es_CO" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <!-- /i18n:hreflang -->
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -24,7 +32,7 @@
     </script>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=home-aprovada-20261105" />
+    <link rel="stylesheet" href="styles.css?v=i18n-20261109" />
     <style>
       /* Estilos próprios do Portfólio. A tipografia e o cabeçalho compartilham
          o sistema da página inicial: Archivo, títulos densos e verde da marca. */
@@ -189,7 +197,7 @@
     <!-- Cabeçalho compartilhado com a página inicial; Portfólio apenas acrescenta o atalho de Início. -->
     <header class="site-header">
       <a class="brand" href="index.html#inicio"><img class="brand-logo" src="assets/espiral-logo.svg" alt="" width="30" height="30" /><span><span class="brand-pessoa">Maria José Charfuelan Villarreal</span><span class="brand-autora">Pesquisa aplicada em energia e políticas públicas</span></span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" data-rotulo-abrir="Abrir menu" data-rotulo-fechar="Fechar menu">
         <span></span>
         <span></span>
       </button>
@@ -202,6 +210,7 @@
           <li><a href="index.html#trajetoria">Trajetória</a></li>
           <li><a href="analises.html">Blog</a></li>
           <li class="nav-contato"><a href="#contato">Contato →</a></li>
+          <li class="nav-idioma"><span class="visually-hidden">Idioma</span><a href="portfolio.html" hreflang="pt-BR" lang="pt-BR" aria-current="true" aria-label="Português" title="Português">PT</a><a href="es/portafolio.html" hreflang="es" lang="es" aria-label="Español" title="Español">ES</a><a href="en/portfolio.html" hreflang="en" lang="en" aria-label="English" title="English">EN</a></li>
         </ul>
       </nav>
     </header>
@@ -268,7 +277,7 @@
         <div class="pf-wrap">
           <div class="pf-cabeca"><h2 id="t-casos">Casos · seis trabalhos públicos</h2><span>Escolha um caso para ver desafio, percurso e resultado</span></div>
           <div class="pf-casos">
-            <div class="pf-abas" role="tablist" aria-label="Casos">
+            <div class="pf-abas" role="tablist" aria-label="Casos" data-rotulo-caso="Caso" data-rotulo-todos="Todos os casos" data-rotulo-navegar="Navegar entre os casos">
               <button class="pf-aba" type="button" role="tab" id="aba-1" aria-controls="caso-1" aria-selected="true"><span class="n">Caso 1</span><span class="t">Panorama do Setor Elétrico de Minas Gerais</span></button>
               <button class="pf-aba" type="button" role="tab" id="aba-2" aria-controls="caso-2" aria-selected="false" tabindex="-1"><span class="n">Caso 2</span><span class="t">Eficiência Energética na Indústria</span></button>
               <button class="pf-aba" type="button" role="tab" id="aba-3" aria-controls="caso-3" aria-selected="false" tabindex="-1"><span class="n">Caso 3</span><span class="t">Programa de Tecnologias de Baixa Emissão</span></button>
@@ -515,10 +524,12 @@
             if (!texto) return;
             var nav = document.createElement("nav");
             nav.className = "pf-passo";
-            nav.setAttribute("aria-label", "Navegar entre os casos");
-            var ant = i > 0 ? '<a href="#caso-' + i + '">← Caso ' + i + '</a>' : '<span></span>';
-            var prox = i < total - 1 ? '<a href="#caso-' + (i + 2) + '">Caso ' + (i + 2) + ' →</a>' : '<span></span>';
-            nav.innerHTML = ant + '<a class="meio" href="#casos">Todos os casos ↑</a>' + prox;
+            var rot = casos.dataset;
+            var rotCaso = rot.rotuloCaso || "Caso";
+            nav.setAttribute("aria-label", rot.rotuloNavegar || "Navegar entre os casos");
+            var ant = i > 0 ? '<a href="#caso-' + i + '">← ' + rotCaso + ' ' + i + '</a>' : '<span></span>';
+            var prox = i < total - 1 ? '<a href="#caso-' + (i + 2) + '">' + rotCaso + ' ' + (i + 2) + ' →</a>' : '<span></span>';
+            nav.innerHTML = ant + '<a class="meio" href="#casos">' + (rot.rotuloTodos || "Todos os casos") + ' ↑</a>' + prox;
             texto.appendChild(nav);
           });
 
@@ -582,6 +593,6 @@
         atualizar();
       })();
     </script>
-    <script defer src="script.js"></script>
+    <script defer src="script.js?v=i18n-20261109"></script>
   </body>
 </html>

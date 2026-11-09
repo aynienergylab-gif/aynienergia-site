@@ -1783,3 +1783,87 @@ main:focus {
 /* Apresentação da atuação integrada aos trabalhos selecionados. */
 .atuacao-resumo { max-width: 700px; margin: 22px auto 0; font-size: 18px; line-height: 1.6; color: var(--creme-suave); }
 @media (max-width: 640px) { .atuacao-resumo { font-size: 16px; } }
+
+/* ---------- Idiomas (PT · ES · EN) ---------- */
+
+.nav-lista .nav-idioma {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 48px;
+  padding: 0 6px;
+}
+
+.nav-lista .nav-idioma a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.nav-lista .nav-idioma a:hover {
+  text-decoration: underline;
+}
+
+.nav-lista .nav-idioma a[aria-current="true"] {
+  color: var(--terracota);
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  .nav-lista .nav-idioma {
+    min-height: 44px;
+    margin-left: 6px;
+    padding: 0 0 0 8px;
+    border-left: 1px solid var(--linha);
+  }
+
+  .nav-lista .nav-idioma a {
+    min-width: 0;
+    padding: 0 7px;
+    font-size: 14px;
+  }
+}
+
+/* Títulos de documentos em português, mostrados sob a tradução nas versões ES/EN. */
+.titulo-original {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8em;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--texto-suave);
+}
+
+/* Em links com seta (painel, base de dados), o original segue na mesma linha. */
+.titulo-original.titulo-original-inline {
+  display: inline;
+  margin: 0 0 0 0.35em;
+}
+
+/* Aviso de idioma dos documentos (versões ES/EN). */
+.nota-idioma {
+  max-width: 64ch;
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+/* Espanhol: rótulos do menu mais longos; em 1024-1119px o espaçamento é reduzido
+   para o menu não quebrar em duas linhas. */
+@media (min-width: 1024px) and (max-width: 1119px) {
+  html[lang="es"] .nav-lista a {
+    padding: 0 6px;
+  }
+
+  html[lang="es"] .nav-lista .nav-idioma a {
+    padding: 0 5px;
+  }
+}
