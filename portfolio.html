@@ -24,49 +24,47 @@
     </script>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=header-compact-20261105-2" />
+    <link rel="stylesheet" href="styles.css?v=fundos-leves-20261109" />
     <style>
-      /* Estilos próprios da página de portfólio (prefixo pf-). A tipografia segue o sistema do site (styles.css): Archivo, cores da marca,
-         rótulos de 13px com 0,2em, títulos em frase de 42px/700 e títulos de destaque 800 largos. */
+      /* Estilos próprios do Portfólio. A tipografia e o cabeçalho compartilham
+         o sistema da página inicial: Archivo, títulos densos e verde da marca. */
       .pf{background:#fff;color:var(--verde)}
       .pf a{color:var(--verde)}
       .pf a:hover{color:var(--terracota)}
       .pf-wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(20px,3vw,32px)}
       .pf-rotulo{margin:0;font-size:13px;font-weight:600;line-height:1.4;letter-spacing:.2em;text-transform:uppercase;color:var(--terracota)}
       .pf-rotulo.claro{color:var(--creme-suave)}
-      /* Botões: mesmas medidas dos botões do site (52px de altura, cantos de 12px, peso 600).
-         Sobre fundo verde o botão é o .botao-claro da própria página principal. */
-      .pf-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border:1px solid var(--verde);border-radius:var(--raio-botao);font-size:inherit;font-weight:600;text-decoration:none;transition:background-color .2s,border-color .2s,color .2s}
+      .pf-btn{display:inline-block;text-decoration:none;font-weight:600;font-size:inherit;border-radius:6px;padding:13px 21px;border:1.5px solid var(--verde)}
       .pf-btn.cheio{background:var(--verde);color:var(--creme)!important}
       .pf-btn.cheio:hover{background:#0a2a1f}
       .pf-btn.vazado{background:transparent;color:var(--verde)}
-      .pf-btn.vazado:hover{background:var(--salvia);color:var(--verde)}
-      .pf .escuro a:not(.botao-claro):hover{color:var(--creme-suave)}
+      .pf-btn.branco{background:var(--creme);color:var(--verde)!important;border-color:var(--creme)}
       html{scroll-padding-top:64px}
       /* Sem o botão "Contato →" no cabeçalho (o atalho fica na barra de seções): a faixa ocupa a largura toda */
       @media (min-width:1024px){.site-header::before{grid-column:1/-1}}
       /* Barra de seções: fica fixa no topo ao rolar, destaca onde o leitor está e mantém o PDF a um clique */
       .pf-barra{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
-      .pf-barra.preso{border-bottom-color:var(--linha);box-shadow:0 4px 14px rgba(15,59,44,.07)}
+      .pf-barra.preso{border-bottom-color:#DCE3DD;box-shadow:0 4px 14px rgba(15,59,44,.07)}
       .pf-barra .pf-wrap{display:flex;align-items:center;justify-content:flex-end;gap:10px 22px;min-height:54px}
       .pf-sub{display:flex;flex-wrap:wrap;gap:0 22px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
       .pf-sub a{text-decoration:none;display:inline-block;padding:14px 0 11px;border-bottom:3px solid transparent}
       .pf-sub a[aria-current="location"]{border-bottom-color:var(--ocre);color:var(--verde);font-weight:600}
-      /* Abertura: foto de fundo suave (parte direita da imagem de capa do site), com desvanecimento nas bordas para manter o texto legível */
-      .pf-topo{position:relative;isolation:isolate;overflow:hidden}
-      .pf-topo::before{content:"";position:absolute;z-index:-1;inset:0 0 0 auto;width:min(66%,960px);background:url("assets/portfolio/fundo-topo.webp") 50% 40%/cover no-repeat;opacity:.9;
-        -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);-webkit-mask-composite:source-in;
-        mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);mask-composite:intersect}
-      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
+      /* A abertura retoma a fotografia da página inicial em uma camada verde sólida,
+         sem usar degradê e preservando a leitura dos textos. */
+      .pf-topo{background:#fff}
+      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding:clamp(34px,4vw,50px);background-color:rgb(15 59 44 / .62);background-image:url("assets/hero-lampada-eolica-final.jpg");background-position:center;background-size:cover;background-repeat:no-repeat;background-blend-mode:multiply;border-radius:var(--raio)}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
-      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.06;font-weight:700;color:var(--verde);letter-spacing:-.015em;font-stretch:100%;text-transform:none}
+      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.02;font-weight:800;color:var(--creme);letter-spacing:-.015em;font-stretch:112%;text-transform:none}
       /* Texto principal da abertura (rótulo, título e botões): mantido como no desenho original da página */
-      .pf-hero .pf-rotulo{letter-spacing:.14em;line-height:1.6}
+      .pf-hero .pf-rotulo{letter-spacing:.14em;line-height:1.6;color:var(--creme-suave)}
+      .pf-hero .pf-btn{font-size:16px}
+      .pf-hero .pf-btn.vazado{border-color:var(--creme-suave);color:var(--creme)}
+      .pf-hero .pf-btn.vazado:hover{background:var(--creme);color:var(--verde)}
       .pf-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-top:4px}
-      .pf-perfil{width:min(100%,310px);max-width:310px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--linha);border-radius:var(--raio-cartao);background:rgba(255,255,255,.94)}
-      .pf-perfil img{width:100%;height:330px;object-fit:cover;object-position:50% 35%;display:block}
-      .pf-perfil figcaption{display:flex;flex-direction:column;gap:2px;padding:12px 16px 14px}
+      .pf-perfil{width:min(100%,310px);max-width:310px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;gap:10px}
+      .pf-perfil img{width:100%;height:330px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
+      .pf-perfil figcaption{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--verde);padding:10px 14px 12px;background:rgba(255,255,255,.94)}
       .pf-perfil strong{font-size:17px;font-weight:600}
       .pf-perfil .grau{font-size:15px;color:var(--terracota);font-weight:600}
       .pf-perfil .atuacao{font-size:15px;line-height:1.5;color:var(--texto-suave)}
@@ -75,10 +73,10 @@
       .pf-capas a:hover{transform:translateY(-4px)}
       .pf-capas a:hover img{box-shadow:0 0 0 1px var(--ocre),0 10px 22px rgba(15,59,44,.18)}
       .pf-capas a:focus-visible{outline:3px solid var(--terracota);outline-offset:3px}
-      .pf-capas img{width:100%;height:auto;display:block;box-shadow:0 0 0 1px var(--linha);background:#fff;border-radius:8px}
+      .pf-capas img{width:100%;height:auto;display:block;box-shadow:0 0 0 1px #DCE3DD;background:#fff}
       .pf-nota{margin:12px 0 0;font-size:15px;color:var(--texto-suave)}
       /* Tese */
-      .pf-tese{background:#fff;border-block:1px solid var(--linha);margin-top:56px}
+      .pf-tese{background:#fff;border-block:1px solid #DCE3DD;margin-top:56px}
       .pf-tese .pf-wrap{padding-block:72px;display:flex;flex-direction:column;gap:40px}
       .pf-tese h2{margin:0;font-size:clamp(26px,3.4vw,42px);line-height:1.15;font-weight:700;color:var(--verde);max-width:860px;text-wrap:balance}
       .pf-duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
@@ -90,8 +88,8 @@
       .pf-cabeca span{font-size:15px;color:var(--texto-suave)}
       .pf-casos{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
       .pf-abas{flex:1 1 280px;min-width:0;display:flex;flex-direction:column}
-      .pf-aba{font:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:0;border-bottom:1px solid var(--linha);border-left:3px solid transparent;background:#fff}
-      .pf-aba[aria-selected="true"]{border-left-color:var(--ocre);background:var(--salvia);border-radius:0 var(--raio-botao) var(--raio-botao) 0}
+      .pf-aba{font:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:0;border-bottom:1px solid #DCE3DD;border-left:3px solid transparent;background:#fff}
+      .pf-aba[aria-selected="true"]{border-left-color:var(--ocre);background:#F2F5F2}
       .pf-aba:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
       .pf-aba .n{font-size:13px;font-weight:600;line-height:1.4;letter-spacing:.2em;text-transform:uppercase;color:var(--terracota)}
       .pf-aba .t{font-size:inherit;font-weight:600;line-height:1.3;color:var(--verde)}
@@ -101,25 +99,23 @@
       .pf-painel h3{margin:0;font-size:clamp(26px,2.6vw,34px);line-height:1.15;font-weight:700;color:var(--verde)}
       .pf-bloco span{display:block;font-size:13px;font-weight:600;line-height:1.4;letter-spacing:.2em;text-transform:uppercase;color:var(--texto-suave);margin-bottom:6px}
       .pf-bloco p{margin:0;color:var(--texto-suave)}
-      .pf-atuacao{background:var(--salvia);border-left:3px solid var(--ocre);border-radius:0 var(--raio-botao) var(--raio-botao) 0;padding:16px 20px;display:flex;flex-direction:column;gap:4px}
+      .pf-atuacao{background:#F2F5F2;border-left:3px solid var(--ocre);padding:16px 20px;display:flex;flex-direction:column;gap:4px}
       .pf-atuacao b{font-size:13px;font-weight:600;line-height:1.4;letter-spacing:.2em;text-transform:uppercase;color:var(--terracota)}
       .pf-atuacao .q{font-size:inherit;font-weight:500}
       .pf-atuacao .amb{font-size:15px;color:var(--texto-suave)}
       .pf-lado{flex:1 1 220px;min-width:0;max-width:280px;display:flex;flex-direction:column;gap:16px}
-      .pf-lado img{width:100%;height:auto;display:block;box-shadow:0 0 0 1px var(--linha);border-radius:8px}
+      .pf-lado img{width:100%;height:auto;display:block;box-shadow:0 0 0 1px #DCE3DD}
       .pf-numero{border-top:2px solid var(--verde);padding-top:10px;display:flex;flex-direction:column;gap:4px}
       .pf-numero b{font-size:40px;font-weight:800;font-stretch:112%;color:var(--verde);line-height:1}
       .pf-numero span{font-size:15px;color:var(--texto-suave)}
       .pf-docs{display:flex;flex-direction:column;gap:6px}
       .pf-docs span{font-size:13px;font-weight:600;line-height:1.4;letter-spacing:.2em;text-transform:uppercase;color:var(--texto-suave)}
       .pf-docs a{font-size:15px;font-weight:600}
-      .pf-passo{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;border-top:1px solid var(--linha);padding-top:16px;font-size:15px;font-weight:600}
+      .pf-passo{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;border-top:1px solid #DCE3DD;padding-top:16px;font-size:15px;font-weight:600}
       .pf-passo a{text-decoration:none}
       .pf-passo .meio{color:var(--texto-suave);font-weight:500}
       .pf-passo a:hover{text-decoration:underline}
       /* Método: foto sob camada verde (mesmo tratamento do Contato na página inicial) */
-      .pf-metodo,.pf-contato{margin-inline:var(--margem-lateral);border-radius:var(--raio);overflow:hidden}
-      .pf-contato .botao-claro{margin-top:0;flex:none}
       .pf-metodo{position:relative;isolation:isolate;background:var(--verde);color:var(--creme)}
       .pf-metodo::before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(15,59,44,.96) 0,rgba(15,59,44,.9) 55%,rgba(15,59,44,.78) 100%)}
       .pf-metodo-foto{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
@@ -143,7 +139,7 @@
       .pf-frentes p{margin:0 0 8px;font-size:16px;color:var(--texto-suave)}
       .pf-frentes .ref{font-size:15px;color:var(--texto-suave)}
       /* Colaboração */
-      .pf-colab{border-top:1px solid var(--linha);padding:clamp(34px,3.6vw,44px) 0 clamp(30px,3vw,36px)}
+      .pf-colab{border-top:1px solid #DCE3DD;padding:clamp(34px,3.6vw,44px) 0 clamp(30px,3vw,36px)}
       .pf-colab h2{margin:0 0 26px;font-size:clamp(26px,3.4vw,42px);line-height:1.15;font-weight:700;color:var(--verde);text-wrap:balance}
       .pf-tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
       .pf-tres div{border-top:2px solid var(--verde);padding-top:14px}
@@ -170,14 +166,12 @@
       @media (max-width:700px){
         .pf-barra .pf-wrap{justify-content:flex-start;min-height:50px}
         .pf-sub{justify-content:flex-start;gap:0 16px;font-size:14px}
-        .pf-topo::before{width:100%;inset:0;opacity:.55;background-position:60% 20%;
-          -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);-webkit-mask-composite:source-over;mask-composite:add}
         /* No celular, capa, número e documentos vêm antes do texto longo, em uma linha compacta */
         .pf-painel{gap:22px}
         .pf-lado{order:-1;max-width:none;width:100%;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px 18px;align-items:start}
         .pf-lado img{grid-row:1/3;width:96px}
         .pf-lado .pf-numero b{font-size:32px}
-        .pf-hero{grid-template-columns:1fr;gap:28px;padding-block:32px}
+        .pf-hero{grid-template-columns:1fr;gap:28px;padding:32px}
         .pf-hero h1{max-width:16ch}
         .pf-perfil{width:100%;max-width:400px;justify-self:start}
         .pf-perfil img{height:360px}
@@ -190,15 +184,9 @@
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <!-- CABEÇALHO: o mesmo da página inicial e do Blog, com "Início" na faixa e "Portfólio" como página atual -->
+    <!-- Cabeçalho compartilhado com a página inicial; Portfólio apenas acrescenta o atalho de Início. -->
     <header class="site-header">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="assets/espiral-logo.svg" alt="" width="30" height="30" />
-        <span>
-          <span class="brand-nome">Ayni Energia</span>
-          <span class="brand-autora">Maria José Charfuelan Villarreal</span>
-        </span>
-      </a>
+      <a class="brand" href="index.html#inicio"><img class="brand-logo" src="assets/espiral-logo.svg" alt="" width="30" height="30" /><span><span class="brand-pessoa">Maria José Charfuelan Villarreal</span><span class="brand-autora">Pesquisa aplicada em energia e políticas públicas</span></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
         <span></span>
         <span></span>
@@ -211,6 +199,7 @@
           <li><a href="producao.html">Produção</a></li>
           <li><a href="index.html#trajetoria">Trajetória</a></li>
           <li><a href="analises.html">Blog</a></li>
+          <li class="nav-contato"><a href="#contato">Contato →</a></li>
         </ul>
       </nav>
     </header>
@@ -386,7 +375,7 @@
         </div>
       </section>
 
-      <section class="pf-metodo escuro" id="metodo" aria-labelledby="t-metodo">
+      <section class="pf-metodo" id="metodo" aria-labelledby="t-metodo">
         <img class="pf-metodo-foto" src="assets/espiral-fibra-1600.webp" alt="" width="1600" height="1064" loading="lazy" />
         <div class="pf-wrap">
           <p class="pf-rotulo claro">Método</p>
@@ -432,7 +421,7 @@
         </div>
       </section>
 
-      <section class="pf-contato escuro" id="contato" aria-label="Contato">
+      <section class="pf-contato" id="contato" aria-label="Contato">
         <img class="pf-contato-foto" src="assets/producao-fundo.jpg" alt="" width="1600" height="1066" loading="lazy" />
         <div class="pf-wrap">
           <div>
@@ -445,7 +434,7 @@
               <a href="https://www.researchgate.net/profile/Maria-Charfuelan" target="_blank" rel="noreferrer">ResearchGate</a>
             </div>
           </div>
-          <a class="botao-claro" href="assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11-06-pdf7" download>Baixar o portfólio em PDF <span aria-hidden="true">↓</span></a>
+          <a class="pf-btn branco" href="assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11-06-pdf7" download>Baixar o portfólio em PDF ↓</a>
         </div>
       </section>
     </main>
