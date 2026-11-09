@@ -1698,28 +1698,6 @@ main:focus {
   outline-color: var(--creme);
 }
 
-.grupo-imagem {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  margin-top: 26px;
-  border-radius: var(--raio-cartao);
-  object-fit: cover;
-}
-
-.grupo-imagem--larga {
-  aspect-ratio: 16 / 7;
-}
-
-@media (max-width: 700px) {
-  .grupo-imagem {
-    max-width: none;
-    aspect-ratio: 16 / 7;
-  }
-}
-
 @media (max-width: 639px) {
   .trabalhos-acoes {
     flex-direction: column;
