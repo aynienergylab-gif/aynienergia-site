@@ -1650,9 +1650,11 @@ main:focus {
 }
 
 .production-topo {
-  margin-top: clamp(20px, 3vw, 32px);
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--linha);
+  margin-top: 12px;
+  padding: clamp(26px, 3.6vw, 44px) clamp(20px, 3vw, 40px);
+  border-radius: var(--raio);
+  background: var(--verde) url("assets/producao-faixa-topo.webp") center / cover no-repeat;
+  color: var(--creme);
 }
 
 .production-topline {
@@ -1664,6 +1666,7 @@ main:focus {
 
 .production-topo .titulo-pagina {
   margin: 0;
+  color: inherit;
   font-size: clamp(34px, 4.5vw, 56px);
   line-height: 1;
 }
@@ -1679,6 +1682,7 @@ main:focus {
   align-items: center;
   min-height: 36px;
   border-bottom: 1px solid transparent;
+  color: inherit;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -1687,7 +1691,33 @@ main:focus {
 .production-text-nav a:hover,
 .production-text-nav a:focus-visible {
   border-bottom-color: currentColor;
-  color: var(--terracota);
+  color: var(--creme-suave);
+}
+
+.production-text-nav a:focus-visible {
+  outline-color: var(--creme);
+}
+
+.grupo-imagem {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  margin-top: 26px;
+  border-radius: var(--raio-cartao);
+  object-fit: cover;
+}
+
+.grupo-imagem--larga {
+  aspect-ratio: 16 / 7;
+}
+
+@media (max-width: 700px) {
+  .grupo-imagem {
+    max-width: none;
+    aspect-ratio: 16 / 7;
+  }
 }
 
 @media (max-width: 639px) {
