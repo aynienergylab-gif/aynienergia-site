@@ -32,7 +32,7 @@
     </script>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preload" href="../assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="../styles.css?v=i18n-20261109" />
+    <link rel="stylesheet" href="../styles.css?v=idiomas-20261109" />
     <style>
       /* Estilos próprios do Portfólio. A tipografia e o cabeçalho compartilham
          o sistema da página inicial: Archivo, títulos densos e verde da marca. */
@@ -57,18 +57,18 @@
       .pf-sub{display:flex;flex-wrap:wrap;gap:0 22px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
       .pf-sub a{text-decoration:none;display:inline-block;padding:14px 0 11px;border-bottom:3px solid transparent}
       .pf-sub a[aria-current="location"]{border-bottom-color:var(--ocre);color:var(--verde);font-weight:600}
-      /* Abertura: foto de fundo suave (parte direita da imagem de capa do site), com desvanecimento nas bordas para manter o texto legível */
-      .pf-topo{position:relative;isolation:isolate;overflow:hidden}
-      .pf-topo::before{content:"";position:absolute;z-index:-1;inset:0 0 0 auto;width:min(66%,960px);background:linear-gradient(rgba(15,59,44,.62),rgba(15,59,44,.62)),url("../assets/portfolio/fundo-topo.webp") 50% 40%/cover no-repeat;background-blend-mode:multiply;opacity:.9;
-        -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);-webkit-mask-composite:source-in;
-        mask-image:linear-gradient(90deg,transparent 0,#000 55%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 97%);mask-composite:intersect}
-      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
+      /* A imagem de abertura já vem tratada no tom da página inicial. */
+      .pf-topo{background:#fff}
+      .pf-hero{background-color:var(--verde);background-image:url("../assets/portfolio-abertura-tom-inicial.webp");background-position:center;background-size:cover;background-repeat:no-repeat}
+      .pf-hero-interna{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(34px,4vw,50px);padding-inline:calc(clamp(20px,3vw,32px) + clamp(34px,4vw,50px))}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
-      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.02;font-weight:800;color:var(--verde);letter-spacing:-.015em;font-stretch:112%;text-transform:none}
+      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.02;font-weight:800;color:var(--creme);letter-spacing:-.015em;font-stretch:112%;text-transform:none}
       /* Texto principal da abertura (rótulo, título e botões): mantido como no desenho original da página */
-      .pf-hero .pf-rotulo{letter-spacing:.14em;line-height:1.6}
+      .pf-hero .pf-rotulo{letter-spacing:.14em;line-height:1.6;color:var(--creme-suave)}
       .pf-hero .pf-btn{font-size:16px}
+      .pf-hero .pf-btn.vazado{border-color:var(--creme-suave);color:var(--creme)}
+      .pf-hero .pf-btn.vazado:hover{background:var(--creme);color:var(--verde)}
       .pf-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-top:4px}
       .pf-perfil{width:min(100%,310px);max-width:310px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;gap:10px}
       .pf-perfil img{width:100%;height:330px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
@@ -164,7 +164,7 @@
       .pf-contato .perfis{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:15px}
       .pf-contato .perfis a{color:var(--creme-suave)!important}
       @media (max-width:900px){
-        .pf-hero{grid-template-columns:minmax(0,1fr) minmax(240px,.62fr);gap:32px}
+        .pf-hero-interna{grid-template-columns:minmax(0,1fr) minmax(240px,.62fr);gap:32px}
         .pf-perfil{max-width:300px}
         .pf-capas{grid-template-columns:repeat(3,minmax(0,1fr))}
         .pf-duas,.pf-etapa-texto,.pf-tres{grid-template-columns:1fr}
@@ -174,14 +174,12 @@
       @media (max-width:700px){
         .pf-barra .pf-wrap{justify-content:flex-start;min-height:50px}
         .pf-sub{justify-content:flex-start;gap:0 16px;font-size:14px}
-        .pf-topo::before{width:100%;inset:0;opacity:.55;background-position:60% 20%;
-          -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 28%,transparent 48%);-webkit-mask-composite:source-over;mask-composite:add}
         /* No celular, capa, número e documentos vêm antes do texto longo, em uma linha compacta */
         .pf-painel{gap:22px}
         .pf-lado{order:-1;max-width:none;width:100%;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px 18px;align-items:start}
         .pf-lado img{grid-row:1/3;width:96px}
         .pf-lado .pf-numero b{font-size:32px}
-        .pf-hero{grid-template-columns:1fr;gap:28px;padding-block:32px}
+        .pf-hero-interna{grid-template-columns:1fr;gap:28px;padding-block:32px;padding-inline:calc(clamp(20px,3vw,32px) + 32px)}
         .pf-hero h1{max-width:16ch}
         .pf-perfil{width:100%;max-width:400px;justify-self:start}
         .pf-perfil img{height:360px}
@@ -228,28 +226,29 @@
       </div>
 
       <div class="pf-topo">
-      <div class="pf-wrap">
         <section class="pf-hero" aria-labelledby="pf-titulo">
-          <div class="pf-hero-texto">
-            <span class="pf-traco" aria-hidden="true"></span>
-            <p class="pf-rotulo">Work portfolio · 2026</p>
-            <h1 id="pf-titulo">Evidence for the energy transition in the territories</h1>
-            <div class="pf-acoes">
-              <a class="pf-btn cheio" href="#casos">View the cases</a>
-              <a class="pf-btn vazado" href="../assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11-06-pdf7" download>Download the portfolio as PDF (in Portuguese)</a>
+          <div class="pf-wrap pf-hero-interna">
+            <div class="pf-hero-texto">
+              <span class="pf-traco" aria-hidden="true"></span>
+              <p class="pf-rotulo">Work portfolio · 2026</p>
+              <h1 id="pf-titulo">Evidence for the energy transition in the territories</h1>
+              <div class="pf-acoes">
+                <a class="pf-btn cheio" href="#casos">View the cases</a>
+                <a class="pf-btn vazado" href="../assets/documentos/portfolio-maria-jose-charfuelan.pdf?v=2026-11-06-pdf7" download>Download the portfolio as PDF (in Portuguese)</a>
+              </div>
             </div>
+            <figure class="pf-perfil">
+              <img src="../assets/portfolio/retrato-maria-jose.webp" alt="Portrait of Maria José Charfuelan Villarreal" width="800" height="960" />
+              <figcaption>
+                <strong>Maria José Charfuelan Villarreal</strong>
+                <span class="grau">PhD in Energy (UFABC)</span>
+                <span class="atuacao">Energy policy and planning</span>
+              </figcaption>
+            </figure>
           </div>
-          <figure class="pf-perfil">
-            <img src="../assets/portfolio/retrato-maria-jose.webp" alt="Portrait of Maria José Charfuelan Villarreal" width="800" height="960" />
-            <figcaption>
-              <strong>Maria José Charfuelan Villarreal</strong>
-              <span class="grau">PhD in Energy (UFABC)</span>
-              <span class="atuacao">Energy policy and planning</span>
-            </figcaption>
-          </figure>
         </section>
 
-        <section aria-label="Cited publications">
+        <section class="pf-wrap" aria-label="Cited publications">
           <div class="pf-capas">
             <a href="#caso-1" aria-label="Open Case 1: Overview of the Electricity Sector in Minas Gerais"><img src="../assets/portfolio/capa-panorama.webp" alt="Cover of the Overview of the Electricity Sector in Minas Gerais 2025" loading="lazy" /></a>
             <a href="#caso-2" aria-label="Open Case 2: Energy Efficiency in Industry"><img src="../assets/portfolio/capa-eficiencia-industria.webp" alt="Cover of the Energy Efficiency Opportunity Study for Industry" loading="lazy" /></a>
@@ -260,7 +259,6 @@
           </div>
           <p class="pf-nota">Publications cited in this portfolio, all publicly available and in Portuguese. Click on a cover to open the case.</p>
         </section>
-      </div>
       </div>
 
       <section class="pf-tese">

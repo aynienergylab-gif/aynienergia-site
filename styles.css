@@ -1027,54 +1027,93 @@ main:focus {
 
 /* Contato */
 
-.contato {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  margin: var(--respiro) var(--margem-lateral) 0;
-  padding: clamp(64px, 9vw, 128px) 20px;
-  border-radius: var(--raio);
-  background: var(--verde);
+.contato--objetivo {
+  margin: var(--respiro) 0 0;
+  background-color: var(--verde);
+  background-image: url("assets/contato-fundo-verde.webp");
+  background-position: 58% 72%;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--creme);
-  text-align: center;
 }
 
-.contato::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--verde);
-  opacity: 0.85;
-}
-
-.contato-foto {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
+.contato-colaboracao {
+  max-width: 1180px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 58% 72%;
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 80px) var(--margem-lateral);
 }
 
-.contato .rotulo {
+.contato--objetivo:target {
+  display: grid;
+  align-content: center;
+  min-height: 100svh;
+  scroll-margin-top: 0;
+}
+
+.contato-colaboracao .rotulo {
   color: var(--creme-suave);
 }
 
-.contato-frase {
-  max-width: 40ch;
-  text-wrap: balance;
-  margin: 16px auto 0;
+.contato-colaboracao h2 {
+  max-width: 22ch;
+  margin: 12px 0 34px;
+  color: var(--creme);
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.contato-frentes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 46px;
+}
+
+.contato-frentes div {
+  border-top: 2px solid rgb(255 250 240 / 0.72);
+  padding-top: 14px;
+}
+
+.contato-frentes h3 {
+  margin: 0 0 8px;
+  color: var(--creme);
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.contato-frentes p {
+  margin: 0;
   color: var(--creme-suave);
-  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+}
+
+.contato-faixa {
+  border-top: 1px solid rgb(255 250 240 / 0.34);
+  background: transparent;
+  color: var(--creme);
+}
+
+.contato-faixa-interna {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px 48px;
+  padding: clamp(36px, 5vw, 56px) var(--margem-lateral);
+}
+
+.contato-faixa .rotulo {
+  color: var(--creme-suave);
 }
 
 .contato-email {
   display: inline-block;
-  margin-top: 16px;
-  padding: 12px 0;
-  font-size: clamp(19px, 3.6vw, 52px);
+  margin-top: 10px;
+  padding: 6px 0;
+  color: var(--creme);
+  font-size: clamp(24px, 3vw, 40px);
   font-weight: 800;
   font-stretch: 112%;
   line-height: 1.15;
@@ -1084,16 +1123,20 @@ main:focus {
 }
 
 .contato-pdf {
-  display: block;
+  display: inline-block;
   width: fit-content;
-  margin: 4px auto 0;
-  color: var(--creme-suave);
+  margin: 0;
+  padding: 13px 20px;
+  border: 1px solid var(--creme-suave);
+  border-radius: 6px;
+  color: var(--creme);
   font-weight: 600;
   text-underline-offset: 0.16em;
 }
 
 .contato-pdf:hover {
-  color: var(--creme);
+  background: var(--creme);
+  color: var(--verde);
 }
 
 /* ---------- Rodapé ---------- */
@@ -1607,9 +1650,11 @@ main:focus {
 }
 
 .production-topo {
-  margin-top: clamp(20px, 3vw, 32px);
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--linha);
+  margin-top: 12px;
+  padding: clamp(26px, 3.6vw, 44px) clamp(20px, 3vw, 40px);
+  border-radius: var(--raio);
+  background: var(--verde) url("assets/producao-faixa-topo.webp") center / cover no-repeat;
+  color: var(--creme);
 }
 
 .production-topline {
@@ -1621,6 +1666,7 @@ main:focus {
 
 .production-topo .titulo-pagina {
   margin: 0;
+  color: inherit;
   font-size: clamp(34px, 4.5vw, 56px);
   line-height: 1;
 }
@@ -1636,6 +1682,7 @@ main:focus {
   align-items: center;
   min-height: 36px;
   border-bottom: 1px solid transparent;
+  color: inherit;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -1644,7 +1691,11 @@ main:focus {
 .production-text-nav a:hover,
 .production-text-nav a:focus-visible {
   border-bottom-color: currentColor;
-  color: var(--terracota);
+  color: var(--creme-suave);
+}
+
+.production-text-nav a:focus-visible {
+  outline-color: var(--creme);
 }
 
 @media (max-width: 639px) {
@@ -1685,6 +1736,76 @@ main:focus {
   .production-header .header-contato {
     min-height: 32px;
     padding: 0 11px;
+  }
+
+  .contato-colaboracao {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .contato-colaboracao h2 {
+    margin-bottom: 28px;
+  }
+
+  .contato-frentes {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .contato-faixa-interna {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .contato-pdf {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-height: 800px) {
+  .contato--objetivo:target .contato-colaboracao,
+  .contato--objetivo:target .contato-faixa-interna {
+    padding-block: clamp(16px, 4svh, 32px);
+  }
+
+  .contato--objetivo:target h2 {
+    margin-bottom: 20px;
+  }
+
+  .contato--objetivo:target .contato-frentes,
+  .contato--objetivo:target .contato-faixa-interna {
+    row-gap: 14px;
+  }
+}
+
+@media (max-width: 480px) and (max-height: 700px) {
+  .contato--objetivo:target .contato-colaboracao,
+  .contato--objetivo:target .contato-faixa-interna {
+    padding-block: 14px;
+  }
+
+  .contato--objetivo:target h2 {
+    margin: 8px 0 14px;
+    font-size: 26px;
+  }
+
+  .contato--objetivo:target .contato-frentes,
+  .contato--objetivo:target .contato-faixa-interna {
+    row-gap: 10px;
+  }
+
+  .contato--objetivo:target .contato-frentes div {
+    padding-top: 8px;
+  }
+
+  .contato--objetivo:target .contato-frentes h3 {
+    margin-bottom: 4px;
+  }
+
+  .contato--objetivo:target .contato-email {
+    margin-top: 4px;
+    font-size: clamp(18px, 5.4vw, 24px);
   }
 }
 
@@ -1784,6 +1905,38 @@ main:focus {
 .atuacao-resumo { max-width: 700px; margin: 22px auto 0; font-size: 18px; line-height: 1.6; color: var(--creme-suave); }
 @media (max-width: 640px) { .atuacao-resumo { font-size: 16px; } }
 
+/* ---------- Trabalhos selecionados (página inicial): cartões de vidro e mais respiro ---------- */
+/* Os cartões brancos viram vidro verde com borda fina em creme; "Toda a produção" vira link sublinhado,
+   deixando "Ver portfólio" como a ação principal. Escopo: somente a seção #atuacao. */
+#atuacao.faixa { padding-block: clamp(36px, 7vh, 64px); }
+#atuacao .titulo-faixa { font-size: clamp(34px, 4vw, 54px); }
+#atuacao .atuacao-resumo { max-width: 52ch; margin-inline: auto; }
+#atuacao .cartoes-destaque { margin-top: 28px; gap: 16px; }
+#atuacao .cartao-creme {
+  min-height: 0;
+  padding: 26px 26px 22px;
+  border: 1px solid rgb(231 220 194 / 0.3);
+  background: rgb(244 241 230 / 0.07);
+  color: var(--creme);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+#atuacao .cartao-meta { color: var(--creme-suave); }
+#atuacao .cartao-creme h3 { font-size: 22px; color: var(--creme); }
+#atuacao .cartao-creme h3 a { color: var(--creme); }
+#atuacao .cartao-producao .cartao-abrir { margin-top: auto; padding-top: 18px; color: var(--creme-suave); }
+#atuacao .cartao:hover { border-color: rgb(244 241 230 / 0.55); background: rgb(244 241 230 / 0.13); }
+#atuacao .cartao:hover .cartao-link { color: var(--creme); }
+#atuacao .trabalhos-acoes { margin-top: 24px; }
+#atuacao .trabalhos-acoes .botao-claro + .botao-claro {
+  min-height: 0;
+  padding: 0;
+  border-bottom: 1px solid rgb(231 220 194 / 0.7);
+  border-radius: 0;
+  background: transparent;
+  color: var(--creme);
+}
+
 /* ---------- Idiomas (PT · ES · EN) ---------- */
 
 .nav-lista .nav-idioma {
@@ -1866,4 +2019,14 @@ main:focus {
   html[lang="es"] .nav-lista .nav-idioma a {
     padding: 0 5px;
   }
+}
+
+/* Cartões de vidro de "Trabalhos selecionados" (fundo escuro): o título original usa o tom claro. */
+#atuacao .titulo-original {
+  color: var(--creme-suave);
+}
+
+/* Página Produção: o topo agora é uma faixa verde escura, então o aviso de idioma usa o tom claro. */
+.production-topo .nota-idioma {
+  color: var(--creme-suave);
 }
