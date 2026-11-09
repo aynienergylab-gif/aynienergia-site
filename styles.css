@@ -1029,8 +1029,13 @@ main:focus {
 
 .contato--objetivo {
   margin: var(--respiro) 0 0;
-  background: #fff;
-  color: var(--verde);
+  background-color: rgb(8 50 36 / 0.88);
+  background-image: url("assets/foto-trabalho-1000.webp");
+  background-position: 58% 72%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  color: var(--creme);
 }
 
 .contato-colaboracao {
@@ -1040,13 +1045,13 @@ main:focus {
 }
 
 .contato-colaboracao .rotulo {
-  color: var(--terracota);
+  color: var(--creme-suave);
 }
 
 .contato-colaboracao h2 {
   max-width: 22ch;
   margin: 12px 0 34px;
-  color: var(--verde);
+  color: var(--creme);
   font-size: clamp(30px, 4vw, 52px);
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -1059,25 +1064,26 @@ main:focus {
 }
 
 .contato-frentes div {
-  border-top: 2px solid var(--verde);
+  border-top: 2px solid rgb(255 250 240 / 0.72);
   padding-top: 14px;
 }
 
 .contato-frentes h3 {
   margin: 0 0 8px;
-  color: var(--verde);
+  color: var(--creme);
   font-size: 19px;
   line-height: 1.25;
 }
 
 .contato-frentes p {
   margin: 0;
-  color: var(--texto-suave);
+  color: var(--creme-suave);
   line-height: 1.5;
 }
 
 .contato-faixa {
-  background: var(--verde);
+  border-top: 1px solid rgb(255 250 240 / 0.34);
+  background: transparent;
   color: var(--creme);
 }
 
