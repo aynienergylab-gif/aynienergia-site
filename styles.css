@@ -767,23 +767,12 @@ main:focus {
 /* Trajetória */
 
 .trajetoria {
-  position: relative;
-  isolation: isolate;
   display: grid;
   overflow: hidden;
   border: 1px solid var(--linha);
   border-radius: var(--raio);
-  background-color: rgb(8 50 36 / 0.86);
-  background-image: url("assets/hero-lampada-eolica-final.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  color: var(--creme);
+  background: #fff;
 }
-
-/* A trajetória retoma a fotografia da abertura, com uma camada verde sólida
-   para conservar a leitura sem acrescentar degradês. */
 
 .trajetoria-foto img {
   width: 100%;
@@ -796,10 +785,6 @@ main:focus {
   padding: clamp(24px, 4vw, 56px);
 }
 
-.trajetoria-texto .titulo-secao {
-  color: var(--creme);
-}
-
 .trajetoria-formacao {
   margin-top: 20px;
   font-size: 18px;
@@ -808,14 +793,14 @@ main:focus {
 
 .trajetoria-lista {
   margin-top: 28px;
-  border-top: 1px solid rgb(255 250 240 / 0.34);
+  border-top: 1px solid var(--linha);
 }
 
 .trajetoria-lista div {
   display: grid;
   gap: 4px 24px;
   padding: 16px 0;
-  border-bottom: 1px solid rgb(255 250 240 / 0.34);
+  border-bottom: 1px solid var(--linha);
 }
 
 .trajetoria-lista dt {
@@ -823,7 +808,7 @@ main:focus {
 }
 
 .trajetoria-lista dd {
-  color: var(--creme-suave);
+  color: var(--texto-suave);
 }
 
 .links-perfil {

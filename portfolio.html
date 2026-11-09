@@ -24,7 +24,7 @@
     </script>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=home-aprovada-20261105" />
+    <link rel="stylesheet" href="styles.css?v=portfolio-abertura-20261109" />
     <style>
       /* Estilos próprios do Portfólio. A tipografia e o cabeçalho compartilham
          o sistema da página inicial: Archivo, títulos densos e verde da marca. */
@@ -49,15 +49,18 @@
       .pf-sub{display:flex;flex-wrap:wrap;gap:0 22px;align-items:center;justify-content:flex-end;font-size:15px;font-weight:500}
       .pf-sub a{text-decoration:none;display:inline-block;padding:14px 0 11px;border-bottom:3px solid transparent}
       .pf-sub a[aria-current="location"]{border-bottom-color:var(--ocre);color:var(--verde);font-weight:600}
-      /* Abertura limpa, como na página principal: fundo branco e fotografia apenas no retrato. */
+      /* A abertura retoma a fotografia da página inicial em uma camada verde sólida,
+         sem usar degradê e preservando a leitura dos textos. */
       .pf-topo{background:#fff}
-      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding-block:clamp(30px,4vw,48px) 30px}
+      .pf-hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.65fr);gap:clamp(28px,4vw,54px);align-items:start;padding:clamp(34px,4vw,50px);background-color:rgb(8 50 36 / .86);background-image:url("assets/hero-lampada-eolica-final.jpg");background-position:center;background-size:cover;background-repeat:no-repeat;background-blend-mode:multiply;border-radius:var(--raio)}
       .pf-hero-texto{min-width:0;display:flex;flex-direction:column;gap:18px;padding-top:4px}
       .pf-traco{display:block;width:44px;height:3px;background:var(--ocre)}
-      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.02;font-weight:800;color:var(--verde);letter-spacing:-.015em;font-stretch:112%;text-transform:none}
+      .pf-hero h1{margin:0;max-width:20ch;font-size:clamp(34px,4vw,50px);line-height:1.02;font-weight:800;color:var(--creme);letter-spacing:-.015em;font-stretch:112%;text-transform:none}
       /* Texto principal da abertura (rótulo, título e botões): mantido como no desenho original da página */
-      .pf-hero .pf-rotulo{letter-spacing:.14em;line-height:1.6}
+      .pf-hero .pf-rotulo{letter-spacing:.14em;line-height:1.6;color:var(--creme-suave)}
       .pf-hero .pf-btn{font-size:16px}
+      .pf-hero .pf-btn.vazado{border-color:var(--creme-suave);color:var(--creme)}
+      .pf-hero .pf-btn.vazado:hover{background:var(--creme);color:var(--verde)}
       .pf-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-top:4px}
       .pf-perfil{width:min(100%,310px);max-width:310px;min-width:0;justify-self:end;margin:0;display:flex;flex-direction:column;gap:10px}
       .pf-perfil img{width:100%;height:330px;object-fit:cover;object-position:50% 35%;display:block;border-radius:4px}
@@ -168,7 +171,7 @@
         .pf-lado{order:-1;max-width:none;width:100%;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px 18px;align-items:start}
         .pf-lado img{grid-row:1/3;width:96px}
         .pf-lado .pf-numero b{font-size:32px}
-        .pf-hero{grid-template-columns:1fr;gap:28px;padding-block:32px}
+        .pf-hero{grid-template-columns:1fr;gap:28px;padding:32px}
         .pf-hero h1{max-width:16ch}
         .pf-perfil{width:100%;max-width:400px;justify-self:start}
         .pf-perfil img{height:360px}
