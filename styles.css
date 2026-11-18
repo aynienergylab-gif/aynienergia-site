@@ -1190,6 +1190,20 @@ main:focus {
   text-underline-offset: 0.16em;
 }
 
+.nota-direitos--final {
+  max-width: none;
+  margin-top: 0;
+  margin-bottom: clamp(8px, 2vw, 24px);
+  border-left: 0;
+  border-top: 1px solid var(--linha);
+  background: transparent;
+  color: var(--texto-suave);
+}
+
+.nota-direitos--final a {
+  font-weight: 600;
+}
+
 .pagina-direitos {
   max-width: 760px;
   margin: clamp(42px, 7vw, 88px) auto var(--respiro);
