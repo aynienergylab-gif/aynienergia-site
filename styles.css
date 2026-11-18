@@ -1162,6 +1162,59 @@ main:focus {
   font-size: 15px;
 }
 
+.rodape-direitos a {
+  color: inherit;
+  text-underline-offset: 0.16em;
+}
+
+.nota-direitos {
+  max-width: 920px;
+  margin: clamp(18px, 2.4vw, 32px) var(--margem-lateral) 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--ocre);
+  background: var(--creme);
+  color: var(--texto);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.nota-direitos p {
+  margin: 0;
+}
+
+.nota-direitos a {
+  display: inline-block;
+  margin-top: 10px;
+  color: inherit;
+  font-weight: 700;
+  text-underline-offset: 0.16em;
+}
+
+.pagina-direitos {
+  max-width: 760px;
+  margin: clamp(42px, 7vw, 88px) auto var(--respiro);
+  padding: 0 var(--margem-lateral);
+}
+
+.pagina-direitos .titulo-pagina {
+  margin-bottom: 22px;
+}
+
+.pagina-direitos h2 {
+  margin: 38px 0 12px;
+  font-size: clamp(23px, 2.4vw, 30px);
+}
+
+.pagina-direitos p,
+.pagina-direitos li {
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+.pagina-direitos ul {
+  padding-left: 1.2em;
+}
+
 .rodape-lista a {
   display: inline-flex;
   align-items: center;
