@@ -1470,6 +1470,10 @@ main:focus {
   line-height: 1.08;
 }
 
+.analise-cabecalho--weo h1 {
+  font-size: clamp(29px, 3.25vw, 38px);
+}
+
 @media (min-width: 640px) {
   .analise-cabecalho--curto h1 {
     white-space: nowrap;
