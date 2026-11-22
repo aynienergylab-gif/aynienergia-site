@@ -1471,7 +1471,7 @@ main:focus {
 }
 
 @media (min-width: 640px) {
-  .analise-cabecalho h1 {
+  .analise-cabecalho--curto h1 {
     white-space: nowrap;
   }
 }
